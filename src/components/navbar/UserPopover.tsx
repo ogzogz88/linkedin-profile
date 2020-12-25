@@ -140,6 +140,13 @@ const CustomPopover = applyTheme(Popover, {
             },
         },
     },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
+        },
+    },
 });
 
 export const UserPopover: React.FC = () => {

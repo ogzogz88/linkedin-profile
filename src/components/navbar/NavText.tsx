@@ -15,6 +15,13 @@ const LinkText = applyTheme(Text, {
             },
         },
     },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
+        },
+    },
 });
 type Props = {
     children: React.ReactNode;

@@ -108,6 +108,13 @@ const NavSubHeader = applyTheme(Text, {
             fontSize: '0.9rem',
         },
     },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
+        },
+    },
 });
 const NavSubText = applyTheme(Text, {
     styles: {
@@ -121,6 +128,15 @@ const NavSubText = applyTheme(Text, {
         },
     },
 });
+const CustomDrawer = applyTheme(Drawer, {
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
+        },
+    },
+});
 
 export function SideDrawer(): JSX.Element {
     return (
@@ -128,7 +144,7 @@ export function SideDrawer(): JSX.Element {
             <Drawer.Disclosure style={{ height: '5px', marginTop: '-10px' }}>
                 <PopoverIcon />
             </Drawer.Disclosure>
-            <Drawer placement="right" style={{ marginTop: '58px', borderRadius: '8px 8px 0 0' }} fade slide>
+            <CustomDrawer placement="right" style={{ marginTop: '58px', borderRadius: '8px 8px 0 0' }} fade slide>
                 <Card style={{ margin: '1.5rem', padding: '2px 0 0 0' }}>
                     <NavHeader>Visit More Linkedin Products</NavHeader>
                     <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px', padding: '20px ' }}>
@@ -170,7 +186,7 @@ export function SideDrawer(): JSX.Element {
                         </NavSubHeader>
                     </Card>
                 </Card>
-            </Drawer>
+            </CustomDrawer>
         </Drawer.State>
     );
 }

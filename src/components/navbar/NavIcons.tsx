@@ -44,4 +44,11 @@ export const NavIcon = applyTheme(Icon, {
             },
         },
     },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
+        },
+    },
 });

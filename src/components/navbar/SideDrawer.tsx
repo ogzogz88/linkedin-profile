@@ -1,6 +1,6 @@
 import React from 'react';
 import { Drawer, Card, Flex, Text, Image, applyTheme } from 'bumbag';
-import { PopoverIcon } from './UserPopover';
+import { PopoverIcon } from './UserPopoverElements';
 
 const iconData = [
     {

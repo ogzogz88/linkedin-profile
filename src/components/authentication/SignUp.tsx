@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { InputField, Box, Divider, Text, FieldStack, Button } from 'bumbag';
 import { Link } from 'react-router-dom';
+import { signInWithGoogle } from '../../firebase';
 
 export function SignUp(): JSX.Element {
     const [email, setEmail] = useState('');
@@ -79,7 +80,7 @@ export function SignUp(): JSX.Element {
                 <Text.Block margin={'1rem auto'} textAlign={'center'}>
                     <Text fontSize={'1rem'}>Or</Text>
                 </Text.Block>
-                <Button variant="outlined" palette="primary" width={'100%'}>
+                <Button variant="outlined" palette="primary" width={'100%'} onClick={signInWithGoogle}>
                     Sign In With Google
                 </Button>
             </FieldStack>

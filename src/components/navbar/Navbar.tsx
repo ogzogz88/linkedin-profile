@@ -1,15 +1,21 @@
 /* eslint-disable prettier/prettier */
-import React from 'react';
-import { TopNav, Image, Input, Flex } from 'bumbag';
+import React, { useContext } from 'react';
+import { TopNav, Image, Input, Flex, } from 'bumbag';
 import { Navlink, NavDivider } from './Navlink';
 import NavText from './NavText';
 import { UserPopover } from './UserPopover';
 import { SideDrawer } from './SideDrawer';
 import { NavIcon } from '../../theme/Theme';
 import { navData } from './NavData';
+import { NavImage } from './UserPopoverElements'
 import { DarkMode } from '../DarkMode';
+import { UserContext } from '../../providers/UserProvider';
+
+
 
 function Navbar(): JSX.Element {
+    const user = useContext(UserContext);
+    const { photoURL }: any = user;
     return (
         <TopNav>
             <TopNav.Section>
@@ -48,7 +54,10 @@ function Navbar(): JSX.Element {
                                             undefined
                                 }
                             >
-                                <NavIcon aria-label="Navlcon" icon={`solid-${navElement.navIcon}`} />
+                                {navElement.navIcon !== 'user' && <NavIcon aria-label="Navlcon" icon={`solid-${navElement.navIcon}`} />}
+                                {navElement.navIcon === 'user' && <NavImage src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
+                                    alt="Profile Picture" width={'30px'} />}
+
                                 <div style={{ display: 'flex' }}>
                                     <NavText>{navElement.navText}</NavText>
                                     {navElement.navIcon === 'user' && <UserPopover />}
@@ -59,19 +68,6 @@ function Navbar(): JSX.Element {
                         </>
                     );
                 })}
-                {/* <Navlink key={11} href="#" style={{ marginRight: '0', marginLeft: 0 }}>
-                    <p
-                        style={{
-                            color: '#5d3b09',
-                            fontSize: '0.75rem',
-                            fontWeight: 'lighter',
-                            width: '120px',
-                            textAlign: 'center',
-                        }}
-                    >
-                        Try Premium Free For 1 Month
-                    </p>
-                </Navlink> */}
                 <DarkMode />
             </TopNav.Section>
         </TopNav >

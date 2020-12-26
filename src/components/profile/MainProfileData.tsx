@@ -1,18 +1,18 @@
 export const data = [
     {
         basic: {
-            name: 'Oğuzhan',
-            lastname: 'Alagöz',
-            headline: 'Ministry of Interior, Turkey şirketinde Network Administrator',
-            city: 'Ankara',
-            country: 'Turkey',
-            company: 'Self Employed',
-            education: 'Free Code Camp',
+            name: 'Your Name',
+            lastname: 'Your Lastname',
+            email: 'yourmailaddress@gmail.com',
+            headline: 'Your Company, Your Position',
+            city: 'City',
+            country: 'Country',
+            company: 'Company',
+            education: 'Education',
         },
         about: {
             title: 'About',
-            text:
-                'Interested in frontend web development with html, css, javaScript and React.js. A javaScript enthusiast. Interested in web technologies. Clean & lean coding. ',
+            text: 'You can tell about your skills, your interests, your work and so on.  ',
         },
     },
 ];

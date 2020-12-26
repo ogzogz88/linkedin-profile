@@ -1,5 +1,5 @@
 import React from 'react';
-import { Columns, Box, Flex, Card, Image, applyTheme, Set, Button, Link, Icon, Text } from 'bumbag';
+import { Columns, Flex, Card, Set } from 'bumbag';
 import {
     ProfileImg,
     BackgroundImg,
@@ -17,13 +17,16 @@ import {
 import { data } from './MainProfileData';
 import SideProfile from './SideProfile';
 
-function MainProfile(): JSX.Element {
+function MainProfile({ user }: any): JSX.Element {
+    const { photoURL, displayName, email }: any = user;
+
     return (
         <Columns style={{ marginTop: '2rem' }}>
             <Columns.Column spread={8}>
                 <Card style={{ padding: 0, borderRadius: '0.5rem', position: 'relative' }}>
                     <BackgroundImg src="../../assets/photos/profile-bg.jpg" />
-                    <ProfileImg src="../../assets/photos/ogz.jpg" />
+                    {/* <ProfileImg src="../../assets/photos/ogz.jpg" /> */}
+                    <ProfileImg src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'} />
                     <Set style={{ justifyContent: 'flex-end', marginTop: '0.3rem' }}>
                         <AddButton size="small" palette="primary">
                             Add profile section
@@ -38,12 +41,13 @@ function MainProfile(): JSX.Element {
                     <Columns style={{ marginTop: '0.25rem', paddingBottom: '1rem' }}>
                         <Columns.Column spread={8}>
                             <Flex flexDirection="column" marginLeft="1.5rem">
-                                <ProfileTextLg>
-                                    {data[0].basic.name} {data[0].basic.lastname.toUpperCase()}
+                                <ProfileTextLg textTransform={'capitalize'}>
+                                    {displayName ? displayName : `${data[0].basic.name} ${data[0].basic.lastname}`}
                                 </ProfileTextLg>
+                                <ProfileTextSm>{email ? email : data[0].basic.email}</ProfileTextSm>
                                 <ProfileTextMd>{data[0].basic.headline}</ProfileTextMd>
                                 <ProfileTextSm>
-                                    {data[0].basic.city},{data[0].basic.country}
+                                    {data[0].basic.city}, {data[0].basic.country}
                                 </ProfileTextSm>
                             </Flex>
                         </Columns.Column>

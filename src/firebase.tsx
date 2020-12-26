@@ -16,3 +16,18 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
+export const logOut = () => {
+    auth.signOut()
+        .then(() => {
+            console.log('logged out');
+        })
+        .catch((error) => {
+            console.log(error.message);
+        });
+};
+
+const provider = new firebase.auth.GoogleAuthProvider();
+export const signInWithGoogle = (): any => {
+    auth.signInWithPopup(provider);
+};

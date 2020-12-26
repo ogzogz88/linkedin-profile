@@ -82,7 +82,7 @@ export const PopoverContent: React.FC = () => {
                 <NavText>Posts & Activity</NavText>
                 <NavText>Job Posting Account</NavText>
                 <Divider />
-                <NavText>Sign Out</NavText>
+                <PageLink href="/">Sign Out</PageLink>
             </Text.Block>
         </Box>
     );

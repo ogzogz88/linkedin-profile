@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Provider as BumbagProvider, TopNav, Image, Input, Flex, getColorModesCSSVariables, theme } from 'bumbag';
+import { TopNav, Image, Input, Flex } from 'bumbag';
 import { Navlink, NavDivider } from './Navlink';
 import NavText from './NavText';
 import { UserPopover } from './UserPopover';

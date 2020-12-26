@@ -1,142 +1,17 @@
 import React from 'react';
-import { Drawer, Card, Flex, Text, Image, applyTheme } from 'bumbag';
+import { Drawer, Card, Flex } from 'bumbag';
+import {
+    CustomDrawer,
+    NavHeader,
+    SideDrawerIconContainer,
+    NavImage,
+    NavText,
+    NavSubHeader,
+    NavSubText,
+    sideDrawerData,
+    iconData,
+} from './SideDrawerElements';
 import { PopoverIcon } from './UserPopoverElements';
-
-const iconData = [
-    {
-        src: '../../assets/icons/sideDrawerIcon-1.png',
-        text: 'Learning',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-2.png',
-        text: 'Insights',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-3.png',
-        text: 'Post a Job',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-4.png',
-        text: 'Advertise',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-5.png',
-        text: 'Find Leads',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-6.png',
-        text: 'Groups',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-7.png',
-        text: 'Pro Finder',
-    },
-    {
-        src: '../../assets/icons/sideDrawerIcon-8.png',
-        text: 'Salary',
-    },
-];
-const sideDrawerData = [
-    {
-        header: 'Talent Solutions',
-        text: 'Find, attract and recruit talent',
-    },
-    {
-        header: 'Sales Solutions',
-        text: 'Unlock sales opportunities',
-    },
-    {
-        header: 'Post a job for free',
-        text: 'Get your job in front of quality candidates',
-    },
-    {
-        header: 'Marketing Solutions',
-        text: 'Acquire customers and grow your business',
-    },
-    {
-        header: 'Learning Solutions',
-        text: 'Develop talent across your organization',
-    },
-];
-const SideDrawerIconContainer = applyTheme(Flex, {
-    styles: {
-        base: {
-            boxShadow: '0px 0px 3px 1px #eee ',
-            padding: '1px',
-            borderRadius: '4px',
-            boxSizing: 'border-box',
-            marginRight: '30px',
-        },
-    },
-});
-const NavImage = applyTheme(Image, {
-    styles: {
-        base: {
-            borderRadius: '50%',
-            width: '40px',
-        },
-    },
-});
-const NavHeader = applyTheme(Text, {
-    styles: {
-        base: {
-            fontSize: '1rem',
-            fontWeight: '500',
-            margin: '1rem',
-            textAlign: 'left',
-            display: 'block',
-        },
-    },
-});
-const NavText = applyTheme(Text, {
-    styles: {
-        base: {
-            textAlign: 'left',
-            fontSize: '12px',
-            display: 'block',
-            color: '#666',
-            marginTop: '2px',
-            marginBottom: '15px',
-        },
-    },
-});
-const NavSubHeader = applyTheme(Text, {
-    styles: {
-        base: {
-            textAlign: 'left',
-            fontWeight: '500',
-            fontSize: '0.9rem',
-        },
-    },
-    modes: {
-        dark: {
-            defaultProps: {
-                color: '#B1B7C2',
-            },
-        },
-    },
-});
-const NavSubText = applyTheme(Text, {
-    styles: {
-        base: {
-            textAlign: 'left',
-            fontSize: '12px',
-            display: 'block',
-            color: '#666',
-            marginTop: '-2px',
-            marginBottom: '2px',
-        },
-    },
-});
-const CustomDrawer = applyTheme(Drawer, {
-    modes: {
-        dark: {
-            defaultProps: {
-                color: '#B1B7C2',
-            },
-        },
-    },
-});
 
 export function SideDrawer(): JSX.Element {
     return (
@@ -171,7 +46,7 @@ export function SideDrawer(): JSX.Element {
                 <Card style={{ margin: '1.5rem', padding: '2px 0 0 0' }}>
                     <NavHeader>LinkedIn Business Services</NavHeader>
                     <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px' }}>
-                        {sideDrawerData.map((data, index) => {
+                        {sideDrawerData.map((data: any, index: any) => {
                             return (
                                 <div key={index}>
                                     <NavSubHeader>{data.header}</NavSubHeader>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { InputField, Box, Divider, Text, FieldStack, Button } from 'bumbag';
 import { Link } from 'react-router-dom';
+import { auth } from '../../firebase';
 
 export function PasswordReset(): JSX.Element {
     const [email, setEmail] = useState('');
     const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<any>(null);
     const onChangeHandler = (event: any) => {
         const { name, value } = event.currentTarget;
         if (name === 'userEmail') {
@@ -14,6 +15,16 @@ export function PasswordReset(): JSX.Element {
     };
     const sendResetEmail = (event: any) => {
         event.preventDefault();
+        auth.sendPasswordResetEmail(email)
+            .then(() => {
+                setEmailHasBeenSent(true);
+                setTimeout(() => {
+                    setEmailHasBeenSent(false);
+                }, 3000);
+            })
+            .catch(() => {
+                setError('Error resetting password');
+            });
     };
     return (
         <Box>

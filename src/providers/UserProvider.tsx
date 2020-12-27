@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { auth } from '../firebase';
+import { auth, generateUserDocument } from '../firebase';
 
 export const UserContext = createContext(null);
 
@@ -12,11 +12,18 @@ export function UserProvider(props: React.PropsWithChildren<MyProps>): JSX.Eleme
     useEffect(() => {
         auth.onAuthStateChanged(async (userAuth) => {
             if (userAuth) {
-                setUser(userAuth);
+                if (auth?.currentUser?.providerData[0]?.providerId === 'google.com') {
+                    setUser(userAuth);
+                } else {
+                    const user = await generateUserDocument(userAuth);
+                    setUser(user);
+                }
             } else {
                 setUser(null);
             }
+            console.log('provider');
+            console.log(auth?.currentUser?.providerData[0]?.providerId);
         });
-    }, [auth]);
+    }, []);
     return <UserContext.Provider value={user}>{props.children}</UserContext.Provider>;
 }

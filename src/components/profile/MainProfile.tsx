@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Columns, Flex, Card, Set } from 'bumbag';
 import {
@@ -18,7 +19,7 @@ import { data } from './MainProfileData';
 import SideProfile from './SideProfile';
 
 function MainProfile({ user }: any): JSX.Element {
-    const { photoURL, displayName, email }: any = user;
+    const { photoURL, displayName, email, name, lastName }: any = user;
 
     return (
         <Columns style={{ marginTop: '2rem' }}>
@@ -42,7 +43,12 @@ function MainProfile({ user }: any): JSX.Element {
                         <Columns.Column spread={8}>
                             <Flex flexDirection="column" marginLeft="1.5rem">
                                 <ProfileTextLg textTransform={'capitalize'}>
-                                    {displayName ? displayName : `${data[0].basic.name} ${data[0].basic.lastname}`}
+                                    {name && lastName
+                                        ? `${name} ${lastName}`
+                                        : displayName
+                                            ? displayName
+                                            // eslint-disable-next-line prettier/prettier
+                                            : `${data[0].basic.name} ${data[0].basic.lastname}`}
                                 </ProfileTextLg>
                                 <ProfileTextSm>{email ? email : data[0].basic.email}</ProfileTextSm>
                                 <ProfileTextMd>{data[0].basic.headline}</ProfileTextMd>

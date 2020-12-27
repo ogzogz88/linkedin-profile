@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useContext } from 'react';
 import { Text, Box, Popover, Link, Divider, Flex, Button, Stack, Set, Image, applyTheme } from 'bumbag';
 import { NavIcon } from './NavIcons';
@@ -93,7 +94,7 @@ export const CustomPopover = applyTheme(Popover, {
 });
 export const PopoverContent: React.FC = () => {
     const user = useContext(UserContext);
-    const { photoURL }: any = user;
+    const { photoURL, name, lastName, displayName }: any = user;
     return (
         <Box>
             <Stack>
@@ -106,7 +107,14 @@ export const PopoverContent: React.FC = () => {
                             />
                         </Box>
                         <Box style={{ marginLeft: '3.5rem', fontSize: '1rem' }}>
-                            <NavHeader style={{ marginTop: '0' }}>Oğuzhan Alagoz</NavHeader>
+                            <NavHeader style={{ marginTop: '0', textTransform: 'capitalize' }}>
+                                {name && lastName
+                                    ? `${name} ${lastName}`
+                                    : displayName
+                                        ? displayName
+                                        : // eslint-disable-next-line prettier/prettier
+                                        `${data[0].basic.name} ${data[0].basic.lastname}`}
+                            </NavHeader>
                             <NavText style={{ lineHeight: '1rem' }}>{data[0].basic.headline}</NavText>
                         </Box>
                     </Flex>

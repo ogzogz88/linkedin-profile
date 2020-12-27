@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { InputField, Box, Divider, Text, FieldStack, Button } from 'bumbag';
 import { Link } from 'react-router-dom';
-import { signInWithGoogle } from '../../firebase';
-// interface Props {
-//     path: string;
-// }
+import { signInWithGoogle, auth } from '../../firebase';
+
 export function SignIn(): JSX.Element {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<any>(null);
     const signInWithEmailAndPasswordHandler = (event: any, email: any, password: any) => {
         event.preventDefault();
+        auth.signInWithEmailAndPassword(email, password).catch((error) => {
+            setError('Error signing in with password and email!');
+            console.error('Error signing in with password and email', error);
+        });
     };
-
     const onChangeHandler = (event: any) => {
         const { name, value } = event.currentTarget;
 

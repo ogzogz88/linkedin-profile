@@ -2,26 +2,53 @@ import React, { useState } from 'react';
 import { InputField, Box, Divider, Text, FieldStack, Button } from 'bumbag';
 import { Link } from 'react-router-dom';
 import { signInWithGoogle } from '../../firebase';
+import { auth, generateUserDocument } from '../../firebase';
 
 export function SignUp(): JSX.Element {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [displayName, setDisplayName] = useState('');
-    const [error, setError] = useState(null);
-    const createUserWithEmailAndPasswordHandler = (event: any, email: any, password: any) => {
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [error, setError] = useState<any>(null);
+    const createUserWithEmailAndPasswordHandler = async (event: any, email: any, password: any) => {
         event.preventDefault();
-        setEmail('');
-        setPassword('');
-        setDisplayName('');
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+            generateUserDocument(user, { email, name, lastName, displayName });
+        } catch (error) {
+            setError('Error Signing up with email and password');
+        }
+        // setEmail('');
+        // setPassword('');
+        // setDisplayName('');
+        // setName('');
+        // setLastName('');
     };
     const onChangeHandler = (event: any) => {
         const { name, value } = event.currentTarget;
         if (name === 'userEmail') {
             setEmail(value);
+            console.log('onchange handler');
+            console.log('email');
+            console.log(email);
         } else if (name === 'userPassword') {
             setPassword(value);
+            console.log('password');
+            console.log(password);
         } else if (name === 'displayName') {
             setDisplayName(value);
+            console.log('displayname');
+            console.log(displayName);
+        } else if (name === 'name') {
+            setName(value);
+            console.log('name');
+            console.log(name);
+        } else if (name === 'lastName') {
+            setLastName(value);
+            console.log('lastname');
+            console.log(lastName);
         }
     };
     return (
@@ -39,13 +66,31 @@ export function SignUp(): JSX.Element {
                     </Text.Block>
                 )}
                 <InputField
-                    label="User name"
-                    name="userName"
-                    id="userName"
+                    label="Display name"
+                    name="displayName"
+                    id="displayName"
                     value={displayName}
-                    placeholder="Enter your username"
+                    placeholder="Enter your display name"
                     onChange={(event: any) => onChangeHandler(event)}
                 />
+                <FieldStack orientation="horizontal">
+                    <InputField
+                        label="Name"
+                        name="name"
+                        id="name"
+                        value={name}
+                        placeholder="Enter your  name"
+                        onChange={(event: any) => onChangeHandler(event)}
+                    />
+                    <InputField
+                        label="Last name"
+                        name="lastName"
+                        id="lastName"
+                        value={lastName}
+                        placeholder="Enter your last name"
+                        onChange={(event: any) => onChangeHandler(event)}
+                    />
+                </FieldStack>
                 <InputField
                     type="email"
                     label="Email"

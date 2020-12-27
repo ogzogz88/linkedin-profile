@@ -17,6 +17,12 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+// signin for google Sign In
+const provider = new firebase.auth.GoogleAuthProvider();
+export const signInWithGoogle = (): any => {
+    auth.signInWithPopup(provider);
+};
+//signout for google Sign Out
 export const logOut = () => {
     auth.signOut()
         .then(() => {
@@ -27,7 +33,36 @@ export const logOut = () => {
         });
 };
 
-const provider = new firebase.auth.GoogleAuthProvider();
-export const signInWithGoogle = (): any => {
-    auth.signInWithPopup(provider);
+// email and password login implementation
+export const generateUserDocument = async (user: any, additionalData?: any) => {
+    if (!user) return;
+    const userRef = firestore.doc(`users/${user.uid}`);
+    const snapshot = await userRef.get();
+    if (!snapshot.exists) {
+        const { email, displayName, photoURL } = user;
+
+        try {
+            await userRef.set({
+                email,
+                displayName,
+                photoURL,
+                ...additionalData,
+            });
+        } catch (error) {
+            console.error('Error creating user document', error);
+        }
+    }
+    return getUserDocument(user.uid);
+};
+const getUserDocument = async (uid: any) => {
+    if (!uid) return null;
+    try {
+        const userDocument = await firestore.doc(`users/${uid}`).get();
+        return {
+            uid,
+            ...userDocument.data(),
+        };
+    } catch (error) {
+        console.error('Error fetching user', error);
+    }
 };

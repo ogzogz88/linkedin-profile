@@ -16,7 +16,7 @@ import { UserContext } from '../../providers/UserProvider';
 
 function Main(): JSX.Element {
     const user = useContext(UserContext);
-    console.log("user");
+    console.log("maintsx, user");
 
     console.log(user);
 
@@ -45,7 +45,7 @@ function Main(): JSX.Element {
             <Router>
                 <BumbagProvider theme={Theme}>
 
-                    <Flex justifyContent={'center'} alignItems={'center'} marginTop={'5rem'}>
+                    <Flex justifyContent={'center'} alignItems={'center'} marginTop={'4rem'}>
                         <Container maxWidth={'400px'} background={'#e2f0fe'} borderRadius={'8px'} padding={'1rem'} borderTop={'5px solid #574feb'}>
                             <Switch>
                                 <Route path="/signUp" >

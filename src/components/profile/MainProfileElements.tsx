@@ -1,9 +1,9 @@
-import { Flex, Image, applyTheme, Button, Link, Icon, Text } from 'bumbag';
+import { Flex, Image, applyTheme, Button, Link, Text } from 'bumbag';
 
 export const ProfileImg = applyTheme(Image, {
     styles: {
         base: {
-            border: '5px solid white',
+            border: '4px solid white',
             borderRadius: '50%',
             width: '150px',
             top: '100px',

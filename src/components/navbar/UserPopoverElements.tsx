@@ -93,8 +93,8 @@ export const CustomPopover = applyTheme(Popover, {
     },
 });
 export const PopoverContent: React.FC = () => {
-    const user = useContext(UserContext);
-    const { photoURL, name, lastName, displayName }: any = user;
+    const { user } = useContext(UserContext);
+    const { photoURL, name, lastName, displayName, headline }: any = user;
     return (
         <Box>
             <Stack>
@@ -115,7 +115,7 @@ export const PopoverContent: React.FC = () => {
                                         : // eslint-disable-next-line prettier/prettier
                                         `${data[0].basic.name} ${data[0].basic.lastname}`}
                             </NavHeader>
-                            <NavText style={{ lineHeight: '1rem' }}>{data[0].basic.headline}</NavText>
+                            <NavText style={{ lineHeight: '1rem' }}>{headline ? headline : data[0].basic.headline}</NavText>
                         </Box>
                     </Flex>
                 </Box>

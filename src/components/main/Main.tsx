@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Provider as BumbagProvider, Container, Flex } from 'bumbag';
 import Navbar from '../navbar/Navbar';
 import MainProfile from '../profile/MainProfile';
@@ -10,41 +10,42 @@ import { SignIn } from '../authentication/SignIn';
 import { SignUp } from '../authentication/SignUp';
 import { PasswordReset } from '../authentication/PasswordReset';
 import { UserContext } from '../../providers/UserProvider';
-
+import { LoaderSpinner } from '../loader/LoaderSpinner'
 
 
 
 function Main(): JSX.Element {
-    const user = useContext(UserContext);
-    console.log("maintsx, user");
+    const { user } = useContext(UserContext);
 
-    console.log(user);
-
-    // const { photoURL, displayName, email }: any = user;
-
-
-    return user !== null ? (
-        <BumbagProvider theme={Theme}>
-            <AppPageWithHeader
-                sticky
-                header={
+    if (user === 'loading') {
+        return (
+            <LoaderSpinner />
+        );
+    }
+    else if (user !== null) {
+        return (
+            <BumbagProvider theme={Theme}>
+                <AppPageWithHeader
+                    sticky
+                    header={
+                        <Container>
+                            <Navbar />
+                        </Container>
+                    }
+                    overrides={{
+                        PageWithHeader: { styles: { base: { minHeight: 'unset' } } },
+                    }}
+                >
                     <Container>
-                        <Navbar />
+                        <MainProfile user={user} />
                     </Container>
-                }
-                overrides={{
-                    PageWithHeader: { styles: { base: { minHeight: 'unset' } } },
-                }}
-            >
-                <Container>
-                    <MainProfile user={user} />
-                </Container>
-            </AppPageWithHeader>
-        </BumbagProvider>
-    ) : (
+                </AppPageWithHeader>
+            </BumbagProvider>
+        );
+    } else {
+        return (
             <Router>
                 <BumbagProvider theme={Theme}>
-
                     <Flex justifyContent={'center'} alignItems={'center'} marginTop={'4rem'}>
                         <Container maxWidth={'400px'} background={'#e2f0fe'} borderRadius={'8px'} padding={'1rem'} borderTop={'5px solid #574feb'}>
                             <Switch>
@@ -61,10 +62,10 @@ function Main(): JSX.Element {
                             </Switch>
                         </Container>
                     </Flex>
-
                 </BumbagProvider>
             </Router >
         );
+    }
 }
 
 export default Main;

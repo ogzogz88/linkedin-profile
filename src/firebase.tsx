@@ -51,7 +51,29 @@ export const generateUserDocument = async (user: any, additionalData?: any) => {
         } catch (error) {
             console.error('Error creating user document', error);
         }
+    } else {
+        try {
+            await userRef.update({
+                ...additionalData,
+            });
+        } catch (error) {
+            console.error('Error updating user document', error);
+        }
     }
+    return getUserDocument(user.uid);
+};
+//update user data
+export const updateUserData = async (user: any, additionalData?: any) => {
+    if (!user) return;
+    const userRef = firestore.doc(`users/${user.uid}`);
+    try {
+        await userRef.update({
+            ...additionalData,
+        });
+    } catch (error) {
+        console.error('Error updating user document', error);
+    }
+
     return getUserDocument(user.uid);
 };
 const getUserDocument = async (uid: any) => {

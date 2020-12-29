@@ -17,9 +17,11 @@ import {
 } from './MainProfileElements';
 import { data } from './MainProfileData';
 import SideProfile from './SideProfile';
+import { UpdateModalIntro } from '../update/UpdateModalIntro'
 
 function MainProfile({ user }: any): JSX.Element {
-    const { photoURL, displayName, email, name, lastName }: any = user;
+    const { photoURL, displayName, email, name, lastName, headline, company, education, country, location, industry }: any = user;
+
 
     return (
         <Columns style={{ marginTop: '2rem' }}>
@@ -34,8 +36,11 @@ function MainProfile({ user }: any): JSX.Element {
                         </AddButton>
                         <MoreButton size="small">More...</MoreButton>
                         <ProfileEditLink>
-                            <MainPageIconContainer>
+                            {/* <MainPageIconContainer>
                                 <MainPageIcon src="../../assets/icons/pencil-icon.png" />
+                            </MainPageIconContainer> */}
+                            <MainPageIconContainer>
+                                <UpdateModalIntro />
                             </MainPageIconContainer>
                         </ProfileEditLink>
                     </Set>
@@ -51,9 +56,10 @@ function MainProfile({ user }: any): JSX.Element {
                                             : `${data[0].basic.name} ${data[0].basic.lastname}`}
                                 </ProfileTextLg>
                                 <ProfileTextSm>{email ? email : data[0].basic.email}</ProfileTextSm>
-                                <ProfileTextMd>{data[0].basic.headline}</ProfileTextMd>
+                                <ProfileTextMd>{headline ? headline : data[0].basic.headline}</ProfileTextMd>
+                                <ProfileTextMd>{industry ? industry : data[0].basic.industry}</ProfileTextMd>
                                 <ProfileTextSm>
-                                    {data[0].basic.city}, {data[0].basic.country}
+                                    {location ? location : data[0].basic.city}, {country ? country : data[0].basic.country}
                                 </ProfileTextSm>
                             </Flex>
                         </Columns.Column>
@@ -70,7 +76,7 @@ function MainProfile({ user }: any): JSX.Element {
                                     >
                                         <MainPageIcon src="../../assets/icons/company-icon.png" />
                                     </MainPageIconContainer>
-                                    <ProfileTextXs fontWeight="bold">{data[0].basic.company} </ProfileTextXs>
+                                    <ProfileTextXs fontWeight="bold">{company ? company : data[0].basic.company} </ProfileTextXs>
                                 </Flex>
                                 <Flex style={{ alignItems: 'center' }}>
                                     <MainPageIconContainer
@@ -78,7 +84,7 @@ function MainProfile({ user }: any): JSX.Element {
                                     >
                                         <MainPageIcon src="../../assets/icons/education-icon.png" />
                                     </MainPageIconContainer>
-                                    <ProfileTextXs fontWeight="bold">{data[0].basic.education} </ProfileTextXs>
+                                    <ProfileTextXs fontWeight="bold">{education ? education : data[0].basic.education} </ProfileTextXs>
                                 </Flex>
                             </Flex>
                         </Columns.Column>

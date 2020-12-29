@@ -20,35 +20,24 @@ export function SignUp(): JSX.Element {
         } catch (error) {
             setError('Error Signing up with email and password');
         }
-        // setEmail('');
-        // setPassword('');
-        // setDisplayName('');
-        // setName('');
-        // setLastName('');
+        setEmail('');
+        setPassword('');
+        setDisplayName('');
+        setName('');
+        setLastName('');
     };
     const onChangeHandler = (event: any) => {
         const { name, value } = event.currentTarget;
         if (name === 'userEmail') {
             setEmail(value);
-            console.log('onchange handler');
-            console.log('email');
-            console.log(email);
         } else if (name === 'userPassword') {
             setPassword(value);
-            console.log('password');
-            console.log(password);
         } else if (name === 'displayName') {
             setDisplayName(value);
-            console.log('displayname');
-            console.log(displayName);
         } else if (name === 'name') {
             setName(value);
-            console.log('name');
-            console.log(name);
         } else if (name === 'lastName') {
             setLastName(value);
-            console.log('lastname');
-            console.log(lastName);
         }
     };
     return (

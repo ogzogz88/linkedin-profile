@@ -9,6 +9,7 @@ export const data = [
             country: 'Country',
             company: 'Company',
             education: 'Education',
+            industry: 'Industry',
         },
         about: {
             title: 'About',

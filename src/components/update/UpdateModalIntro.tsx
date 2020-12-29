@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
-import { Modal, Card, Button, Box, Link, FieldStack, InputField, Flex, TextareaField, Text } from 'bumbag';
+import React, { useState, useContext } from 'react';
+import { Modal, Card, Button, Box, Link, FieldStack, InputField, Flex } from 'bumbag';
+import { Formik, Form, Field, FormikHelpers } from 'formik';
 import { MainPageIcon } from '../profile/MainProfileElements';
 import { auth, updateUserData } from '../../firebase';
+import { UserContext } from '../../providers/UserProvider';
 
+interface Values {
+    name: string;
+    lastName: string;
+    headline: string;
+    company: string;
+    education: string;
+    country: string;
+    location: string;
+    industry: string;
+}
 export function UpdateModalIntro(): JSX.Element {
-    const initialState = {
+    const { setUser } = useContext(UserContext);
+    const initialValues: Values = {
         name: '',
         lastName: '',
         headline: '',
@@ -14,41 +27,14 @@ export function UpdateModalIntro(): JSX.Element {
         location: '',
         industry: '',
     };
-    const [introData, setIntroData] = useState<any>(initialState);
-    const [error, setError] = useState<any>(null);
-
-    const { name, lastName, headline, company, education, country, location, industry } = introData;
-    const onChangeHandler = (event: any) => {
-        const { name, value } = event.currentTarget;
-        setIntroData({
-            ...introData,
-            [name]: value,
-        });
-        console.log('onchange');
-        console.log(introData);
-    };
-    const updateModalData = async (event: any) => {
-        // event.preventDefault();
+    const updateModalData = async (values: Values) => {
         try {
-            const user = auth.currentUser;
-            console.log('current user');
-            console.log(user);
-            //updating firebase DB
-            updateUserData(user, {
-                name,
-                lastName,
-                headline,
-                company,
-                education,
-                country,
-                location,
-                industry,
-            });
-        } catch (error) {
-            setError('Error updating intro data');
+            let user: any = auth.currentUser;
+            user = await updateUserData(user, values);
+            setUser(user);
+        } catch (Error) {
+            console.log('Error updating intro data');
         }
-
-        setIntroData({});
     };
     return (
         <Modal.State>
@@ -72,75 +58,43 @@ export function UpdateModalIntro(): JSX.Element {
                         overflowY={'scroll'}
                         padding={'1rem 1rem 1rem 0'}
                     >
-                        {error !== null && (
-                            <Text.Block margin={'1rem auto'}>
-                                <Text fontSize={'1rem'}>{error}</Text>
-                            </Text.Block>
-                        )}
-                        <FieldStack>
-                            <form onSubmit={(event) => updateModalData(event)}>
-                                <FieldStack orientation="horizontal">
-                                    <InputField
-                                        name="name"
-                                        label="First name"
-                                        value={name}
-                                        onChange={(event: any) => onChangeHandler(event)}
-                                        isRequired={true}
-                                    />
-                                    <InputField
-                                        name="lastName"
-                                        label="Last name"
-                                        value={lastName}
-                                        onChange={(event: any) => onChangeHandler(event)}
-                                        isRequired={true}
-                                    />
-                                </FieldStack>
-                                <TextareaField
-                                    name="headline"
-                                    label="Headline"
-                                    value={headline}
-                                    onChange={(event: any) => onChangeHandler(event)}
-                                    isRequired={true}
-                                />
-                                <InputField
-                                    name="company"
-                                    label="Company"
-                                    value={company}
-                                    onChange={(event: any) => onChangeHandler(event)}
-                                />
-                                <InputField
-                                    name="education"
-                                    label="Education"
-                                    value={education}
-                                    onChange={(event: any) => onChangeHandler(event)}
-                                />
-                                <InputField
-                                    name="country"
-                                    label="Country/Region"
-                                    value={country}
-                                    onChange={(event: any) => onChangeHandler(event)}
-                                    isRequired={true}
-                                />
-                                <InputField
-                                    name="location"
-                                    label="Locations in this Country/Region"
-                                    onChange={(event: any) => onChangeHandler(event)}
-                                    value={location}
-                                />
-                                <InputField
-                                    name="industry"
-                                    label="Industry"
-                                    value={industry}
-                                    onChange={(event: any) => onChangeHandler(event)}
-                                    isRequired={true}
-                                />
-                                <Flex justifyContent={'flex-end'} marginTop={'1.5rem'}>
-                                    <Button palette="primary" borderRadius={'2rem'} padding={'0 2rem'} type="submit">
-                                        Save
-                                    </Button>
-                                </Flex>
-                            </form>
-                        </FieldStack>
+                        <Formik
+                            initialValues={initialValues}
+                            onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
+                                updateModalData(values);
+                                setTimeout(() => {
+                                    setSubmitting(false);
+                                }, 500);
+                            }}
+                        >
+                            {({ isSubmitting }) => (
+                                <Form>
+                                    <FieldStack>
+                                        <FieldStack orientation="horizontal">
+                                            <Field component={InputField.Formik} name="name" label="First name" />
+                                            <Field component={InputField.Formik} name="lastName" label="Last name" />
+                                        </FieldStack>
+                                        <Field component={InputField.Formik} name="headline" label="Headline" />
+                                        <Field component={InputField.Formik} name="company" label="Company" />
+                                        <Field component={InputField.Formik} name="education" label="Education" />
+                                        <Field component={InputField.Formik} name="country" label="Country" />
+                                        <Field component={InputField.Formik} name="location" label="Location" />
+                                        <Field component={InputField.Formik} name="industry" label="Industry" />
+                                        <Flex justifyContent={'flex-end'} marginTop={'1.5rem'}>
+                                            <Button
+                                                disabled={isSubmitting}
+                                                palette="primary"
+                                                borderRadius={'2rem'}
+                                                padding={'0 2rem'}
+                                                type="submit"
+                                            >
+                                                Save
+                                            </Button>
+                                        </Flex>
+                                    </FieldStack>
+                                </Form>
+                            )}
+                        </Formik>
                     </Box>
                 </Card>
             </Modal>

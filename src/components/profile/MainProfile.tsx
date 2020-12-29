@@ -91,6 +91,7 @@ function MainProfile({ user }: any): JSX.Element {
                     </Columns>
                 </Card>
                 <Card style={{ marginTop: '2rem', position: 'relative' }}>
+
                     <Flex>
                         <Flex flexDirection="column">
                             <ProfileTextMd marginBottom="1rem">{data[0].about.title}</ProfileTextMd>

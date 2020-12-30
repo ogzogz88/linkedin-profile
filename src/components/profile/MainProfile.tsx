@@ -18,9 +18,10 @@ import {
 import { data } from './MainProfileData';
 import SideProfile from './SideProfile';
 import { UpdateModalIntro } from '../update/UpdateModalIntro'
+import { UpdateModalAbout } from '../update/UpdateModalAbout'
 
 function MainProfile({ user }: any): JSX.Element {
-    const { photoURL, displayName, email, name, lastName, headline, company, education, country, location, industry }: any = user;
+    const { photoURL, displayName, email, name, lastName, headline, company, education, country, location, industry, about }: any = user;
 
 
     return (
@@ -95,15 +96,12 @@ function MainProfile({ user }: any): JSX.Element {
                     <Flex>
                         <Flex flexDirection="column">
                             <ProfileTextMd marginBottom="1rem">{data[0].about.title}</ProfileTextMd>
-                            <ProfileTextXs>{data[0].about.text}</ProfileTextXs>
+                            <ProfileTextXs>{about ? about : data[0].about.text}</ProfileTextXs>
                         </Flex>
                     </Flex>
                     <ProfileEditLink style={{ position: 'absolute', right: '1rem', top: '1rem' }}>
                         <MainPageIconContainerSec margin={'0px'}>
-                            <MainPageIcon
-                                style={{ margin: '0px', color: '#0a66c2' }}
-                                src="../../assets/icons/pencil-icon-secondary.png"
-                            />
+                            <UpdateModalAbout />
                         </MainPageIconContainerSec>
                     </ProfileEditLink>
                 </Card>

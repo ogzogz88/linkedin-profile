@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
-import { Modal, Card, Button, Box, Link, FieldStack, InputField, Flex, applyTheme } from 'bumbag';
+import { Modal, Card, Button, Box, Link, FieldStack, TextareaField, Flex, applyTheme } from 'bumbag';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
 import { MainPageIcon } from '../profile/MainProfileElements';
 import { auth, updateUserData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 
-export const ModalButton = applyTheme(Button, {
+export const ModalCloseButton = applyTheme(Button, {
     styles: {
         base: {
             palette: 'primary',
@@ -13,29 +13,15 @@ export const ModalButton = applyTheme(Button, {
             padding: '0 2rem',
         },
     },
-    type: 'submit',
 });
+
 interface Values {
-    name: string;
-    lastName: string;
-    headline: string;
-    company: string;
-    education: string;
-    country: string;
-    location: string;
-    industry: string;
+    about: string;
 }
-export function UpdateModalIntro(): JSX.Element {
+export function UpdateModalAbout(): JSX.Element {
     const { setUser } = useContext(UserContext);
     const initialValues: Values = {
-        name: '',
-        lastName: '',
-        headline: '',
-        company: '',
-        education: '',
-        country: '',
-        location: '',
-        industry: '',
+        about: '',
     };
     const updateModalData = async (values: Values) => {
         try {
@@ -49,13 +35,13 @@ export function UpdateModalIntro(): JSX.Element {
     return (
         <Modal.State>
             <Modal.Disclosure use={Link}>
-                <MainPageIcon src="../../assets/icons/pencil-icon.png" />
+                <MainPageIcon src="../../assets/icons/pencil-icon-secondary.png" />
             </Modal.Disclosure>
             <Modal>
                 <Card>
                     <Flex justifyContent={'space-between'} borderBottom={'1px solid #ccc'}>
                         <Box margin={'auto 0 1.5rem'} fontSize={'1.5rem'}>
-                            Edit intro
+                            Edit about
                         </Box>
                         <Modal.Disclosure use={Link} fontSize={'1.5rem'} color={'#666'} textDecoration={'none'}>
                             X
@@ -80,40 +66,11 @@ export function UpdateModalIntro(): JSX.Element {
                             {({ isSubmitting }) => (
                                 <Form>
                                     <FieldStack>
-                                        <FieldStack orientation="horizontal">
-                                            <Field
-                                                component={InputField.Formik}
-                                                name="name"
-                                                label="First name"
-                                                isRequired
-                                            />
-                                            <Field
-                                                component={InputField.Formik}
-                                                name="lastName"
-                                                label="Last name"
-                                                isRequired
-                                            />
-                                        </FieldStack>
                                         <Field
-                                            component={InputField.Formik}
-                                            name="headline"
-                                            label="Headline"
-                                            isRequired
-                                        />
-                                        <Field component={InputField.Formik} name="company" label="Company" />
-                                        <Field component={InputField.Formik} name="education" label="Education" />
-                                        <Field
-                                            component={InputField.Formik}
-                                            name="country"
-                                            label="Country"
-                                            isRequired
-                                        />
-                                        <Field component={InputField.Formik} name="location" label="Location" />
-                                        <Field
-                                            component={InputField.Formik}
-                                            name="industry"
-                                            label="Industry"
-                                            isRequired
+                                            component={TextareaField.Formik}
+                                            name="about"
+                                            label="Summary"
+                                            minHeight={'10rem'}
                                         />
                                         <Flex justifyContent={'flex-end'} marginTop={'1.5rem '}>
                                             <Button
@@ -126,7 +83,7 @@ export function UpdateModalIntro(): JSX.Element {
                                             >
                                                 Save
                                             </Button>
-                                            <Modal.Disclosure use={ModalButton}>Close</Modal.Disclosure>
+                                            <Modal.Disclosure use={ModalCloseButton}>Close</Modal.Disclosure>
                                         </Flex>
                                     </FieldStack>
                                 </Form>

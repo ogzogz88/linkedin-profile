@@ -70,15 +70,14 @@ export function UpdateModalIntro(): JSX.Element {
                     >
                         <Formik
                             initialValues={initialValues}
-                            onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
+                            onSubmit={(values: Values, { setSubmitting, resetForm }: FormikHelpers<Values>) => {
                                 updateModalData(values);
-                                setTimeout(() => {
-                                    setSubmitting(false);
-                                }, 500);
+                                setSubmitting(false);
+                                resetForm({});
                             }}
                         >
-                            {({ isSubmitting }) => (
-                                <Form>
+                            {({ isSubmitting, handleSubmit }) => (
+                                <Form onSubmit={handleSubmit}>
                                     <FieldStack>
                                         <FieldStack orientation="horizontal">
                                             <Field

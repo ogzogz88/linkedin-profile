@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -13,7 +14,8 @@ const firebaseConfig = {
     measurementId: 'G-XZNCK36PGF',
 };
 
-firebase.initializeApp(firebaseConfig);
+export const firebaseApp = firebase.initializeApp(firebaseConfig);
+export const storage = firebaseApp.storage();
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
@@ -64,6 +66,20 @@ export const generateUserDocument = async (user: any, additionalData?: any) => {
 };
 //update user data
 export const updateUserData = async (user: any, additionalData?: any) => {
+    if (!user) return;
+    const userRef = firestore.doc(`users/${user.uid}`);
+    try {
+        await userRef.update({
+            ...additionalData,
+        });
+    } catch (error) {
+        console.error('Error updating user document', error);
+    }
+
+    return getUserDocument(user.uid);
+};
+//update image data
+export const updateImageData = async (user: any, additionalData?: any) => {
     if (!user) return;
     const userRef = firestore.doc(`users/${user.uid}`);
     try {

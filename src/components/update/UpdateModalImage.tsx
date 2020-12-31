@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { Modal, Card, Button, Box, Link, FieldStack, TextareaField, Flex, applyTheme } from 'bumbag';
+import { Modal, Card, Button, Box, Link, FieldStack, InputField, Flex, applyTheme } from 'bumbag';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
 import { MainPageIcon } from '../profile/MainProfileElements';
-import { auth, updateUserData } from '../../firebase';
+import { auth, updateImageData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
+import { storage, firestore } from '../../firebase';
 
 export const ModalCloseButton = applyTheme(Button, {
     styles: {
@@ -16,17 +17,25 @@ export const ModalCloseButton = applyTheme(Button, {
 });
 
 interface Values {
-    about: string;
+    photoURL: string;
 }
-export function UpdateModalAbout(): JSX.Element {
+export function UpdateModalImage(): JSX.Element {
+    const [fileUrl, setFileUrl] = useState(null);
     const { setUser } = useContext(UserContext);
     const initialValues: Values = {
-        about: '',
+        photoURL: '',
+    };
+    const onFileChange = async (e: any) => {
+        const file = e.target.files[0];
+        const storageRef = storage.ref();
+        const fileRef = storageRef.child(file.name);
+        await fileRef.put(file);
+        setFileUrl(await fileRef.getDownloadURL());
     };
     const updateModalData = async (values: Values) => {
         try {
             let user: any = auth.currentUser;
-            user = await updateUserData(user, values);
+            user = await updateImageData(user, { photoURL: fileUrl });
             setUser(user);
         } catch (Error) {
             console.log('Error updating intro data');
@@ -35,7 +44,12 @@ export function UpdateModalAbout(): JSX.Element {
     return (
         <Modal.State>
             <Modal.Disclosure use={Link}>
-                <MainPageIcon src="../../assets/icons/pencil-icon-secondary.png" />
+                <MainPageIcon
+                    src="../../assets/icons/pencil-icon-secondary.png"
+                    width={'1.25rem'}
+                    height={'1.25rem'}
+                    marginTop={'5px'}
+                />
             </Modal.Disclosure>
             <Modal>
                 <Card>
@@ -66,10 +80,11 @@ export function UpdateModalAbout(): JSX.Element {
                                 <Form onSubmit={handleSubmit}>
                                     <FieldStack>
                                         <Field
-                                            component={TextareaField.Formik}
-                                            name="about"
-                                            label="Summary"
-                                            minHeight={'7rem'}
+                                            component={InputField.Formik}
+                                            name="photoURL"
+                                            label="Photo"
+                                            type={'file'}
+                                            onChange={onFileChange}
                                         />
                                         <Flex justifyContent={'flex-end'} marginTop={'1.5rem '}>
                                             <Button

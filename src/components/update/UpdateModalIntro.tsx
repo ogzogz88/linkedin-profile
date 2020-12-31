@@ -1,7 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { Modal, Card, Button, Box, Link, FieldStack, InputField, Flex, applyTheme } from 'bumbag';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
-import { MainPageIcon } from '../profile/MainProfileElements';
+import {
+    MainPageIcon,
+    MainPageIconContainer,
+    ProfileImg,
+    BackgroundImg,
+    MainPageIconContainerSec,
+} from '../profile/MainProfileElements';
+import { UpdateModalImage } from './UpdateModalImage';
 import { auth, updateUserData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 
@@ -15,6 +22,7 @@ export const ModalButton = applyTheme(Button, {
     },
     type: 'submit',
 });
+
 interface Values {
     name: string;
     lastName: string;
@@ -26,6 +34,8 @@ interface Values {
     industry: string;
 }
 export function UpdateModalIntro(): JSX.Element {
+    const { user } = useContext(UserContext);
+    const { photoURL } = user;
     const { setUser } = useContext(UserContext);
     const initialValues: Values = {
         name: '',
@@ -61,6 +71,7 @@ export function UpdateModalIntro(): JSX.Element {
                             X
                         </Modal.Disclosure>
                     </Flex>
+
                     <Box
                         maxHeight={'500px'}
                         maxWidth={'800px'}
@@ -79,6 +90,32 @@ export function UpdateModalIntro(): JSX.Element {
                             {({ isSubmitting, handleSubmit }) => (
                                 <Form onSubmit={handleSubmit}>
                                     <FieldStack>
+                                        <Card
+                                            style={{
+                                                padding: 0,
+                                                borderRadius: '0.5rem 05.rem 0 0',
+                                                position: 'relative',
+                                                marginBottom: '6rem',
+                                                height: '170px',
+                                            }}
+                                        >
+                                            <BackgroundImg src="../../assets/photos/profile-bg.jpg" width={'100%'} />
+                                            {/* <ProfileImg src="../../assets/photos/ogz.jpg" /> */}
+                                            <ProfileImg
+                                                src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
+                                            />
+                                            <MainPageIconContainerSec
+                                                style={{
+                                                    position: 'absolute',
+                                                    left: '7.5rem',
+                                                    bottom: '-4rem',
+                                                    background: '#fff',
+                                                    boxShadow: '0 0 4px 0px #aaa',
+                                                }}
+                                            >
+                                                <UpdateModalImage />
+                                            </MainPageIconContainerSec>
+                                        </Card>
                                         <FieldStack orientation="horizontal">
                                             <Field
                                                 component={InputField.Formik}

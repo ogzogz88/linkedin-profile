@@ -19,6 +19,7 @@ import { data } from './MainProfileData';
 import SideProfile from './SideProfile';
 import { UpdateModalIntro } from '../update/UpdateModalIntro'
 import { UpdateModalAbout } from '../update/UpdateModalAbout'
+import { UpdateModalImage } from '../update/UpdateModalImage'
 
 function MainProfile({ user }: any): JSX.Element {
     const { photoURL, displayName, email, name, lastName, headline, company, education, country, location, industry, about }: any = user;

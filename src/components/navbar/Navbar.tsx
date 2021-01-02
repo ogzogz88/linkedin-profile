@@ -14,7 +14,7 @@ import { UserContext } from '../../providers/UserProvider';
 
 
 function Navbar(): JSX.Element {
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const { photoURL }: any = user;
     return (
         <TopNav>

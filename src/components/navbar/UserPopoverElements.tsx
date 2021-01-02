@@ -137,7 +137,7 @@ export const PopoverContent: React.FC = () => {
                 <NavText>Posts & Activity</NavText>
                 <NavText>Job Posting Account</NavText>
                 <Divider />
-                <PageLink fontWeight={'normal'} fontSize={'14px'} alignItems={'flex-start'} color={'#545454'} onClick={logOut}>Sign Out</PageLink>
+                <PageLink fontWeight={'normal'} fontSize={'14px'} alignItems={'flex-start'} color={'#545454'} onClick={logOut} href='/'>Sign Out</PageLink>
             </Text.Block>
         </Box>
     );

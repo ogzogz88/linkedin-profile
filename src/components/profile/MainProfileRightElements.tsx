@@ -6,13 +6,27 @@ export const ProfileTextLg = applyTheme(Text, {
             fontSize: '1.5rem',
         },
     },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
+        },
+    },
 });
 export const ProfileTextMd = applyTheme(Text, {
     styles: {
         base: {
-            fontSize: '1.2rem',
+            fontSize: '1rem',
             color: '#666666',
             fontWeight: '600',
+        },
+    },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
         },
     },
 });
@@ -20,8 +34,15 @@ export const ProfileTextSm = applyTheme(Text, {
     styles: {
         base: {
             fontSize: '0.8rem',
-            color: '#666666',
+            color: '#222',
             fontWeight: '600',
+        },
+    },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
         },
     },
 });
@@ -31,6 +52,13 @@ export const ProfileTextXs = applyTheme(Text, {
             fontSize: '0.7rem',
             color: '#666666',
             fontWeight: '600',
+        },
+    },
+    modes: {
+        dark: {
+            defaultProps: {
+                color: '#B1B7C2',
+            },
         },
     },
 });
@@ -46,7 +74,7 @@ export const BackgroundImg = applyTheme(Image, {
         },
     },
 });
-export const ImgContainer = applyTheme(Flex, {
+export const BackgroundImgContainer = applyTheme(Flex, {
     styles: {
         base: {
             margin: '0px',
@@ -54,6 +82,60 @@ export const ImgContainer = applyTheme(Flex, {
             background: '#fff',
             borderRadius: '0.5rem',
             cursor: 'pointer',
+        },
+    },
+});
+export const AlsoViewedTextContainer = applyTheme(Flex, {
+    styles: {
+        base: {
+            justifyContent: 'space-between',
+            width: '100%',
+            marginLeft: '0.4rem',
+            borderBottom: '1px solid #ddd',
+            paddingBottom: '0.7rem',
+        },
+    },
+    modes: {
+        dark: {
+            defaultProps: {
+                borderBottom: '1px solid #B1B7C2',
+            },
+        },
+    },
+});
+export const IconContainer = applyTheme(Flex, {
+    styles: {
+        base: {
+            padding: '8px',
+            border: '1px solid #666666',
+            borderRadius: '50%',
+            cursor: 'pointer',
+            alignItems: 'center',
+            width: '35px',
+            height: '35px',
+            alignSelf: 'center',
+            transition: 'all 0.2s ease-in-out',
+            ':hover': {
+                border: '2px solid #666666',
+                background: '#ddd',
+                padding: '7px',
+            },
+        },
+    },
+    modes: {
+        dark: {
+            defaultProps: {
+                border: '1px solid #B1B7C2',
+            },
+        },
+    },
+});
+export const ProfileImage = applyTheme(Image, {
+    styles: {
+        base: {
+            borderRadius: '50%',
+            width: '50px',
+            height: '50px',
         },
     },
 });

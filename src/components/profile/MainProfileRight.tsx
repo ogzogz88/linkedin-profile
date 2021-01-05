@@ -1,15 +1,28 @@
 import React from 'react';
-import { Card, Box, Flex, Divider, Button } from 'bumbag';
-import { ProfileTextSm, ProfileTextXs, CardToolTip, BackgroundImg, ImgContainer } from './MainProfileRightElements';
+import { Card, Box, Flex, Divider, List } from 'bumbag';
+import {
+    ProfileTextMd,
+    ProfileTextSm,
+    ProfileTextXs,
+    CardToolTip,
+    BackgroundImg,
+    BackgroundImgContainer,
+    ProfileImage,
+    IconContainer,
+    AlsoViewedTextContainer,
+} from './MainProfileRightElements';
 import { data } from './MainProfileRightData';
+import { NavIcon } from '../../theme/Theme';
 
 export function MainProfileRight(): JSX.Element {
-    const { textCard } = data[0];
+    const { textCard }: any = data[0];
+    const { alsoViewed }: any = data[1];
     return (
         <>
+            {/* Info card with two text/link */}
             <Card marginBottom={'1.5rem'}>
                 <Flex flexDirection={'column'}>
-                    {textCard.map((item, index) => {
+                    {textCard.map((item: any, index: any) => {
                         return (
                             <>
                                 <Flex key={index} justifyContent={'space-between'}>
@@ -38,9 +51,45 @@ export function MainProfileRight(): JSX.Element {
                     })}
                 </Flex>
             </Card>
-            <ImgContainer>
+            {/* advertisement card with image background */}
+            <BackgroundImgContainer marginBottom={'24px'}>
                 <BackgroundImg src="../../assets/photos/see-jobs.jpg" />
-            </ImgContainer>
+            </BackgroundImgContainer>
+            {/* people also viewed card */}
+            <Card>
+                <Box marginBottom={'1rem'}>
+                    <ProfileTextMd>{alsoViewed.title}</ProfileTextMd>
+                </Box>
+                {alsoViewed.data.map((item: any, index: any) => {
+                    return (
+                        <Flex key={index} justifyContent={'flex-start'} marginTop={'0.7rem'}>
+                            <ProfileImage src={item.imgSrc} alt="Also viewed profile image" alignSelf={'top'} />
+                            <AlsoViewedTextContainer>
+                                <Flex flexDirection={'column'}>
+                                    <ProfileTextSm>{item.name}</ProfileTextSm>
+                                    <List
+                                        listStyleType="disc"
+                                        listStylePosition="inside"
+                                        fontWeight={'300'}
+                                        fontSize={'0.8rem'}
+                                    >
+                                        <List.Item fontSize={'0.5rem'}>
+                                            <ProfileTextSm fontWeight={'300'} marginLeft={'-4px'}>
+                                                {item.order}
+                                            </ProfileTextSm>
+                                        </List.Item>
+                                    </List>
+                                    <ProfileTextSm fontWeight={'400'}>{item.headline}</ProfileTextSm>
+                                </Flex>
+                                <IconContainer>
+                                    <NavIcon aria-label="Navlcon" icon={'solid-user'} />
+                                    <ProfileTextSm>+</ProfileTextSm>
+                                </IconContainer>
+                            </AlsoViewedTextContainer>
+                        </Flex>
+                    );
+                })}
+            </Card>
         </>
     );
 }

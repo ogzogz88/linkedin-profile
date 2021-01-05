@@ -15,7 +15,7 @@ export const ProfileImg = applyTheme(Image, {
         dark: {
             defaultProps: {
                 border: '4px solid #303847',
-                backgorund: '#303847',
+                background: '#303847',
             },
         },
     },

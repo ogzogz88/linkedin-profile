@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useContext } from 'react';
 import { Text, Box, Popover, Link, Divider, Flex, Button, Stack, Set, Image, applyTheme } from 'bumbag';
-import { NavIcon } from './NavIcons';
+import { NavIcon } from '../../theme/Theme';
 import { logOut } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 import { data } from '../profile/MainProfileLeftData';

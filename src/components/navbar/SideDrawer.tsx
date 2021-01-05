@@ -8,9 +8,8 @@ import {
     NavText,
     NavSubHeader,
     NavSubText,
-    sideDrawerData,
-    iconData,
 } from './SideDrawerElements';
+import { sideDrawerData, iconData } from './SideDrawerData';
 import { PopoverIcon } from './UserPopoverElements';
 
 export function SideDrawer(): JSX.Element {

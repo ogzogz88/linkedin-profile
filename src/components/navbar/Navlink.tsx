@@ -5,7 +5,7 @@ import { Link, Box, applyTheme } from 'bumbag';
 const PageLink = applyTheme(Link, {
     styles: {
         base: {
-            fontSize: '24px',
+            fontSize: '22px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',

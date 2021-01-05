@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Provider as BumbagProvider, Container } from 'bumbag';
 import { AppPageWithHeader } from '../../theme/Theme';
 import { Theme } from '../../theme/Theme';
 import Navbar from '../navbar/Navbar';
 import MainProfile from '../profile/MainProfile';
-import { UserContext } from '../../providers/UserProvider';
 
 export function MainPageContent(): JSX.Element {
-    const { user } = useContext(UserContext);
-
     return (
         <BumbagProvider theme={Theme}>
             <AppPageWithHeader
@@ -23,7 +20,7 @@ export function MainPageContent(): JSX.Element {
                 }}
             >
                 <Container>
-                    <MainProfile user={user} />
+                    <MainProfile />
                 </Container>
             </AppPageWithHeader>
         </BumbagProvider>

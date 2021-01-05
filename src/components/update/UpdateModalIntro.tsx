@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { Modal, Card, Box, Link, Flex } from 'bumbag';
-import { MainPageIcon } from '../profile/MainProfileElements';
+import { MainPageIcon } from '../profile/MainProfileLeftElements';
 import { UpdateModalIntroForm } from './UpdateModalIntroForm'
 
 
@@ -10,7 +10,7 @@ export function UpdateModalIntro(): JSX.Element {
 
     return (
         <Modal.State>
-            <Modal.Disclosure use={Link}>
+            <Modal.Disclosure use={Link} >
                 <MainPageIcon src="../../assets/icons/pencil-icon.png" />
             </Modal.Disclosure>
             <Modal>

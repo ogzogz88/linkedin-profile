@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Modal, Card, Button, FieldStack, InputField, Flex, applyTheme, Alert } from 'bumbag';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
-import { ProfileImg, BackgroundImg, MainPageIconContainerSec } from '../profile/MainProfileElements';
+import { ProfileImg, BackgroundImg, MainPageIconContainerSec } from '../profile/MainProfileLeftElements';
 import { UpdateModalImage } from './UpdateModalImage';
 import { auth, updateUserData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';

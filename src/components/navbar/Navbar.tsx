@@ -17,7 +17,7 @@ function Navbar(): JSX.Element {
     const { user } = useContext(UserContext);
     const { photoURL }: any = user;
     return (
-        <TopNav>
+        <TopNav margin={'0 2rem'}>
             <TopNav.Section>
                 <Navlink key={10} href="/" style={{ marginLeft: '0' }}>
                     <Image src="/logo.png" height="35px" />
@@ -28,12 +28,12 @@ function Navbar(): JSX.Element {
                         placeholder="Search"
                         style={{ marginLeft: '5px' }}
                         size="small"
-                        width="300px"
+                        width="250px"
                         marginRight="6rem"
                     />
                 </Flex>
             </TopNav.Section>
-            <TopNav.Section marginRight="major-2">
+            <TopNav.Section >
                 {navData.map((navElement, index) => {
                     return (
                         <>

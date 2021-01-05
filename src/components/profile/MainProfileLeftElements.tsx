@@ -25,7 +25,7 @@ export const BackgroundImg = applyTheme(Image, {
         base: {
             fit: 'contain',
             fitPosition: 'top',
-            width: '795px',
+            width: '100%',
             alt: 'profile background',
             borderRadius: '0.5rem 0.5rem 0 0',
         },
@@ -43,6 +43,7 @@ export const MainPageIcon = applyTheme(Image, {
         base: {
             width: '1.5rem',
             height: '1.5rem',
+            marginTop: '4px',
             background: 'transparent',
         },
     },
@@ -53,8 +54,8 @@ export const MainPageIconContainer = applyTheme(Flex, {
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: '50%',
-            width: '2.4rem',
-            height: '2.4rem',
+            width: '2.5rem',
+            height: '2.5rem',
             margin: '0 1rem',
             ':hover': {
                 background: '#ebebeb',

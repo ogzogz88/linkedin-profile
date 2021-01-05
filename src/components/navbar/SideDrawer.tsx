@@ -16,7 +16,7 @@ import { PopoverIcon } from './UserPopoverElements';
 export function SideDrawer(): JSX.Element {
     return (
         <Drawer.State animated>
-            <Drawer.Disclosure style={{ height: '5px', marginTop: '-10px' }}>
+            <Drawer.Disclosure style={{ height: '5px', marginTop: '-7px' }}>
                 <PopoverIcon />
             </Drawer.Disclosure>
             <CustomDrawer placement="right" style={{ marginTop: '58px', borderRadius: '8px 8px 0 0' }} fade slide>

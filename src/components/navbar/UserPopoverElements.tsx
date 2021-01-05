@@ -4,7 +4,7 @@ import { Text, Box, Popover, Link, Divider, Flex, Button, Stack, Set, Image, app
 import { NavIcon } from './NavIcons';
 import { logOut } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
-import { data } from '../profile/MainProfileData';
+import { data } from '../profile/MainProfileLeftData';
 
 export const NavText = applyTheme(Text, {
     styles: {

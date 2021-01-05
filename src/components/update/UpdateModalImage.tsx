@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Card, Box, Link, Flex } from 'bumbag';
-import { MainPageIcon } from '../profile/MainProfileElements';
+import { MainPageIcon } from '../profile/MainProfileLeftElements';
 import { UpdateModalImageForm } from './UpdateModalImageForm';
 
 export function UpdateModalImage(): JSX.Element {

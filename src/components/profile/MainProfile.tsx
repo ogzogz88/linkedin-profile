@@ -6,10 +6,10 @@ import { MainProfileLeft } from './MainProfileLeft'
 import { UserContext } from '../../providers/UserProvider';
 
 
-function MainProfile(): JSX.Element {
+export function MainProfile(): JSX.Element {
     const { user } = useContext(UserContext);
     return (
-        <Columns style={{ margin: '2rem 2rem 0 2rem' }} spacing="major-3">
+        <Columns margin='2rem 2rem 0' spacing="major-3">
             <Columns.Column spread={9} paddingLeft={'0'}>
                 <MainProfileLeft user={user} />
             </Columns.Column>
@@ -20,4 +20,3 @@ function MainProfile(): JSX.Element {
     );
 }
 
-export default MainProfile;

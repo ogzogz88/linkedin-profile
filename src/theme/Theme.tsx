@@ -10,6 +10,8 @@ import {
     faTh,
     faSearch,
     faPencilAlt,
+    faQuestionCircle,
+    faCog,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const Theme = {
@@ -27,11 +29,23 @@ export const Theme = {
                     faTh,
                     faSearch,
                     faPencilAlt,
+                    faQuestionCircle,
+                    faCog,
                 ],
                 prefix: 'solid-',
                 type: 'font-awesome' as ParseIconsOpts['type'],
             },
         ],
+    },
+    DropdownMenu: {
+        Popover: {
+            styles: {
+                base: {
+                    fontSize: '0.8rem',
+                    width: '285px',
+                },
+            },
+        },
     },
 };
 export const NavIcon = applyTheme(Icon, {

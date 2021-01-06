@@ -40,7 +40,6 @@ export function MainProfileLeft({ user }: any): JSX.Element {
             {/* Intro Card  */}
             <Card style={{ padding: 0, borderRadius: '0.5rem', position: 'relative' }}>
                 <BackgroundImg src="../../assets/photos/profile-bg.jpg" />
-                {/* <ProfileImg src="../../assets/photos/ogz.jpg" /> */}
                 <ProfileImg src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'} />
                 <Set style={{ justifyContent: 'flex-end', marginTop: '0.3rem' }}>
                     <AddButton size="small" palette="primary">
@@ -71,18 +70,19 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                             </ProfileTextSm>
                         </Flex>
                     </Columns.Column>
+                    {/* company and education at intro */}
                     <Columns.Column spread={4}>
                         <Flex flexDirection="column">
                             <Flex style={{ alignItems: 'center' }}>
                                 <MainPageIconContainer
                                     style={{
-                                        marginRight: '0.3rem',
-                                        marginBottom: '0.3rem',
+                                        marginRight: '0.6rem',
+                                        marginBottom: '0.6rem',
                                         borderRadius: '0%',
                                         background: '#eee',
                                     }}
                                 >
-                                    <MainPageIcon src="../../assets/icons/company-icon.png" />
+                                    <MainPageIcon style={{ width: '2rem', height: '2rem' }} src="../../assets/icons/company-icon.png" />
                                 </MainPageIconContainer>
                                 <ProfileTextXs fontWeight="bold">
                                     {company ? company : data[0].basic.company}{' '}
@@ -90,9 +90,9 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                             </Flex>
                             <Flex style={{ alignItems: 'center' }}>
                                 <MainPageIconContainer
-                                    style={{ marginRight: '0.3rem', borderRadius: '0%', background: '#eee' }}
+                                    style={{ marginRight: '0.6rem', borderRadius: '0%', background: '#eee' }}
                                 >
-                                    <MainPageIcon src="../../assets/icons/education-icon.png" />
+                                    <MainPageIcon style={{ width: '2rem', height: '2rem' }} src="../../assets/icons/education-icon.png" />
                                 </MainPageIconContainer>
                                 <ProfileTextXs fontWeight="bold">
                                     {education ? education : data[0].basic.education}{' '}

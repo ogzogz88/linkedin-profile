@@ -1,4 +1,4 @@
-import { Flex, Image, applyTheme, Button, Link, Card, Box, Text, Tooltip } from 'bumbag';
+import { Flex, Image, applyTheme, Text, Tooltip } from 'bumbag';
 
 export const ProfileTextLg = applyTheme(Text, {
     styles: {

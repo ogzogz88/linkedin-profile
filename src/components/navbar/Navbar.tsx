@@ -13,7 +13,7 @@ import { UserContext } from '../../providers/UserProvider';
 
 
 
-function Navbar(): JSX.Element {
+export function Navbar(): JSX.Element {
     const { user } = useContext(UserContext);
     const { photoURL }: any = user;
     return (
@@ -74,4 +74,3 @@ function Navbar(): JSX.Element {
     );
 }
 
-export default Navbar;

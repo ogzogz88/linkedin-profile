@@ -15,17 +15,17 @@ import { data } from './MainProfileRightData';
 import { NavIcon } from '../../theme/Theme';
 
 export function MainProfileRight(): JSX.Element {
-    const { textCard }: any = data[0];
-    const { alsoViewed }: any = data[1];
+    const { textCard } = data[0];
+    const { alsoViewed } = data[1];
     return (
         <>
             {/* Info card with two text/link */}
             <Card marginBottom={'1.5rem'}>
                 <Flex flexDirection={'column'}>
-                    {textCard.map((item: any, index: any) => {
+                    {textCard?.map((item, index) => {
                         return (
                             <>
-                                <Flex key={index} justifyContent={'space-between'}>
+                                <Flex key={index.toString()} justifyContent={'space-between'}>
                                     <ProfileTextSm>{item.text}</ProfileTextSm>
                                     <CardToolTip
                                         style={{
@@ -58,9 +58,9 @@ export function MainProfileRight(): JSX.Element {
             {/* people also viewed card */}
             <Card>
                 <Box marginBottom={'1rem'}>
-                    <ProfileTextMd>{alsoViewed.title}</ProfileTextMd>
+                    <ProfileTextMd>{alsoViewed?.title}</ProfileTextMd>
                 </Box>
-                {alsoViewed.data.map((item: any, index: any) => {
+                {alsoViewed?.data.map((item, index) => {
                     return (
                         <Flex key={index} justifyContent={'flex-start'} marginTop={'0.7rem'}>
                             <ProfileImage src={item.imgSrc} alt="Also viewed profile image" alignSelf={'top'} />
@@ -74,7 +74,7 @@ export function MainProfileRight(): JSX.Element {
                                         fontSize={'0.8rem'}
                                     >
                                         <List.Item fontSize={'0.5rem'}>
-                                            <ProfileTextSm fontWeight={'300'} marginLeft={'-4px'}>
+                                            <ProfileTextSm fontWeight={300} marginLeft="-4px">
                                                 {item.order}
                                             </ProfileTextSm>
                                         </List.Item>

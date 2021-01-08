@@ -1,0 +1,8 @@
+{
+    "title": "React'ın react-i18next ve typescript 4.1 ile kullanımına hoşgeldiniz.",
+    "description": {
+      "part1": "Namespace kullanılmadan oluşturulan bir örnek",
+      "part2": "t fonksiyonundan uygun type çıkarımının yapılabilmesi için, Resources type'ını override eden type augmentation'ı kullanmalısın. ",
+      "part3": "Bir örnek için @types/react-i18next sayfasını ziyaret edebilirsiniz."
+    }
+}

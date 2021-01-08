@@ -58,11 +58,12 @@ export function Navbar(): JSX.Element {
                                 {navElement.navIcon === 'user' && <NavImage src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
                                     alt="Profile Picture" width={'30px'} />}
 
-                                <div style={{ display: 'flex' }}>
+                                <Flex>
                                     <NavText>{navElement.navText}</NavText>
                                     {navElement.navIcon === 'user' && <UserPopover />}
                                     {navElement.navIcon === 'th' && <SideDrawer />}
-                                </div>
+                                </Flex>
+
                             </Navlink>
                             {navElement.navIcon === 'user' && <NavDivider />}
                         </>

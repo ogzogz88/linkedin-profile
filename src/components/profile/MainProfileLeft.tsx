@@ -18,6 +18,7 @@ import {
 import { data } from './MainProfileLeftData';
 import { UpdateModalIntro } from '../update/UpdateModalIntro';
 import { UpdateModalAbout } from '../update/UpdateModalAbout';
+import { Translation } from './Translation'
 
 export function MainProfileLeft({ user }: any): JSX.Element {
     const {
@@ -116,6 +117,8 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                     </MainPageIconContainerSec>
                 </ProfileEditLink>
             </Card>
+            {/* translation example */}
+            <Translation />
         </>
     );
 }

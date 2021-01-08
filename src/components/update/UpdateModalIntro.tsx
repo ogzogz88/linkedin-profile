@@ -7,9 +7,8 @@ import { UpdateModalIntroForm } from './UpdateModalIntroForm'
 
 export function UpdateModalIntro(): JSX.Element {
 
-
     return (
-        <Modal.State>
+        <Modal.State >
             <Modal.Disclosure use={Link} >
                 <MainPageIcon src="../../assets/icons/pencil-icon.png" />
             </Modal.Disclosure>

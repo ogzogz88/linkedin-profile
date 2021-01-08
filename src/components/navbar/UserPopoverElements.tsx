@@ -150,7 +150,7 @@ export const PopoverContent: React.FC = () => {
         </Box>
     );
 };
-export const PopoverIcon: React.FC | any = () => {
+export const PopoverIcon: React.FC = () => {
     return (
         <NavIcon
             aria-label="Navlcon"

@@ -60,7 +60,9 @@ const UpdateModalIntroSchema = Yup.object().shape({
         .required('Required'),
     // email: Yup.string().email('Invalid email').required('Required'),
 });
-export function UpdateModalIntroForm(): JSX.Element {
+
+// eslint-disable-next-line react/prop-types
+export const UpdateModalIntroForm: React.FC = () => {
     const { user } = useContext(UserContext);
     const { photoURL } = user;
     const { setUser } = useContext(UserContext);
@@ -161,4 +163,4 @@ export function UpdateModalIntroForm(): JSX.Element {
             )}
         </Formik>
     );
-}
+};

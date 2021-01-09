@@ -129,15 +129,15 @@
 "mainProfileLeftData" : [
   {
       "basic": {
-          "name": "Your Name",
-          "lastname": "Your Lastname",
-          "email": "yourmailaddress@gmail.com",
-          "headline": "Your Company, Your Position",
-          "city": "City",
-          "country": "Country",
-          "company": "Company",
-          "education": "Education",
-          "industry": "Industry"
+          "userName": "Your Name",
+          "userLastName": "Your Lastname",
+          "userEmail": "yourmailaddress@gmail.com",
+          "userHeadline": "Your Company, Your Position",
+          "userLocation": "City",
+          "userCountry": "Country",
+          "userCompany": "Company",
+          "userEducation": "Education",
+          "userIndustry": "Industry"
       },
       "introButtons":{
         "profile":"Add profile section",
@@ -148,5 +148,16 @@
           "text": "You can tell about your skills, your interests, your work and so on.  "
       }
   }
-]
+],
+"userPopoverData":{
+  "viewProfile":"View Profile",
+  "account":"Account",
+  "settings":"Settings & Privacy",
+  "help":"Help",
+  "language":"Language",
+  "manage":"Manage",
+  "posts":"Posts & Activity",
+  "jobPosting":"Job Posting Account",
+  "signout":"Sign Out"
+}
 }

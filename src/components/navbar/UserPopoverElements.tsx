@@ -4,7 +4,7 @@ import { Text, Box, Popover, Link, Divider, Flex, Button, Stack, Set, Image, app
 import { NavIcon } from '../../theme/Theme';
 import { logOut } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
-import { data } from '../profile/MainProfileLeftData';
+import { useTranslation } from 'react-i18next';
 
 export const NavText = applyTheme(Text, {
     styles: {
@@ -103,8 +103,33 @@ export const CustomPopover = applyTheme(Popover, {
 export const PopoverContent: React.FC = () => {
     const { user } = useContext(UserContext);
     const { photoURL, name, lastName, displayName, headline }: any = user;
+    const { i18n } = useTranslation();
+    const mainProfileLeftData = i18n.t<any>('mainProfileLeftData', { returnObjects: true });
+    const userPopoverData = i18n.t<any>('userPopoverData', { returnObjects: true })
+    const {
+        userName,
+        userLastName,
+        userHeadline
+    } = mainProfileLeftData[0].basic;
+    const {
+        viewProfile,
+        account,
+        settings,
+        help,
+        language,
+        manage,
+        posts,
+        jobPosting,
+        signout } = userPopoverData;
+    // display name in necessary when user only sgin in with google
+    let nameLastName;
+    if (name && lastName) {
+        nameLastName = `${name} ${lastName}`;
+    } else if (displayName) {
+        nameLastName = displayName;
+    }
     return (
-        <Box>
+        <Box padding={'0.5rem 0'}>
             <Stack>
                 <Box>
                     <Flex alignX="center" alignY="center" style={{ position: 'relative' }}>
@@ -116,36 +141,29 @@ export const PopoverContent: React.FC = () => {
                         </Box>
                         <Box style={{ marginLeft: '3.5rem', fontSize: '1rem' }}>
                             <NavHeader style={{ marginTop: '0', textTransform: 'capitalize' }}>
-                                {name && lastName
-                                    ? `${name} ${lastName}`
-                                    : displayName
-                                        ? displayName
-                                        : // eslint-disable-next-line prettier/prettier
-                                        `${data[0].basic.name} ${data[0].basic.lastname}`}
+                                {nameLastName ? nameLastName : `${userName} ${userLastName}`}
                             </NavHeader>
-                            <NavText style={{ lineHeight: '1rem' }}>{headline ? headline : data[0].basic.headline}</NavText>
+                            <NavText style={{ lineHeight: '1rem' }}>{headline ? headline : userHeadline}</NavText>
                         </Box>
                     </Flex>
                 </Box>
                 <Set>
                     <NavButton variant="outlined" palette="primary" width="100%">
-                        View Profile
-                    </NavButton>
+                        {viewProfile}                    </NavButton>
                 </Set>
             </Stack>
-
             <Text.Block>
                 <Divider />
-                <NavHeader>Account</NavHeader>
-                <NavText>Settings & Privacy</NavText>
-                <NavText>Help</NavText>
-                <NavText>Language</NavText>
+                <NavHeader>{account}</NavHeader>
+                <NavText>{settings}</NavText>
+                <NavText>{help}</NavText>
+                <NavText>{language}</NavText>
                 <Divider />
-                <NavHeader fontWeight="bold">Manage</NavHeader>
-                <NavText>Posts & Activity</NavText>
-                <NavText>Job Posting Account</NavText>
+                <NavHeader fontWeight="bold">{manage}</NavHeader>
+                <NavText>{posts}</NavText>
+                <NavText>{jobPosting}</NavText>
                 <Divider />
-                <PageLink fontWeight={'normal'} fontSize={'14px'} alignItems={'flex-start'} onClick={logOut} href='/'>Sign Out</PageLink>
+                <PageLink fontWeight={'normal'} fontSize={'14px'} alignItems={'flex-start'} onClick={logOut} href='/'>{signout}</PageLink>
             </Text.Block>
         </Box>
     );

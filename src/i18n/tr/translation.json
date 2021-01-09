@@ -129,15 +129,15 @@
 "mainProfileLeftData" : [
   {
       "basic": {
-          "name": "Adınız",
-          "lastname": "Soyadınız",
-          "email": "emailadresiniz@gmail.com",
-          "headline": "Şirketiniz, Pozisyonunuz",
-          "city": "Şehir",
-          "country": "Ülke",
-          "company": "Şirket",
-          "education": "Eğitim",
-          "industry": "Endüstri / Alan"
+          "userName": "Adınız",
+          "userLastName": "Soyadınız",
+          "userEmail": "emailadresiniz@gmail.com",
+          "userHeadline": "Şirketiniz, Pozisyonunuz",
+          "userLocation": "Şehir",
+          "userCountry": "Ülke",
+          "userCompany": "Şirket",
+          "userEducation": "Eğitim",
+          "userIndustry": "Endüstri / Alan"
       },
       "introButtons":{
         "profile":"Profil bölümü ekle",
@@ -148,5 +148,16 @@
           "text": "Becerilerinizi, ilgi alanlarınızı, işinizi ve istediğiniz diğer hususları burada belirtebilirsiniz. "
       }
   }
-]
+],
+"userPopoverData":{
+  "viewProfile":"Profili Görüntüle",
+  "account":"Hesap",
+  "settings":"Ayarlar & Gizlilik",
+  "help":"Yardım",
+  "language":"Dil",
+  "manage":"Yönet",
+  "posts":"Postlar & Etkinlikler",
+  "jobPosting":"İş Paylaşımı Hesabı",
+  "signout":"Çıkış Yap"
+}
 }

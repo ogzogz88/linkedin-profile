@@ -15,12 +15,16 @@ import {
     ProfileTextXs,
     MainPageIconContainerSec,
 } from './MainProfileLeftElements';
-import { data } from './MainProfileLeftData';
 import { UpdateModalIntro } from '../update/UpdateModalIntro';
 import { UpdateModalAbout } from '../update/UpdateModalAbout';
 import { Translation } from './Translation'
+import { useTranslation } from 'react-i18next';
+
 
 export function MainProfileLeft({ user }: any): JSX.Element {
+    const { i18n } = useTranslation();
+    const mainProfileLeftData = i18n.t<any>('mainProfileLeftData', { returnObjects: true });
+
     const {
         photoURL,
         displayName,
@@ -44,9 +48,11 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                 <ProfileImg src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'} />
                 <Set style={{ justifyContent: 'flex-end', marginTop: '0.3rem' }}>
                     <AddButton size="small" palette="primary">
-                        Add profile section
+                        {mainProfileLeftData[0].introButtons.profile}
                     </AddButton>
-                    <MoreButton size="small">More...</MoreButton>
+                    <MoreButton size="small">
+                        {mainProfileLeftData[0].introButtons.more}
+                    </MoreButton>
                     <ProfileEditLink>
                         <MainPageIconContainer>
                             <UpdateModalIntro />
@@ -61,13 +67,13 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                                     ? `${name} ${lastName}`
                                     : displayName
                                         ? displayName
-                                        : `${data[0].basic.name} ${data[0].basic.lastname}`}
+                                        : `${mainProfileLeftData[0].basic.name} ${mainProfileLeftData[0].basic.lastname}`}
                             </ProfileTextLg>
-                            <ProfileTextSm>{email ? email : data[0].basic.email}</ProfileTextSm>
-                            <ProfileTextMd>{headline ? headline : data[0].basic.headline}</ProfileTextMd>
-                            <ProfileTextMd>{industry ? industry : data[0].basic.industry}</ProfileTextMd>
+                            <ProfileTextSm>{email ? email : mainProfileLeftData[0].basic.email}</ProfileTextSm>
+                            <ProfileTextMd>{headline ? headline : mainProfileLeftData[0].basic.headline}</ProfileTextMd>
+                            <ProfileTextMd>{industry ? industry : mainProfileLeftData[0].basic.industry}</ProfileTextMd>
                             <ProfileTextSm>
-                                {location ? location : data[0].basic.city}, {country ? country : data[0].basic.country}
+                                {location ? location : mainProfileLeftData[0].basic.city}, {country ? country : mainProfileLeftData[0].basic.country}
                             </ProfileTextSm>
                         </Flex>
                     </Columns.Column>
@@ -86,7 +92,7 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                                     <MainPageIcon style={{ width: '2rem', height: '2rem' }} src="../../assets/icons/company-icon.png" />
                                 </MainPageIconContainer>
                                 <ProfileTextXs fontWeight="bold">
-                                    {company ? company : data[0].basic.company}{' '}
+                                    {company ? company : mainProfileLeftData[0].basic.company}{' '}
                                 </ProfileTextXs>
                             </Flex>
                             <Flex style={{ alignItems: 'center' }}>
@@ -96,7 +102,7 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                                     <MainPageIcon style={{ width: '2rem', height: '2rem' }} src="../../assets/icons/education-icon.png" />
                                 </MainPageIconContainer>
                                 <ProfileTextXs fontWeight="bold">
-                                    {education ? education : data[0].basic.education}{' '}
+                                    {education ? education : mainProfileLeftData[0].basic.education}{' '}
                                 </ProfileTextXs>
                             </Flex>
                         </Flex>
@@ -107,8 +113,8 @@ export function MainProfileLeft({ user }: any): JSX.Element {
             <Card style={{ marginTop: '2rem', position: 'relative' }}>
                 <Flex>
                     <Flex flexDirection="column">
-                        <ProfileTextMd marginBottom="1rem">{data[0].about.title}</ProfileTextMd>
-                        <ProfileTextXs>{about ? about : data[0].about.text}</ProfileTextXs>
+                        <ProfileTextMd marginBottom="1rem">{mainProfileLeftData[0].about.title}</ProfileTextMd>
+                        <ProfileTextXs>{about ? about : mainProfileLeftData[0].about.text}</ProfileTextXs>
                     </Flex>
                 </Flex>
                 <ProfileEditLink style={{ position: 'absolute', right: '1rem', top: '1rem' }}>

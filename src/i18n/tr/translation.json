@@ -125,5 +125,28 @@
           ]
       }
   }
+],
+"mainProfileLeftData" : [
+  {
+      "basic": {
+          "name": "Adınız",
+          "lastname": "Soyadınız",
+          "email": "emailadresiniz@gmail.com",
+          "headline": "Şirketiniz, Pozisyonunuz",
+          "city": "Şehir",
+          "country": "Ülke",
+          "company": "Şirket",
+          "education": "Eğitim",
+          "industry": "Endüstri / Alan"
+      },
+      "introButtons":{
+        "profile":"Profil bölümü ekle",
+        "more":"Daha fazla..."
+      },
+      "about": {
+          "title": "Hakkında",
+          "text": "Becerilerinizi, ilgi alanlarınızı, işinizi ve istediğiniz diğer hususları burada belirtebilirsiniz. "
+      }
+  }
 ]
 }

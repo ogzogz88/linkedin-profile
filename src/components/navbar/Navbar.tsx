@@ -16,12 +16,7 @@ import { useTranslation } from 'react-i18next';
 
 export function Navbar(): JSX.Element {
     const { t, i18n } = useTranslation();
-
-    const navArr = i18n.t<any>('NavData', { returnObjects: true });
-    console.log(navArr);
-
-
-
+    const navData = i18n.t<any>('NavData', { returnObjects: true });
     const { user } = useContext(UserContext);
     const { photoURL }: any = user;
     return (
@@ -42,7 +37,7 @@ export function Navbar(): JSX.Element {
                 </Flex>
             </TopNav.Section>
             <TopNav.Section >
-                {navArr?.map((navElement: { navHref: string; navIcon: string; navText: React.ReactNode; }, index: number) => {
+                {navData?.map((navElement: { navHref: string; navIcon: string; navText: React.ReactNode; }, index: number) => {
                     return (
                         <>
                             <Navlink

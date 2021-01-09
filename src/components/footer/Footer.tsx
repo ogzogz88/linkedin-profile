@@ -6,9 +6,9 @@ import { LangItem } from './FooterElements';
 import { useTranslation } from 'react-i18next';
 
 export function Footer(): JSX.Element {
-    const { i18n, t } = useTranslation();
-    const footerArr = i18n.t<any>('footerData', { returnObjects: true });
-    const { links, logoSrc, specialLinks } = footerArr;
+    const { i18n } = useTranslation();
+    const footerData = i18n.t<any>('footerData', { returnObjects: true });
+    const { links, logoSrc, specialLinks } = footerData;
     const languages: any = {
         en: 'English',
         tr: 'Türkçe',
@@ -20,8 +20,6 @@ export function Footer(): JSX.Element {
     const localLng: any = localStorage.getItem('i18nextLng');
     const initialLang = localLng ? localLng : 'en';
     const [lang, setLang] = useState(initialLang);
-    // const { links, logoSrc, specialLinks } = footerData;
-
     const handleClick = (event: any) => {
         const lang = event.currentTarget.dataset.value;
         setLang(lang);

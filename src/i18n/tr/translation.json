@@ -4,5 +4,48 @@
       "part1": "Namespace kullanılmadan oluşturulan bir örnek",
       "part2": "t fonksiyonundan uygun type çıkarımının yapılabilmesi için, Resources type'ını override eden type augmentation'ı kullanmalısın. ",
       "part3": "Bir örnek için @types/react-i18next sayfasını ziyaret edebilirsiniz."
-    }
+    },
+    "placeholder":"Ara",
+    "NavData" : [
+      {
+          "navText": "Anasayfa",
+          "navHref":"#",
+          "navIcon": "home"
+      },
+      {
+          "navText": "Ağım",
+          "navHref": "#",
+          "navIcon": "user-friends"
+      },
+      {
+          "navText": "İş İlanları",
+          "navHref": "#",
+          "navIcon": "suitcase"
+      },
+      {
+          "navText": "Mesajlaşma",
+          "navHref": "#",
+          "navIcon": "comment-dots"
+      },
+      {
+          "navText": "Bildirimler",
+          "navHref": "#",
+          "navIcon": "bell"
+      },
+      {
+          "navText": "Ben",
+          "navHref": "#",
+          "navIcon": "user"
+      },
+      {
+          "navText": "İş",
+          "navHref": "#",
+          "navIcon": "th"
+      },
+      {
+          "navText": "Premiun'u 1 Ay Ücretsiz Deneyin",
+          "navHref": "#",
+          "navIcon": ""
+      }
+  ]
 }

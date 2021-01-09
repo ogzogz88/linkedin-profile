@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Flex } from 'bumbag';
 import { ProfileTextMd, ProfileTextSm } from './MainProfileLeftElements';
 import { useTranslation } from 'react-i18next';
-import '../../i18n/config';
 
 export function Translation(): JSX.Element {
     const { t } = useTranslation();

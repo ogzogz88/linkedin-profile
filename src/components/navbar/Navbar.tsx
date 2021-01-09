@@ -10,10 +10,19 @@ import { navData } from './NavData';
 import { NavImage } from './UserPopoverElements'
 import { DarkMode } from '../DarkMode';
 import { UserContext } from '../../providers/UserProvider';
+import { useTranslation } from 'react-i18next';
+
 
 
 
 export function Navbar(): JSX.Element {
+    const { t, i18n } = useTranslation();
+
+    const navArr = i18n.t<any>('NavData', { returnObjects: true });
+    console.log(navArr);
+
+
+
     const { user } = useContext(UserContext);
     const { photoURL }: any = user;
     return (
@@ -25,7 +34,7 @@ export function Navbar(): JSX.Element {
                 <Flex style={{ alignItems: 'center' }}>
                     <Input
                         before={<Input.Icon icon="solid-search" />}
-                        placeholder="Search"
+                        placeholder={t('placeholder')}
                         style={{ marginLeft: '5px' }}
                         size="small"
                         width="250px"
@@ -34,7 +43,7 @@ export function Navbar(): JSX.Element {
                 </Flex>
             </TopNav.Section>
             <TopNav.Section >
-                {navData.map((navElement, index) => {
+                {navArr?.map((navElement: { navHref: string; navIcon: string; navText: React.ReactNode; }, index: number) => {
                     return (
                         <>
                             <Navlink

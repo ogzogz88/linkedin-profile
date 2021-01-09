@@ -1,4 +1,5 @@
-import { Link, applyTheme } from 'bumbag';
+import React from 'react';
+import { Link, DropdownMenu, applyTheme } from 'bumbag';
 
 export const FooterLinkXs = applyTheme(Link, {
     styles: {
@@ -47,3 +48,28 @@ export const FooterLinkMd = applyTheme(Link, {
         },
     },
 });
+
+interface LangItemInterface {
+    language: { key: string; name: string };
+    chosenLang: string;
+    key: number;
+    handleClick: (event: any) => void;
+}
+export const LangItem: React.FC<LangItemInterface> = ({
+    chosenLang,
+    language,
+    key,
+    handleClick,
+}: LangItemInterface) => {
+    return (
+        <DropdownMenu.Item
+            key={key}
+            data-value={language.key}
+            onClick={(event) => handleClick(event)}
+            background={chosenLang === language.key ? '#574feb' : ''}
+            color={chosenLang === language.key ? '#fff' : ''}
+        >
+            {language.name}
+        </DropdownMenu.Item>
+    );
+};

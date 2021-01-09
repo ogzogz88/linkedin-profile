@@ -3,29 +3,28 @@ import { Columns, Box, Flex, Image, DropdownMenu, Button } from 'bumbag';
 import { footerData } from './FooterData';
 import { FooterLinkSm, FooterLinkMd } from './FooterElements';
 import { NavIcon } from '../../theme/Theme';
+import { LangItem } from './FooterElements';
 import { useTranslation } from 'react-i18next';
 
 export function Footer(): JSX.Element {
     const { i18n } = useTranslation();
-
-    const [lang, setLang] = useState('English');
+    const languages: any = {
+        en: 'English',
+        tr: 'Türkçe',
+    };
+    const langData = [
+        { key: 'en', name: 'English' },
+        { key: 'tr', name: 'Turkish' },
+    ];
+    const localLng: any = localStorage.getItem('i18nextLng');
+    const initialLang = localLng ? localLng : 'en';
+    const [lang, setLang] = useState(initialLang);
     const { links, logoSrc, specialLinks } = footerData;
-    // const handleChange = (value: any) => {
-    //     setLang(value);
-    //     const languages: any = {
-    //         English: 'en',
-    //         Türkçe: 'tr',
-    //     };
-    //     i18n.changeLanguage(languages[value]);
-    // };
+
     const handleClick = (event: any) => {
         const lang = event.currentTarget.dataset.value;
         setLang(lang);
-        const languages: any = {
-            English: 'en',
-            Türkçe: 'tr',
-        };
-        i18n.changeLanguage(languages[lang]);
+        i18n.changeLanguage(lang);
     };
     return (
         <Columns margin={'1rem 2rem 0'} paddingBottom={'2rem'}>
@@ -65,53 +64,21 @@ export function Footer(): JSX.Element {
             </Columns.Column>
             <Columns.Column spread={3} padding={'0'}>
                 <Box>
-                    {/* <DropdownMenu
-                        menu={
-                            <React.Fragment>
-                                <DropdownMenu.OptionGroup
-                                    onChange={(value) => handleChange(value)}
-                                    value={lang}
-                                    title="Select Language"
-                                    type="radio"
-                                >
-                                    <DropdownMenu.OptionItem hideOnClick={true} value="English">
-                                        English
-                                    </DropdownMenu.OptionItem>
-                                    <DropdownMenu.OptionItem hideOnClick={true} value="Turkish">
-                                        Turkish
-                                    </DropdownMenu.OptionItem>
-                                </DropdownMenu.OptionGroup>
-                            </React.Fragment>
-                        }
-                    >
-                        <Button
-                            iconAfter="solid-sort-down"
-                            size="small"
-                            width={'100%'}
-                            justifyContent={'space-between'}
-                        >
-                            {lang}
-                        </Button>
-                    </DropdownMenu> */}
                     <DropdownMenu
                         menu={
                             <React.Fragment>
-                                <DropdownMenu.Item
-                                    data-value={'English'}
-                                    onClick={(event) => handleClick(event)}
-                                    background={lang === 'English' ? '#574feb' : ''}
-                                    color={lang === 'English' ? '#fff' : ''}
-                                >
-                                    English
-                                </DropdownMenu.Item>
-                                <DropdownMenu.Item
-                                    data-value={'Türkçe'}
-                                    onClick={(event) => handleClick(event)}
-                                    background={lang === 'Türkçe' ? '#574feb' : ''}
-                                    color={lang === 'Türkçe' ? '#fff' : ''}
-                                >
-                                    Türkçe
-                                </DropdownMenu.Item>
+                                {langData.map((language, index) => {
+                                    return (
+                                        <>
+                                            <LangItem
+                                                language={language}
+                                                chosenLang={lang}
+                                                key={index}
+                                                handleClick={(event) => handleClick(event)}
+                                            />
+                                        </>
+                                    );
+                                })}
                             </React.Fragment>
                         }
                     >
@@ -121,7 +88,7 @@ export function Footer(): JSX.Element {
                             width={'100%'}
                             justifyContent={'space-between'}
                         >
-                            {lang}
+                            {languages[lang]}
                         </Button>
                     </DropdownMenu>
                 </Box>

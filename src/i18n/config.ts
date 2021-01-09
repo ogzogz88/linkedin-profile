@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import detector from 'i18next-browser-languagedetector';
+import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-chained-backend';
 import LocalStorageBackend from 'i18next-localstorage-backend';
 import HttpApi from 'i18next-http-backend'; // fallback http load
@@ -17,11 +17,14 @@ export const resources = {
 } as const;
 
 i18n.use(Backend)
-    .use(detector)
+    .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        lng: 'en',
+        // lng: 'en',
         fallbackLng: 'en',
+        react: {
+            useSuspense: false,
+        },
         backend: {
             backends: [
                 LocalStorageBackend, // primary
@@ -39,17 +42,21 @@ i18n.use(Backend)
                     defaultVersion: '',
 
                     // language versions
-                    versions: {},
+                    versions: { en: 'v1.0', tr: 'v1.0' },
 
                     // can be either window.localStorage or window.sessionStorage. Default: window.localStorage
                     store: window.localStorage,
                 },
-                {
-                    loadPath: '/locales/{{lng}}/{{ns}}.json', // xhr load path for my own fallback
-                },
+                // {
+                //     loadPath: '/locales/{{lng}}/{{ns}}.json', // xhr load path for my own fallback
+                // },
             ],
         },
         debug: true,
+        detection: {
+            order: ['localStorage', 'navigator'],
+            caches: ['localStorage'],
+        },
         resources,
     });
 

@@ -78,5 +78,52 @@
     ],
     "copyrightsText": "LinkedIn Şirketi © 2021",
     "logoSrc": "../../assets/photos/footer-logo.png"
-}
+},
+"mainProfileRightData" : [
+  {
+      "textCard": [
+          {
+              "text": "Profilini & URL'i düzenle",
+              "tooltip":
+                  "Oturum açmamış kişilere nasıl göründüğünüzü görün ve düzenleyin, kendinizi arama motorlarında bulun (ör. Google, Bing)."
+          },
+          {
+              "text": "Başka bir dilde profil ekle",
+              "tooltip":
+                  "Başka bir dilde profil oluşturmak, yerel iş bağlantılarının ve işe alım uzmanlarının sizi LinkedIn'de bulmasını kolaylaştırır."
+          }
+      ]
+  },
+  {
+      "alsoViewed": {
+          "title": "İnsanlar ayrıca görüntüledi",
+          "data": [
+              {
+                  "imgSrc": "../../assets/photos/also-viewed-1.jpg",
+                  "name": "Eser KOÇVER",
+                  "order": "2'nci",
+                  "headline": "ABD Büyükelçiliği'nde Finansal Danışman"
+              },
+              {
+                  "imgSrc": "../../assets/photos/also-viewed-2.jpg",
+                  "name": "Erkin KULA",
+                  "order": "3'üncü",
+                  "headline": "Trendyol'da Ürün Yöneticisi"
+              },
+              {
+                  "imgSrc": "../../assets/photos/also-viewed-3.jpg",
+                  "name": "Gökay BAYKARA",
+                  "order": "2'nci",
+                  "headline": "Kastamonu Devlet Hastanesinde Plastik Cerrah"
+              },
+              {
+                  "imgSrc": "../../assets/photos/also-viewed-4.jpg",
+                  "name": "Mücahit GÜRBÜZ",
+                  "order": "2'nci",
+                  "headline": "OPLOG'da Yazılım Mühendisi"
+              }
+          ]
+      }
+  }
+]
 }

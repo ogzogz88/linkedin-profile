@@ -11,18 +11,21 @@ import {
     IconContainer,
     AlsoViewedTextContainer,
 } from './MainProfileRightElements';
-import { data } from './MainProfileRightData';
 import { NavIcon } from '../../theme/Theme';
+import { useTranslation } from 'react-i18next';
 
 export function MainProfileRight(): JSX.Element {
-    const { textCard } = data[0];
-    const { alsoViewed } = data[1];
+    const { i18n } = useTranslation();
+    const mainProfileRightData = i18n.t<any>('mainProfileRightData', { returnObjects: true });
+
+    const { textCard } = mainProfileRightData[0];
+    const { alsoViewed } = mainProfileRightData[1];
     return (
         <>
             {/* Info card with two text/link */}
             <Card marginBottom={'1.5rem'}>
                 <Flex flexDirection={'column'}>
-                    {textCard?.map((item, index) => {
+                    {textCard?.map((item: any, index: any) => {
                         return (
                             <>
                                 <Flex key={index.toString()} justifyContent={'space-between'}>
@@ -60,7 +63,7 @@ export function MainProfileRight(): JSX.Element {
                 <Box marginBottom={'1rem'}>
                     <ProfileTextMd>{alsoViewed?.title}</ProfileTextMd>
                 </Box>
-                {alsoViewed?.data.map((item, index) => {
+                {alsoViewed?.data.map((item: any, index: any) => {
                     return (
                         <Flex key={index} justifyContent={'flex-start'} marginTop={'0.7rem'}>
                             <ProfileImage src={item.imgSrc} alt="Also viewed profile image" alignSelf={'top'} />

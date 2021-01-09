@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Columns, Box, Flex, Image, DropdownMenu, Button } from 'bumbag';
-import { footerData } from './FooterData';
 import { FooterLinkSm, FooterLinkMd } from './FooterElements';
 import { NavIcon } from '../../theme/Theme';
 import { LangItem } from './FooterElements';
 import { useTranslation } from 'react-i18next';
 
 export function Footer(): JSX.Element {
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
+    const footerArr = i18n.t<any>('footerData', { returnObjects: true });
+    const { links, logoSrc, specialLinks } = footerArr;
     const languages: any = {
         en: 'English',
         tr: 'Türkçe',
@@ -19,7 +20,7 @@ export function Footer(): JSX.Element {
     const localLng: any = localStorage.getItem('i18nextLng');
     const initialLang = localLng ? localLng : 'en';
     const [lang, setLang] = useState(initialLang);
-    const { links, logoSrc, specialLinks } = footerData;
+    // const { links, logoSrc, specialLinks } = footerData;
 
     const handleClick = (event: any) => {
         const lang = event.currentTarget.dataset.value;
@@ -35,7 +36,7 @@ export function Footer(): JSX.Element {
             </Columns.Column>
             <Columns.Column spread={6} padding={'0'}>
                 <Flex flexWrap={'wrap'}>
-                    {links.map((link, index) => {
+                    {links.map((link: any, index: any) => {
                         return (
                             <Box style={{ width: '170px', margin: '0.2rem 0' }} key={index}>
                                 <FooterLinkSm>{link}</FooterLinkSm>
@@ -45,7 +46,7 @@ export function Footer(): JSX.Element {
                 </Flex>
             </Columns.Column>
             <Columns.Column spread={3} padding={'0'}>
-                {specialLinks.map((link, index) => {
+                {specialLinks.map((link: any, index: any) => {
                     return (
                         <Flex key={index} marginBottom={'0.8rem'}>
                             <NavIcon

@@ -6,7 +6,6 @@ import NavText from './NavText';
 import { UserPopover } from './UserPopover';
 import { SideDrawer } from './SideDrawer';
 import { NavIcon } from '../../theme/Theme';
-import { navData } from './NavData';
 import { NavImage } from './UserPopoverElements'
 import { DarkMode } from '../DarkMode';
 import { UserContext } from '../../providers/UserProvider';

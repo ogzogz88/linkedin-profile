@@ -47,5 +47,36 @@
           "navHref": "#",
           "navIcon": ""
       }
-  ]
+  ],
+  "footerData" : {
+    "links": [
+        "Hakkımızda",
+        "Ulaşılabilirlik",
+        "Yetenek Çözümleri",
+        "Topluluk Rehberi",
+        "Kariyer",
+        "Pazarlama Çözümleri",
+        "Gizlilik & Şartlar",
+        "Reklam Tercihleri",
+        "Reklam Verme",
+        "Satış Çözümleri",
+        "Mobil",
+        "Küçük işletmeler",
+        "Güvenlik Merkezi"
+    ],
+    "specialLinks": [
+        {
+            "title": "Sorular ?",
+            "text": "Yardım Merkezini ziyaret edin.",
+            "navIcon": "question-circle"
+        },
+        {
+            "title": "Hesap ve gizlili yönet",
+            "text": "Ayarlara git.",
+            "navIcon": "cog"
+        }
+    ],
+    "copyrightsText": "LinkedIn Şirketi © 2021",
+    "logoSrc": "../../assets/photos/footer-logo.png"
+}
 }

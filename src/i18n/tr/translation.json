@@ -198,5 +198,69 @@
   "or":"Ya da",
   "goBack":"Giriş Yap'a geri git",
   "signin":"Giriş Yap"
+},
+"sideDrawerData" : {
+  "innerText":[
+  {
+      "header": "Yetenek Çözümleri",
+      "text": "Yeni yetenekleri keşfet ve işe al"
+  },
+  {
+      "header": "Satış Çözümleri",
+      "text": "Satış imkanlarından faydalan"
+  },
+  {
+      "header": "Ücretsiz İş İlanı Oluştur",
+      "text": "İşinizi kaliteli adayların önüne çıkarın"
+  },
+  {
+      "header": "Pazarlama Çözümleri",
+      "text": "Müşterilerinizi artırın ve işinizi büyütün"
+  },
+  {
+      "header": "Öğrenim Çözümleri",
+      "text": "Kuruluşunuzla beraber yeni yetenekler geliştirin"
+  }
+  ],
+  "headerText":{
+    "products":"Diğer LinkedIn Ürünlerini Ziyaret Edin",
+    "services":"LinkedIn Ticari Hizmetler",
+    "createPage":"Şirket Sayfası Oluştur"
+  },
+  "iconData" : [
+    {
+        "src": "../../assets/icons/sideDrawerIcon-1.png",
+        "text": "Learning"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-2.png",
+        "text": "İçgörüler"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-3.png",
+        "text": "İş İlanı Yayınla"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-4.png",
+        "text": "Rerklam Verin"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-5.png",
+        "text": "Adayları Bulun"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-6.png",
+        "text": "Gruplar"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-7.png",
+        "text": "ProFinder"
+    },
+    {
+        "src": "../../assets/icons/sideDrawerIcon-8.png",
+        "text": "Maaş"
+    }
+]
 }
+  
 }

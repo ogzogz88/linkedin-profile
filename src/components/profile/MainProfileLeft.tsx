@@ -10,7 +10,6 @@ import {
 import { UpdateModalAbout } from '../update/UpdateModalAbout';
 import { MainProfileLeftImg } from './MainProfileLeftImg'
 import { MainProfileLeftIntro } from './MainProfileLeftIntro';
-import { Translation } from './Translation'
 import { useTranslation } from 'react-i18next';
 
 

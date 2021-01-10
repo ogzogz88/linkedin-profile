@@ -9,10 +9,15 @@ import {
     NavSubHeader,
     NavSubText,
 } from './SideDrawerElements';
-import { sideDrawerData, iconData } from './SideDrawerData';
 import { PopoverIcon } from './UserPopoverElements';
+import { useTranslation } from 'react-i18next';
 
 export function SideDrawer(): JSX.Element {
+    const { i18n } = useTranslation();
+    const sideDrawerData = i18n.t<any>('sideDrawerData', { returnObjects: true });
+    const { innerText, headerText, iconData } = sideDrawerData;
+    const { products, services, createPage } = headerText;
+
     return (
         <Drawer.State animated>
             <Drawer.Disclosure style={{ height: '5px', marginTop: '-7px' }}>
@@ -20,7 +25,7 @@ export function SideDrawer(): JSX.Element {
             </Drawer.Disclosure>
             <CustomDrawer placement="right" style={{ marginTop: '58px', borderRadius: '8px 8px 0 0' }} fade slide>
                 <Card style={{ margin: '1.5rem', padding: '2px 0 0 0' }}>
-                    <NavHeader>Visit More Linkedin Products</NavHeader>
+                    <NavHeader>{products}</NavHeader>
                     <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px', padding: '20px ' }}>
                         <Flex
                             style={{
@@ -29,7 +34,7 @@ export function SideDrawer(): JSX.Element {
                                 maxWidth: '325px',
                             }}
                         >
-                            {iconData.map((icon, index) => {
+                            {iconData.map((icon: Record<string, string>, index: string) => {
                                 return (
                                     <Flex key={index} style={{ flexDirection: 'column' }}>
                                         <SideDrawerIconContainer>
@@ -43,9 +48,9 @@ export function SideDrawer(): JSX.Element {
                     </Card>
                 </Card>
                 <Card style={{ margin: '1.5rem', padding: '2px 0 0 0' }}>
-                    <NavHeader>LinkedIn Business Services</NavHeader>
+                    <NavHeader>{services}</NavHeader>
                     <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px' }}>
-                        {sideDrawerData.map((data: any, index: any) => {
+                        {innerText.map((data: any, index: any) => {
                             return (
                                 <div key={index}>
                                     <NavSubHeader>{data.header}</NavSubHeader>
@@ -56,7 +61,7 @@ export function SideDrawer(): JSX.Element {
                     </Card>
                     <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px', padding: '0.5rem 1.5rem' }}>
                         <NavSubHeader>
-                            Create a Company Page <span style={{ fontSize: '1.5rem' }}>+</span>
+                            {createPage} <span style={{ fontSize: '1.5rem' }}>+</span>
                         </NavSubHeader>
                     </Card>
                 </Card>

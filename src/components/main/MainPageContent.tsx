@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider as BumbagProvider, Container, Divider } from 'bumbag';
+import { Provider as BumbagProvider, Container } from 'bumbag';
 import { AppPageWithHeader } from '../../theme/Theme';
 import { Theme } from '../../theme/Theme';
 import { Navbar } from '../navbar/Navbar';
@@ -17,9 +17,6 @@ export function MainPageContent(): JSX.Element {
                         <Navbar />
                     </Container>
                 }
-                overrides={{
-                    PageWithHeader: { styles: { base: { minHeight: 'unset' } } },
-                }}
             >
                 <Container>
                     <MainProfile />

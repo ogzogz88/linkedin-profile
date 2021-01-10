@@ -159,5 +159,44 @@
   "posts":"Postlar & Etkinlikler",
   "jobPosting":"İş Paylaşımı Hesabı",
   "signout":"Çıkış Yap"
+},
+"signinData":{
+  "signin":"Giriş Yap",
+  "email":"Email",
+  "password":"Parola",
+  "signinWithGoogle":"Google ile Giriş Yap",
+  "or":"Ya da",
+  "noAccount":"Bir hesabınız yok mu?",
+  "gotoSignup":"Kaydol",
+  "forgetPass":"Parolamı Unuttum",
+  "enterEmail":"Email adresinizi giriniz",
+  "enterPass":"Parolanızı giriniz"
+},
+"signupData":{
+  "signup":"Kaydol",
+  "displayNameT":"Görünen ad",
+  "nameT":"Ad",
+  "lastNameT":"Soyad",
+  "emailT":"Email",
+  "passwordT":"Parola",
+  "enterDisplayName":"Görünen adınızı giriniz ",
+  "enterName":"Adınızı giriniz",
+  "enterLastName":"Soyadınızı giriniz",
+  "enterEmail":"Email adresinizi giriniz",
+  "enterPass":"Parolanızı giriniz",
+  "alreadyAccount":"Zaten bir hesabınız mı var?",
+  "or":"Ya da",
+  "signinHere":"Buradan giriş yap",
+  "signinWithGoogle":"Google ile Giriş Yap"
+},
+"passwordResetData":{
+  "resetPass":"Parolayı Sıfırla",
+  "emailT":"Email",
+  "enterEmail":"Email adresinizi giriniz",
+  "sendReset":"Parola reset linki gönder",
+  "emailSent":"Email adresinize parola reset linki gönderilmiştir!",
+  "or":"Ya da",
+  "goBack":"Giriş Yap'a geri git",
+  "signin":"Giriş Yap"
 }
 }

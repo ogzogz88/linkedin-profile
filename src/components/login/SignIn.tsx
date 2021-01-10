@@ -3,10 +3,25 @@ import { InputField, Box, Divider, Text, FieldStack, Button } from 'bumbag';
 import { Link } from 'react-router-dom';
 import { LoginWrapper } from './LoginWrapper';
 import { signInWithGoogle, auth } from '../../firebase';
+import { useTranslation } from 'react-i18next';
 
 export function SignIn(): JSX.Element {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const { i18n } = useTranslation();
+    const signinData = i18n.t<any>('signinData', { returnObjects: true });
+    const {
+        signin,
+        email,
+        password,
+        signinWithGoogle,
+        or,
+        noAccount,
+        gotoSignup,
+        forgetPass,
+        enterEmail,
+        enterPass,
+    } = signinData;
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setUserPassword] = useState('');
     const [error, setError] = useState<any>(null);
     const signInWithEmailAndPasswordHandler = (event: any, email: any, password: any) => {
         event.preventDefault();
@@ -17,11 +32,10 @@ export function SignIn(): JSX.Element {
     };
     const onChangeHandler = (event: any) => {
         const { name, value } = event.currentTarget;
-
         if (name === 'userEmail') {
-            setEmail(value);
+            setUserEmail(value);
         } else if (name === 'userPassword') {
-            setPassword(value);
+            setUserPassword(value);
         }
     };
     return (
@@ -29,7 +43,7 @@ export function SignIn(): JSX.Element {
             <Box>
                 <Text.Block marginBottom={'1rem'} marginTop={'2rem'}>
                     <Text use="strong" fontSize={'2rem'}>
-                        Sign In
+                        {signin}
                     </Text>
                 </Text.Block>
                 <Divider margin={'1rem auto 2rem '} borderBottom={'1px solid #574feb'} />
@@ -41,18 +55,18 @@ export function SignIn(): JSX.Element {
                     )}
                     <InputField
                         type="email"
-                        label="Email"
+                        label={email}
                         name="userEmail"
                         id="userEmail"
-                        placeholder="Enter your email"
+                        placeholder={enterEmail}
                         onChange={(event: any) => onChangeHandler(event)}
                     />
                     <InputField
                         type="password"
-                        label="Password"
+                        label={password}
                         id="userPassword"
                         name="userPassword"
-                        placeholder="Enter your password"
+                        placeholder={enterPass}
                         onChange={(event: any) => onChangeHandler(event)}
                     />
                     <Button
@@ -60,23 +74,23 @@ export function SignIn(): JSX.Element {
                         width={'100%'}
                         textTransform={'uppercase'}
                         onClick={(event) => {
-                            signInWithEmailAndPasswordHandler(event, email, password);
+                            signInWithEmailAndPasswordHandler(event, userEmail, userPassword);
                         }}
                     >
-                        Sign In
+                        {signin}
                     </Button>
                     <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>Or</Text>
+                        <Text fontSize={'1rem'}>{or}</Text>
                     </Text.Block>
                     <Button variant="outlined" palette="primary" width={'100%'} onClick={signInWithGoogle}>
-                        Sign In With Google
+                        {signinWithGoogle}
                     </Button>
                     <Text.Block margin={'1rem auto'}>
-                        <Text fontSize={'1rem'}>Dont have an account?</Text>{' '}
-                        <Link to="/signUp">Go to Sign Up &rarr; </Link>
+                        <Text fontSize={'1rem'}>{noAccount}</Text>
+                        <Link to="/signUp">{gotoSignup} &rarr; </Link>
                     </Text.Block>
                     <Text.Block margin={'1rem auto'}>
-                        <Link to="/passwordReset">Forgot Password?</Link>
+                        <Link to="/passwordReset">{forgetPass}</Link>
                     </Text.Block>
                 </FieldStack>
             </Box>

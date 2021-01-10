@@ -4,8 +4,28 @@ import { Link } from 'react-router-dom';
 import { LoginWrapper } from './LoginWrapper';
 import { signInWithGoogle } from '../../firebase';
 import { auth, generateUserDocument } from '../../firebase';
+import { useTranslation } from 'react-i18next';
 
 export function SignUp(): JSX.Element {
+    const { i18n } = useTranslation();
+    const signupData = i18n.t<any>('signupData', { returnObjects: true });
+    const {
+        signup,
+        displayNameT,
+        nameT,
+        lastNameT,
+        emailT,
+        passwordT,
+        enterDisplayName,
+        enterName,
+        enterLastName,
+        enterEmail,
+        enterPass,
+        alreadyAccount,
+        or,
+        signinHere,
+        signinWithGoogle,
+    } = signupData;
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [displayName, setDisplayName] = useState('');
@@ -46,7 +66,7 @@ export function SignUp(): JSX.Element {
             <Box>
                 <Text.Block marginBottom={'1rem'} marginTop={'2rem'}>
                     <Text use="strong" fontSize={'2rem'}>
-                        Sign Up
+                        {signup}
                     </Text>
                 </Text.Block>
                 <Divider margin={'1rem auto 2rem '} borderBottom={'1px solid #574feb'} />
@@ -57,47 +77,47 @@ export function SignUp(): JSX.Element {
                         </Text.Block>
                     )}
                     <InputField
-                        label="Display name"
+                        label={displayNameT}
                         name="displayName"
                         id="displayName"
                         value={displayName}
-                        placeholder="Enter your display name"
+                        placeholder={enterDisplayName}
                         onChange={(event: any) => onChangeHandler(event)}
                     />
                     <FieldStack orientation="horizontal">
                         <InputField
-                            label="Name"
+                            label={nameT}
                             name="name"
                             id="name"
                             value={name}
-                            placeholder="Enter your  name"
+                            placeholder={enterName}
                             onChange={(event: any) => onChangeHandler(event)}
                         />
                         <InputField
-                            label="Last name"
+                            label={lastNameT}
                             name="lastName"
                             id="lastName"
                             value={lastName}
-                            placeholder="Enter your last name"
+                            placeholder={enterLastName}
                             onChange={(event: any) => onChangeHandler(event)}
                         />
                     </FieldStack>
                     <InputField
                         type="email"
-                        label="Email"
+                        label={emailT}
                         name="userEmail"
                         id="userEmail"
                         value={email}
-                        placeholder="Enter your email"
+                        placeholder={enterEmail}
                         onChange={(event: any) => onChangeHandler(event)}
                     />
                     <InputField
                         type="password"
-                        label="Password"
+                        label={passwordT}
                         name="userPassword"
                         id="userPassword"
                         value={password}
-                        placeholder="Enter your password"
+                        placeholder={enterPass}
                         onChange={(event: any) => onChangeHandler(event)}
                     />
                     <Button
@@ -108,16 +128,16 @@ export function SignUp(): JSX.Element {
                             createUserWithEmailAndPasswordHandler(event, email, password);
                         }}
                     >
-                        Sign Up
+                        {signup}
                     </Button>
                     <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>Already have an account?</Text> <Link to="/signin">Sign in here</Link>
+                        <Text fontSize={'1rem'}>{alreadyAccount}</Text> <Link to="/signin">{signinHere}</Link>
                     </Text.Block>
                     <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>Or</Text>
+                        <Text fontSize={'1rem'}>{or}</Text>
                     </Text.Block>
                     <Button variant="outlined" palette="primary" width={'100%'} onClick={signInWithGoogle}>
-                        Sign In With Google
+                        {signinWithGoogle}
                     </Button>
                 </FieldStack>
             </Box>

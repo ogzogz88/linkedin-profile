@@ -159,5 +159,44 @@
   "posts":"Posts & Activity",
   "jobPosting":"Job Posting Account",
   "signout":"Sign Out"
+},
+"signinData":{
+  "signin":"Sign In",
+  "email":"Email",
+  "password":"Paswword",
+  "signinWithGoogle":"Sign In With Google",
+  "or":"Or",
+  "noAccount":"Don't have an account?",
+  "gotoSignup":"Go to Sign Up",
+  "forgetPass":"Forget Password",
+  "enterEmail":"Enter your email",
+  "enterPass":"Enter your password"
+},
+"signupData":{
+  "signup":"Sign Up",
+  "displayNameT":"Display name",
+  "nameT":"Name",
+  "lastNameT":"Last name",
+  "emailT":"Email",
+  "passwordT":"Password",
+  "enterDisplayName":"Enter your display name",
+  "enterName":"Enter your name",
+  "enterLastName":"Enter your last name",
+  "enterEmail":"Enter your email",
+  "enterPass":"Enter your password",
+  "alreadyAccount":"Already have an account?",
+  "or":"Or",
+  "signinHere":"Sign in here",
+  "signinWithGoogle":"Sign In With Google"
+},
+"passwordResetData":{
+  "resetPass":"Reset Your Password",
+  "emailT":"Email",
+  "enterEmail":"Enter your email",
+  "sendReset":"Send me a reset link",
+  "emailSent":"An email has been sent to you!",
+  "or":"Or",
+  "goBack":"Go back to sign in",
+  "signin":"Sign in"
 }
 }

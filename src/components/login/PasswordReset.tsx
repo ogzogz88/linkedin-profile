@@ -3,8 +3,12 @@ import { InputField, Box, Divider, Text, FieldStack, Button } from 'bumbag';
 import { LoginWrapper } from './LoginWrapper';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
+import { useTranslation } from 'react-i18next';
 
 export function PasswordReset(): JSX.Element {
+    const { i18n } = useTranslation();
+    const passwordResetData = i18n.t<any>('passwordResetData', { returnObjects: true });
+    const { resetPass, emailT, enterEmail, sendReset, or, goBack, signin, emailSent } = passwordResetData;
     const [email, setEmail] = useState('');
     const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
     const [error, setError] = useState<any>(null);
@@ -32,14 +36,14 @@ export function PasswordReset(): JSX.Element {
             <Box>
                 <Text.Block marginBottom={'1rem'} marginTop={'2rem'}>
                     <Text use="strong" fontSize={'2rem'}>
-                        Reset Your Password
+                        {resetPass}
                     </Text>
                 </Text.Block>
                 <Divider margin={'1rem auto 2rem '} borderBottom={'1px solid #574feb'} />
                 <FieldStack>
                     {emailHasBeenSent && (
                         <Text.Block margin={'1rem auto'}>
-                            <Text fontSize={'1rem'}>An email has been sent to you!</Text>
+                            <Text fontSize={'1rem'}>{emailSent}</Text>
                         </Text.Block>
                     )}
                     {error !== null && (
@@ -49,11 +53,11 @@ export function PasswordReset(): JSX.Element {
                     )}
                     <InputField
                         type="email"
-                        label="Email"
+                        label={emailT}
                         name="userEmail"
                         id="userEmail"
                         value={email}
-                        placeholder="Enter your email"
+                        placeholder={enterEmail}
                         onChange={(event: any) => onChangeHandler(event)}
                     />
                     <Button
@@ -62,13 +66,13 @@ export function PasswordReset(): JSX.Element {
                         textTransform={'uppercase'}
                         onClick={(event) => sendResetEmail(event)}
                     >
-                        Send me a reset link
+                        {sendReset}
                     </Button>
                     <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>Or</Text>
+                        <Text fontSize={'1rem'}>{or}</Text>
                     </Text.Block>
                     <Text.Block margin={'1rem auto'}>
-                        <Text fontSize={'1rem'}>Go Back to Sign In?</Text> <Link to="/signin"> &larr; Sign In</Link>
+                        <Text fontSize={'1rem'}>{goBack}</Text> <Link to="/signin"> &larr; {signin}</Link>
                     </Text.Block>
                 </FieldStack>
             </Box>

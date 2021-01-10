@@ -166,7 +166,7 @@
   "password":"Parola",
   "signinWithGoogle":"Google ile Giriş Yap",
   "or":"Ya da",
-  "noAccount":"Bir hesabınız yok mu?",
+  "noAccount":"Bir hesabınız yok mu?  ",
   "gotoSignup":"Kaydol",
   "forgetPass":"Parolamı Unuttum",
   "enterEmail":"Email adresinizi giriniz",
@@ -261,6 +261,43 @@
         "text": "Maaş"
     }
 ]
+},
+"modalIntroData":{
+"title":"Girişi düzenle"
+},
+"modalAboutData":{
+  "title":"Hakkında kısmını düzenle"
+},
+"modalImageData":{
+  "title":"Fotoğrafı düzenle"
+},
+"modalIntroFormData":{
+  "nameT":"Adınız",
+  "lastNameT":"Soyadınız",
+  "headlineT":"Başlık",
+  "companyT":"Şirket adı",
+  "educationT":"Eğitim",
+  "countryT":"Ülke",
+  "locationT":"Şehir",
+  "industryT":"Alan",
+  "successMsgT":"Giriş bilgilerinizi güncellediniz.",
+  "errorMsgT":"Giriş bilgileri güncellenemedi, lütfen tekrar deneyiniz.",
+  "btnSaveT":"Kaydet",
+  "btnCloseT":"Çıkış"
+},
+"modalAboutFormData":{
+  "summaryT":"Özet",
+  "successMsgT":"Hakkında bilgilerinizi güncellediniz.",
+  "errorMsgT":"Hakkında bilgileri güncellenemedi, lütfen tekrar deneyiniz.",
+  "btnSaveT":"Kaydet",
+  "btnCloseT":"Çıkış"
+},
+"modalImageFormData":{
+  "photoT":"Fotoğrafınız",
+  "successMsgT":"Fotoğrafınızı güncellediniz.",
+  "errorMsgT":"Fotoğraf güncellenemiyor, lütfen tekrar deneyiniz.",
+  "btnSaveT":"Kaydet",
+  "btnCloseT":"Çıkış"
 }
   
 }

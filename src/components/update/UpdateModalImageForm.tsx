@@ -5,6 +5,7 @@ import { auth, updateImageData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 import { storage } from '../../firebase';
 import { UpdateMessage } from './UpdateMessage';
+import { useTranslation } from 'react-i18next';
 
 export const ModalCloseButton = applyTheme(Button, {
     styles: {
@@ -19,6 +20,9 @@ interface Values {
     photoURL: string;
 }
 export function UpdateModalImageForm(): JSX.Element {
+    const { i18n } = useTranslation();
+    const modalImageFormData = i18n.t<any>('modalImageFormData', { returnObjects: true });
+    const { photoT, successMsgT, errorMsgT, btnSaveT, btnCloseT } = modalImageFormData;
     const [fileUrl, setFileUrl] = useState(null);
     const { setUser } = useContext(UserContext);
     const [updateMessage, setUpdateMessage] = useState('notSent');
@@ -39,7 +43,7 @@ export function UpdateModalImageForm(): JSX.Element {
             user = await updateImageData(user, { photoURL: fileUrl });
             setUser(user);
         } catch (Error) {
-            console.log('Error updating intro data');
+            console.log('Error updating photo data');
         }
     };
     return (
@@ -61,17 +65,17 @@ export function UpdateModalImageForm(): JSX.Element {
                         <Field
                             component={InputField.Formik}
                             name="photoURL"
-                            label="Photo"
+                            label={photoT}
                             type={'file'}
                             onChange={onFileChange}
                         />
                         {updateMessage === 'isSent' ? (
                             <UpdateMessage title="Success" type="success">
-                                You updated your photo.
+                                {successMsgT}{' '}
                             </UpdateMessage>
                         ) : updateMessage === 'notSent' ? null : (
                             <UpdateMessage title="An error occurred" type="danger">
-                                Unable to update photo, please try again later.
+                                {errorMsgT}{' '}
                             </UpdateMessage>
                         )}
                         <Flex justifyContent={'flex-end'} marginTop={'1.5rem '}>
@@ -83,9 +87,9 @@ export function UpdateModalImageForm(): JSX.Element {
                                 margin={'0 0.5rem'}
                                 type="submit"
                             >
-                                Save
+                                {btnSaveT}
                             </Button>
-                            <Modal.Disclosure use={ModalCloseButton}>Close</Modal.Disclosure>
+                            <Modal.Disclosure use={ModalCloseButton}>{btnCloseT}</Modal.Disclosure>
                         </Flex>
                     </FieldStack>
                 </Form>

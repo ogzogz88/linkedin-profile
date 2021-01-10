@@ -15,7 +15,7 @@ export function Footer(): JSX.Element {
     };
     const langData = [
         { key: 'en', name: 'English' },
-        { key: 'tr', name: 'Turkish' },
+        { key: 'tr', name: 'Türkçe' },
     ];
     const localLng: any = localStorage.getItem('i18nextLng');
     const initialLang = localLng ? localLng : 'en';

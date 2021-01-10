@@ -5,6 +5,7 @@ import { auth, updateUserData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 import { UpdateMessage } from './UpdateMessage';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 
 export const ModalCloseButton = applyTheme(Button, {
     styles: {
@@ -26,6 +27,9 @@ const UpdateModalAboutSchema = Yup.object().shape({
         .required('Required'),
 });
 export function UpdateModalAboutForm(): JSX.Element {
+    const { i18n } = useTranslation();
+    const modalAboutFormData = i18n.t<any>('modalAboutFormData', { returnObjects: true });
+    const { summaryT, btnSaveT, btnCloseT } = modalAboutFormData;
     const { setUser } = useContext(UserContext);
     const [updateMessage, setUpdateMessage] = useState('notSent');
     const initialValues: Values = {
@@ -57,14 +61,14 @@ export function UpdateModalAboutForm(): JSX.Element {
             {({ isSubmitting, handleSubmit }) => (
                 <Form onSubmit={handleSubmit}>
                     <FieldStack>
-                        <Field component={TextareaField.Formik} name="about" label="Summary" minHeight={'7rem'} />
+                        <Field component={TextareaField.Formik} name="about" label={summaryT} minHeight={'7rem'} />
                         {updateMessage === 'isSent' ? (
                             <UpdateMessage title="Success" type="success">
-                                You updated your Intro Info.
+                                You updated your About Info.
                             </UpdateMessage>
                         ) : updateMessage === 'notSent' ? null : (
                             <UpdateMessage title="An error occurred" type="danger">
-                                Unable to update Intro info, please try again later.
+                                Unable to update About info, please try again later.
                             </UpdateMessage>
                         )}
                         <Flex justifyContent={'flex-end'} marginTop={'1.5rem '}>
@@ -76,9 +80,9 @@ export function UpdateModalAboutForm(): JSX.Element {
                                 margin={'0 0.5rem'}
                                 type="submit"
                             >
-                                Save
+                                {btnSaveT}
                             </Button>
-                            <Modal.Disclosure use={ModalCloseButton}>Close</Modal.Disclosure>
+                            <Modal.Disclosure use={ModalCloseButton}>{btnCloseT}</Modal.Disclosure>
                         </Flex>
                     </FieldStack>
                 </Form>

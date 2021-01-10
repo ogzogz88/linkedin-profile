@@ -166,7 +166,7 @@
   "password":"Paswword",
   "signinWithGoogle":"Sign In With Google",
   "or":"Or",
-  "noAccount":"Don't have an account?",
+  "noAccount":"Don't have an account?  ",
   "gotoSignup":"Go to Sign Up",
   "forgetPass":"Forget Password",
   "enterEmail":"Enter your email",
@@ -262,5 +262,42 @@
     }
 ]
   
+},
+"modalIntroData":{
+"title":"Edit intro"
+},
+"modalAboutData":{
+  "title":"Edit about"
+},
+"modalImageData":{
+  "title":"Edit Image"
+},
+"modalIntroFormData":{
+  "nameT":"First name",
+  "lastNameT":"Last name",
+  "headlineT":"Headline",
+  "companyT":"Company",
+  "educationT":"Education",
+  "countryT":"Country",
+  "locationT":"Location",
+  "industryT":"Alan",
+  "successMsgT":"You updated your Intro Info.",
+  "errorMsgT":"Unable to update Intro info, please try again later.",
+  "btnSaveT":"Save",
+  "btnCloseT":"Close"
+},
+"modalAboutFormData":{
+  "summaryT":"Summary",
+  "successMsgT":"You updated your About Info.",
+  "errorMsgT":"Unable to update About info, please try again later.",
+  "btnSaveT":"Save",
+  "btnCloseT":"Close"
+},
+"modalImageFormData":{
+  "photoT":"Your photo",
+  "successMsgT":"You updated your photo.",
+  "errorMsgT":"Unable to update photo, please try again later.",
+  "btnSaveT":"Save",
+  "btnCloseT":"Close"
 }
 }

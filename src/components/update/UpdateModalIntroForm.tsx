@@ -7,6 +7,7 @@ import { auth, updateUserData } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 import { UpdateMessage } from './UpdateMessage';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 
 const ModalButton = applyTheme(Button, {
     styles: {
@@ -63,6 +64,22 @@ const UpdateModalIntroSchema = Yup.object().shape({
 
 // eslint-disable-next-line react/prop-types
 export const UpdateModalIntroForm: React.FC = () => {
+    const { i18n } = useTranslation();
+    const modalIntroFormData = i18n.t<any>('modalIntroFormData', { returnObjects: true });
+    const {
+        nameT,
+        lastNameT,
+        headlineT,
+        companyT,
+        educationT,
+        countryT,
+        locationT,
+        industryT,
+        successMsgT,
+        errorMsgT,
+        btnSaveT,
+        btnCloseT,
+    } = modalIntroFormData;
     const { user } = useContext(UserContext);
     const { photoURL } = user;
     const { setUser } = useContext(UserContext);
@@ -127,22 +144,22 @@ export const UpdateModalIntroForm: React.FC = () => {
                             </MainPageIconContainerSec>
                         </Card>
                         <FieldStack orientation="horizontal">
-                            <Field component={InputField.Formik} name="name" label="First name" isRequired />
-                            <Field component={InputField.Formik} name="lastName" label="Last name" isRequired />
+                            <Field component={InputField.Formik} name="name" label={nameT} isRequired />
+                            <Field component={InputField.Formik} name="lastName" label={lastNameT} isRequired />
                         </FieldStack>
-                        <Field component={InputField.Formik} name="headline" label="Headline" isRequired />
-                        <Field component={InputField.Formik} name="company" label="Company" />
-                        <Field component={InputField.Formik} name="education" label="Education" />
-                        <Field component={InputField.Formik} name="country" label="Country" isRequired />
-                        <Field component={InputField.Formik} name="location" label="Location" />
-                        <Field component={InputField.Formik} name="industry" label="Industry" isRequired />
+                        <Field component={InputField.Formik} name="headline" label={headlineT} isRequired />
+                        <Field component={InputField.Formik} name="company" label={companyT} />
+                        <Field component={InputField.Formik} name="education" label={educationT} />
+                        <Field component={InputField.Formik} name="country" label={countryT} isRequired />
+                        <Field component={InputField.Formik} name="location" label={locationT} />
+                        <Field component={InputField.Formik} name="industry" label={industryT} isRequired />
                         {updateMessage === 'isSent' ? (
                             <UpdateMessage title="Success" type="success">
-                                You updated your About Info.
+                                {successMsgT}
                             </UpdateMessage>
                         ) : updateMessage === 'notSent' ? null : (
                             <UpdateMessage title="An error occurred" type="danger">
-                                Unable to update About info, please try again later.
+                                {errorMsgT}
                             </UpdateMessage>
                         )}
                         <Flex justifyContent={'flex-end'} marginTop={'1.5rem '}>
@@ -154,9 +171,9 @@ export const UpdateModalIntroForm: React.FC = () => {
                                 margin={'0 0.5rem'}
                                 type="submit"
                             >
-                                Save
+                                {btnSaveT}
                             </Button>
-                            <Modal.Disclosure use={ModalButton}>Close</Modal.Disclosure>
+                            <Modal.Disclosure use={ModalButton}>{btnCloseT}</Modal.Disclosure>
                         </Flex>
                     </FieldStack>
                 </Form>

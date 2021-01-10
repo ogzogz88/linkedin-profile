@@ -87,7 +87,7 @@ export function SignIn(): JSX.Element {
                     </Button>
                     <Text.Block margin={'1rem auto'}>
                         <Text fontSize={'1rem'}>{noAccount}</Text>
-                        <Link to="/signUp">{gotoSignup} &rarr; </Link>
+                        <Link to="/signUp"> {gotoSignup} &rarr; </Link>
                     </Text.Block>
                     <Text.Block margin={'1rem auto'}>
                         <Link to="/passwordReset">{forgetPass}</Link>

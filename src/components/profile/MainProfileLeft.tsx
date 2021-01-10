@@ -64,8 +64,6 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                     </MainPageIconContainerSec>
                 </ProfileEditLink>
             </Card>
-            {/* translation example */}
-            <Translation />
         </>
     );
 }

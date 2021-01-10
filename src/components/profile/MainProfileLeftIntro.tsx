@@ -71,7 +71,7 @@ export const MainProfileLeftIntro: React.FC<LeftIntro> = ({
             </Columns.Column>
             {/* company and education at intro */}
             <Columns.Column spread={4}>
-                <Flex flexDirection="column">
+                <Flex flexDirection="column" paddingRight="0.5rem">
                     <Flex style={{ alignItems: 'center' }}>
                         <MainPageIconContainer
                             style={{

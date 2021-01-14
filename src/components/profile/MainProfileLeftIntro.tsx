@@ -55,10 +55,10 @@ export const MainProfileLeftIntro: React.FC<LeftIntro> = ({
         nameLastName = displayName;
     }
     return (
-        <Columns style={{ marginTop: '0.25rem', paddingBottom: '1rem' }}>
+        <Columns marginTop="0.25rem" paddingBottom="1rem">
             <Columns.Column spread={8}>
                 <Flex flexDirection="column" marginLeft="1.5rem">
-                    <ProfileTextLg textTransform={'capitalize'}>
+                    <ProfileTextLg textTransform="capitalize">
                         {nameLastName ? nameLastName : `${userName} ${userLastName}`}
                     </ProfileTextLg>
                     <ProfileTextSm>{email ? email : userEmail}</ProfileTextSm>
@@ -72,30 +72,20 @@ export const MainProfileLeftIntro: React.FC<LeftIntro> = ({
             {/* company and education at intro */}
             <Columns.Column spread={4}>
                 <Flex flexDirection="column" paddingRight="0.5rem">
-                    <Flex style={{ alignItems: 'center' }}>
+                    <Flex alignItems="center">
                         <MainPageIconContainer
-                            style={{
-                                marginRight: '0.6rem',
-                                marginBottom: '0.6rem',
-                                borderRadius: '0%',
-                                background: '#eee',
-                            }}
+                            marginRight="0.6rem"
+                            marginBottom="0.6rem"
+                            borderRadius="0%"
+                            background="#eee"
                         >
-                            <MainPageIcon
-                                style={{ width: '2rem', height: '2rem' }}
-                                src="../../assets/icons/company-icon.png"
-                            />
+                            <MainPageIcon width="2rem" height="2rem" src="../../assets/icons/company-icon.png" />
                         </MainPageIconContainer>
                         <ProfileTextXs fontWeight="bold">{company ? company : userCompany} </ProfileTextXs>
                     </Flex>
-                    <Flex style={{ alignItems: 'center' }}>
-                        <MainPageIconContainer
-                            style={{ marginRight: '0.6rem', borderRadius: '0%', background: '#eee' }}
-                        >
-                            <MainPageIcon
-                                style={{ width: '2rem', height: '2rem' }}
-                                src="../../assets/icons/education-icon.png"
-                            />
+                    <Flex alignItems="center">
+                        <MainPageIconContainer marginRight="0.6rem" borderRadius="0%" background="#eee">
+                            <MainPageIcon width="2rem" height="2rem" src="../../assets/icons/education-icon.png" />
                         </MainPageIconContainer>
                         <ProfileTextXs fontWeight="bold">{education ? education : userEducation} </ProfileTextXs>
                     </Flex>

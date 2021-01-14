@@ -34,21 +34,21 @@ export function PasswordReset(): JSX.Element {
     return (
         <LoginWrapper>
             <Box>
-                <Text.Block marginBottom={'1rem'} marginTop={'2rem'}>
-                    <Text use="strong" fontSize={'2rem'}>
+                <Text.Block marginBottom="1rem" marginTop="2rem">
+                    <Text use="strong" fontSize="2rem">
                         {resetPass}
                     </Text>
                 </Text.Block>
-                <Divider margin={'1rem auto 2rem '} borderBottom={'1px solid #574feb'} />
+                <Divider margin="1rem auto 2rem " borderBottom="1px solid #574feb" />
                 <FieldStack>
                     {emailHasBeenSent && (
-                        <Text.Block margin={'1rem auto'}>
-                            <Text fontSize={'1rem'}>{emailSent}</Text>
+                        <Text.Block margin="1rem auto">
+                            <Text fontSize="1rem">{emailSent}</Text>
                         </Text.Block>
                     )}
                     {error !== null && (
-                        <Text.Block margin={'1rem auto'}>
-                            <Text fontSize={'1rem'}>{error}</Text>
+                        <Text.Block margin="1rem auto">
+                            <Text fontSize="1rem">{error}</Text>
                         </Text.Block>
                     )}
                     <InputField
@@ -62,17 +62,17 @@ export function PasswordReset(): JSX.Element {
                     />
                     <Button
                         palette="primary"
-                        width={'100%'}
-                        textTransform={'uppercase'}
+                        width="100%"
+                        textTransform="uppercase"
                         onClick={(event) => sendResetEmail(event)}
                     >
                         {sendReset}
                     </Button>
-                    <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>{or}</Text>
+                    <Text.Block margin="1rem auto" textAlign="center">
+                        <Text fontSize="1rem">{or}</Text>
                     </Text.Block>
-                    <Text.Block margin={'1rem auto'}>
-                        <Text fontSize={'1rem'}>{goBack}</Text> <Link to="/signin"> &larr; {signin}</Link>
+                    <Text.Block margin="1rem auto">
+                        <Text fontSize="1rem">{goBack}</Text> <Link to="/signin"> &larr; {signin}</Link>
                     </Text.Block>
                 </FieldStack>
             </Box>

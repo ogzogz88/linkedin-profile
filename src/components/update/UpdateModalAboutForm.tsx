@@ -61,7 +61,7 @@ export function UpdateModalAboutForm(): JSX.Element {
             {({ isSubmitting, handleSubmit }) => (
                 <Form onSubmit={handleSubmit}>
                     <FieldStack>
-                        <Field component={TextareaField.Formik} name="about" label={summaryT} minHeight={'7rem'} />
+                        <Field component={TextareaField.Formik} name="about" label={summaryT} minHeight="7rem" />
                         {updateMessage === 'isSent' ? (
                             <UpdateMessage title="Success" type="success">
                                 You updated your About Info.
@@ -71,13 +71,13 @@ export function UpdateModalAboutForm(): JSX.Element {
                                 Unable to update About info, please try again later.
                             </UpdateMessage>
                         )}
-                        <Flex justifyContent={'flex-end'} marginTop={'1.5rem '}>
+                        <Flex justifyContent={'flex-end'} marginTop="1.5rem ">
                             <Button
                                 disabled={isSubmitting}
                                 palette="primary"
-                                borderRadius={'2rem'}
-                                padding={'0 2rem'}
-                                margin={'0 0.5rem'}
+                                borderRadius="2rem"
+                                padding="0 2rem"
+                                margin="0 0.5rem"
                                 type="submit"
                             >
                                 {btnSaveT}

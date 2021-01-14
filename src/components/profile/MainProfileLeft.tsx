@@ -1,17 +1,10 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Flex, Card } from 'bumbag';
-import {
-    ProfileEditLink,
-    ProfileTextMd,
-    ProfileTextXs,
-    MainPageIconContainerSec,
-} from './MainProfileLeftElements';
+import { ProfileEditLink, ProfileTextMd, ProfileTextXs, MainPageIconContainerSec } from './MainProfileLeftElements';
 import { UpdateModalAbout } from '../update/UpdateModalAbout';
-import { MainProfileLeftImg } from './MainProfileLeftImg'
+import { MainProfileLeftImg } from './MainProfileLeftImg';
 import { MainProfileLeftIntro } from './MainProfileLeftIntro';
 import { useTranslation } from 'react-i18next';
-
 
 export function MainProfileLeft({ user }: any): JSX.Element {
     const { i18n } = useTranslation();
@@ -35,7 +28,7 @@ export function MainProfileLeft({ user }: any): JSX.Element {
     return (
         <>
             {/* Intro Card  */}
-            <Card style={{ padding: 0, borderRadius: '0.5rem', position: 'relative' }}>
+            <Card padding="0" borderRadius="0.5rem" position="relative">
                 <MainProfileLeftImg photoURL={photoURL} profileTxt={profile} moreTxt={more} />
                 <MainProfileLeftIntro
                     name={name}
@@ -47,18 +40,19 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                     education={education}
                     country={country}
                     location={location}
-                    industry={industry} />
+                    industry={industry}
+                />
             </Card>
             {/* About Card  */}
-            <Card style={{ marginTop: '2rem', position: 'relative' }}>
+            <Card marginTop="2rem" position="relative">
                 <Flex>
                     <Flex flexDirection="column">
                         <ProfileTextMd marginBottom="1rem">{mainProfileLeftData[0].about.title}</ProfileTextMd>
                         <ProfileTextXs>{about ? about : mainProfileLeftData[0].about.text}</ProfileTextXs>
                     </Flex>
                 </Flex>
-                <ProfileEditLink style={{ position: 'absolute', right: '1rem', top: '1rem' }}>
-                    <MainPageIconContainerSec margin={'0px'}>
+                <ProfileEditLink position="absolute" right="1rem" top="1rem">
+                    <MainPageIconContainerSec margin="0">
                         <UpdateModalAbout />
                     </MainPageIconContainerSec>
                 </ProfileEditLink>

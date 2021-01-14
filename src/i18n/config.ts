@@ -52,7 +52,7 @@ i18n.use(Backend)
                 // },
             ],
         },
-        debug: true,
+        debug: false,
         detection: {
             order: ['localStorage', 'navigator'],
             caches: ['localStorage'],

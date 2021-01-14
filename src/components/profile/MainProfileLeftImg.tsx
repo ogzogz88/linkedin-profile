@@ -20,7 +20,7 @@ export const MainProfileLeftImg: React.FC<leftImg> = ({ profileTxt, moreTxt, pho
         <>
             <BackgroundImg src="../../assets/photos/profile-bg.jpg" />
             <ProfileImg src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'} />
-            <Set style={{ justifyContent: 'flex-end', marginTop: '0.3rem' }}>
+            <Set justifyContent="flex-end" marginTop="0.3rem">
                 <AddButton size="small" palette="primary">
                     {profileTxt}
                 </AddButton>

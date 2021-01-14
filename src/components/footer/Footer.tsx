@@ -26,67 +26,61 @@ export function Footer(): JSX.Element {
         i18n.changeLanguage(lang);
     };
     return (
-        <Columns margin={'1rem 2rem 0'} paddingBottom={'2rem'}>
-            <Columns.Column spread={12} padding={'0'} marginBottom={'0.5rem'}>
+        <Columns margin="1rem 2rem 0" paddingBottom="2rem">
+            <Columns.Column spread={12} padding="0" marginBottom="0.5rem">
                 <Flex>
-                    <Image style={{ width: '80px' }} src={logoSrc} />
+                    <Image width="80px" src={logoSrc} />
                 </Flex>
             </Columns.Column>
-            <Columns.Column spread={6} padding={'0'}>
-                <Flex flexWrap={'wrap'}>
+            <Columns.Column spread={6} padding="0">
+                <Flex flexWrap="wrap">
                     {links.map((link: any, index: any) => {
                         return (
-                            <Box style={{ width: '170px', margin: '0.2rem 0' }} key={index}>
-                                <FooterLinkSm>{link}</FooterLinkSm>
+                            <Box width="170px" margin="0.2rem 0" key={index}>
+                                <FooterLinkSm key={index}>{link}</FooterLinkSm>
                             </Box>
                         );
                     })}
                 </Flex>
             </Columns.Column>
-            <Columns.Column spread={3} padding={'0'}>
+            <Columns.Column spread={3} padding="0">
                 {specialLinks.map((link: any, index: any) => {
                     return (
-                        <Flex key={index} marginBottom={'0.8rem'}>
+                        <Flex key={index} marginBottom="0.8rem">
                             <NavIcon
                                 aria-label="Footer navlcon"
                                 icon={`solid-${link.navIcon}`}
-                                fontSize={'1.2rem'}
-                                marginRight={'0.3rem'}
+                                fontSize="1.2rem"
+                                marginRight="0.3rem"
+                                key={index}
                             />
-                            <Flex flexDirection={'column'}>
+                            <Flex flexDirection="column" key={index + 1}>
                                 <FooterLinkMd>{link.title}</FooterLinkMd>
-                                <FooterLinkSm fontWeight={'300'}>{link.text}</FooterLinkSm>
+                                <FooterLinkSm fontWeight="300">{link.text}</FooterLinkSm>
                             </Flex>
                         </Flex>
                     );
                 })}
             </Columns.Column>
-            <Columns.Column spread={3} padding={'0'}>
+            <Columns.Column spread={3} padding="0">
                 <Box>
                     <DropdownMenu
                         menu={
                             <React.Fragment>
                                 {langData.map((language, index) => {
                                     return (
-                                        <>
-                                            <LangItem
-                                                language={language}
-                                                chosenLang={lang}
-                                                key={index}
-                                                handleClick={(event) => handleClick(event)}
-                                            />
-                                        </>
+                                        <LangItem
+                                            language={language}
+                                            chosenLang={lang}
+                                            key={index}
+                                            handleClick={(event) => handleClick(event)}
+                                        />
                                     );
                                 })}
                             </React.Fragment>
                         }
                     >
-                        <Button
-                            iconAfter="solid-sort-down"
-                            size="small"
-                            width={'100%'}
-                            justifyContent={'space-between'}
-                        >
+                        <Button iconAfter="solid-sort-down" size="small" width="100%" justifyContent="space-between">
                             {languages[lang]}
                         </Button>
                     </DropdownMenu>

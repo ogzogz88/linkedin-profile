@@ -140,11 +140,6 @@ export const ProfileImage = applyTheme(Image, {
     },
 });
 export const CardToolTip = applyTheme(Tooltip, {
-    styles: {
-        base: {
-            fontSize: '0.8rem',
-        },
-    },
     Content: {
         styles: {
             base: {

@@ -41,16 +41,16 @@ export function SignIn(): JSX.Element {
     return (
         <LoginWrapper>
             <Box>
-                <Text.Block marginBottom={'1rem'} marginTop={'2rem'}>
-                    <Text use="strong" fontSize={'2rem'}>
+                <Text.Block marginBottom="1rem" marginTop="2rem">
+                    <Text use="strong" fontSize="2rem">
                         {signin}
                     </Text>
                 </Text.Block>
-                <Divider margin={'1rem auto 2rem '} borderBottom={'1px solid #574feb'} />
+                <Divider margin="1rem auto 2rem " borderBottom="1px solid #574feb" />
                 <FieldStack>
                     {error !== null && (
-                        <Text.Block margin={'1rem auto'}>
-                            <Text fontSize={'1rem'}>{error}</Text>
+                        <Text.Block margin="1rem auto">
+                            <Text fontSize="1rem">{error}</Text>
                         </Text.Block>
                     )}
                     <InputField
@@ -71,25 +71,25 @@ export function SignIn(): JSX.Element {
                     />
                     <Button
                         palette="primary"
-                        width={'100%'}
-                        textTransform={'uppercase'}
+                        width="100%"
+                        textTransform="uppercase"
                         onClick={(event) => {
                             signInWithEmailAndPasswordHandler(event, userEmail, userPassword);
                         }}
                     >
                         {signin}
                     </Button>
-                    <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>{or}</Text>
+                    <Text.Block margin="1rem auto" textAlign={'center'}>
+                        <Text fontSize="1rem">{or}</Text>
                     </Text.Block>
-                    <Button variant="outlined" palette="primary" width={'100%'} onClick={signInWithGoogle}>
+                    <Button variant="outlined" palette="primary" width="100%" onClick={signInWithGoogle}>
                         {signinWithGoogle}
                     </Button>
-                    <Text.Block margin={'1rem auto'}>
-                        <Text fontSize={'1rem'}>{noAccount}</Text>
+                    <Text.Block margin="1rem auto">
+                        <Text fontSize="1rem">{noAccount}</Text>
                         <Link to="/signUp"> {gotoSignup} &rarr; </Link>
                     </Text.Block>
-                    <Text.Block margin={'1rem auto'}>
+                    <Text.Block margin="1rem auto">
                         <Link to="/passwordReset">{forgetPass}</Link>
                     </Text.Block>
                 </FieldStack>

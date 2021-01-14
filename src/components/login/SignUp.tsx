@@ -49,6 +49,7 @@ export function SignUp(): JSX.Element {
     };
     const onChangeHandler = (event: any) => {
         const { name, value } = event.currentTarget;
+
         if (name === 'userEmail') {
             setEmail(value);
         } else if (name === 'userPassword') {
@@ -64,16 +65,16 @@ export function SignUp(): JSX.Element {
     return (
         <LoginWrapper>
             <Box>
-                <Text.Block marginBottom={'1rem'} marginTop={'2rem'}>
-                    <Text use="strong" fontSize={'2rem'}>
+                <Text.Block marginBottom="1rem" marginTop="2rem">
+                    <Text use="strong" fontSize="2rem">
                         {signup}
                     </Text>
                 </Text.Block>
-                <Divider margin={'1rem auto 2rem '} borderBottom={'1px solid #574feb'} />
+                <Divider margin="1rem auto 2rem " borderBottom="1px solid #574feb" />
                 <FieldStack>
                     {error !== null && (
-                        <Text.Block margin={'1rem auto'}>
-                            <Text fontSize={'1rem'}>{error}</Text>
+                        <Text.Block margin="1rem auto">
+                            <Text fontSize="1rem">{error}</Text>
                         </Text.Block>
                     )}
                     <InputField
@@ -122,21 +123,21 @@ export function SignUp(): JSX.Element {
                     />
                     <Button
                         palette="primary"
-                        width={'100%'}
-                        textTransform={'uppercase'}
+                        width="100%"
+                        textTransform="uppercase"
                         onClick={(event) => {
                             createUserWithEmailAndPasswordHandler(event, email, password);
                         }}
                     >
                         {signup}
                     </Button>
-                    <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>{alreadyAccount}</Text> <Link to="/signin">{signinHere}</Link>
+                    <Text.Block margin="1rem auto" textAlign="center">
+                        <Text fontSize="1rem">{alreadyAccount}</Text> <Link to="/signin">{signinHere}</Link>
                     </Text.Block>
-                    <Text.Block margin={'1rem auto'} textAlign={'center'}>
-                        <Text fontSize={'1rem'}>{or}</Text>
+                    <Text.Block margin="1rem auto" textAlign="center">
+                        <Text fontSize="1rem">{or}</Text>
                     </Text.Block>
-                    <Button variant="outlined" palette="primary" width={'100%'} onClick={signInWithGoogle}>
+                    <Button variant="outlined" palette="primary" width="100%" onClick={signInWithGoogle}>
                         {signinWithGoogle}
                     </Button>
                 </FieldStack>

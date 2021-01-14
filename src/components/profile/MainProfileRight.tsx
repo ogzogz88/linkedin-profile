@@ -21,26 +21,26 @@ export function MainProfileRight(): JSX.Element {
     const { textCard } = mainProfileRightData[0];
     const { alsoViewed } = mainProfileRightData[1];
     return (
-        <>
+        <React.Fragment>
             {/* Info card with two text/link */}
-            <Card marginBottom={'1.5rem'}>
-                <Flex flexDirection={'column'}>
+            <Card marginBottom="1.5rem">
+                <Flex flexDirection="column">
                     {textCard?.map((item: any, index: any) => {
                         return (
-                            <>
-                                <Flex key={index.toString()} justifyContent={'space-between'}>
+                            <React.Fragment key={index}>
+                                <Flex key={index.toString()} justifyContent="space-between">
                                     <ProfileTextSm>{item.text}</ProfileTextSm>
                                     <CardToolTip
-                                        style={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            cursor: 'pointer',
-                                            alignItems: 'center',
-                                            background: '#666666',
-                                            borderRadius: '50%',
-                                            width: '1rem',
-                                            height: '1rem',
-                                        }}
+                                        // styles base did not work, so gave styling here
+                                        display="flex"
+                                        justifyContent="center"
+                                        cursor="pointer"
+                                        alignItems="center"
+                                        background="#666666"
+                                        fontSize="0.8rem"
+                                        borderRadius="50%"
+                                        width="1rem"
+                                        height="1rem"
                                         content={item.tooltip}
                                         placement="bottom"
                                         fade
@@ -48,44 +48,44 @@ export function MainProfileRight(): JSX.Element {
                                         <ProfileTextXs color="#fff">?</ProfileTextXs>
                                     </CardToolTip>
                                 </Flex>
-                                {index === 0 && <Divider margin={'1rem 0'} />}
-                            </>
+                                {index === 0 && <Divider margin="1rem 0" />}
+                            </React.Fragment>
                         );
                     })}
                 </Flex>
             </Card>
             {/* advertisement card with image background */}
-            <BackgroundImgContainer marginBottom={'24px'}>
+            <BackgroundImgContainer marginBottom="24px">
                 <BackgroundImg src="../../assets/photos/see-jobs.jpg" />
             </BackgroundImgContainer>
             {/* people also viewed card */}
             <Card>
-                <Box marginBottom={'1rem'}>
+                <Box marginBottom="1rem">
                     <ProfileTextMd>{alsoViewed?.title}</ProfileTextMd>
                 </Box>
                 {alsoViewed?.data.map((item: any, index: any) => {
                     return (
-                        <Flex key={index} justifyContent={'flex-start'} marginTop={'0.7rem'}>
-                            <ProfileImage src={item.imgSrc} alt="Also viewed profile image" alignSelf={'top'} />
+                        <Flex key={index} justifyContent="flex-start" marginTop="0.7rem">
+                            <ProfileImage src={item.imgSrc} alt="Also viewed profile image" alignSelf="top" />
                             <AlsoViewedTextContainer>
-                                <Flex flexDirection={'column'}>
+                                <Flex flexDirection="column">
                                     <ProfileTextSm>{item.name}</ProfileTextSm>
                                     <List
                                         listStyleType="disc"
                                         listStylePosition="inside"
-                                        fontWeight={'300'}
-                                        fontSize={'0.8rem'}
+                                        fontWeight="300"
+                                        fontSize="0.8rem"
                                     >
-                                        <List.Item fontSize={'0.5rem'}>
+                                        <List.Item fontSize="0.5rem">
                                             <ProfileTextSm fontWeight={300} marginLeft="-4px">
                                                 {item.order}
                                             </ProfileTextSm>
                                         </List.Item>
                                     </List>
-                                    <ProfileTextSm fontWeight={'400'}>{item.headline}</ProfileTextSm>
+                                    <ProfileTextSm fontWeight="400">{item.headline}</ProfileTextSm>
                                 </Flex>
                                 <IconContainer>
-                                    <NavIcon aria-label="Navlcon" icon={'solid-user'} />
+                                    <NavIcon aria-label="Navlcon" icon="solid-user" />
                                     <ProfileTextSm>+</ProfileTextSm>
                                 </IconContainer>
                             </AlsoViewedTextContainer>
@@ -93,6 +93,6 @@ export function MainProfileRight(): JSX.Element {
                     );
                 })}
             </Card>
-        </>
+        </React.Fragment>
     );
 }

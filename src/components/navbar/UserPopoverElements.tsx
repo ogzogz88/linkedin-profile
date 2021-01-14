@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React, { useContext } from 'react';
 import { Text, Box, Popover, Link, Divider, Flex, Button, Stack, Set, Image, applyTheme } from 'bumbag';
 import { NavIcon } from '../../theme/Theme';
@@ -90,6 +89,7 @@ export const CustomPopover = applyTheme(Popover, {
             ':active': {
                 color: '#545454',
             },
+            cursor: 'default',
         },
     },
     modes: {
@@ -105,23 +105,10 @@ export const PopoverContent: React.FC = () => {
     const { photoURL, name, lastName, displayName, headline }: any = user;
     const { i18n } = useTranslation();
     const mainProfileLeftData = i18n.t<any>('mainProfileLeftData', { returnObjects: true });
-    const userPopoverData = i18n.t<any>('userPopoverData', { returnObjects: true })
-    const {
-        userName,
-        userLastName,
-        userHeadline
-    } = mainProfileLeftData[0].basic;
-    const {
-        viewProfile,
-        account,
-        settings,
-        help,
-        language,
-        manage,
-        posts,
-        jobPosting,
-        signout } = userPopoverData;
-    // display name in necessary when user only sgin in with google
+    const userPopoverData = i18n.t<any>('userPopoverData', { returnObjects: true });
+    const { userName, userLastName, userHeadline } = mainProfileLeftData[0].basic;
+    const { viewProfile, account, settings, help, language, manage, posts, jobPosting, signout } = userPopoverData;
+    // display name in necessary when user only sign in with google
     let nameLastName;
     if (name && lastName) {
         nameLastName = `${name} ${lastName}`;
@@ -131,25 +118,24 @@ export const PopoverContent: React.FC = () => {
     return (
         <Box padding={'0.5rem 0'}>
             <Stack>
-                <Box>
-                    <Flex alignX="center" alignY="center" style={{ position: 'relative' }}>
-                        <Box style={{ position: 'absolute', top: 0, left: 0 }}>
-                            <NavImage
-                                src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
-                                alt="Profile Picture"
-                            />
-                        </Box>
-                        <Box style={{ marginLeft: '3.5rem', fontSize: '1rem' }}>
-                            <NavHeader style={{ marginTop: '0', textTransform: 'capitalize' }}>
-                                {nameLastName ? nameLastName : `${userName} ${userLastName}`}
-                            </NavHeader>
-                            <NavText style={{ lineHeight: '1rem' }}>{headline ? headline : userHeadline}</NavText>
-                        </Box>
-                    </Flex>
-                </Box>
+                <Flex alignX="center" alignY="center" position="relative">
+                    <Box position="absolute" top="0" left="0">
+                        <NavImage
+                            src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
+                            alt="Profile Picture"
+                        />
+                    </Box>
+                    <Box marginLeft="3.5rem" fontSize="1rem">
+                        <NavHeader marginTop="0" textTransform="capitalize">
+                            {nameLastName ? nameLastName : `${userName} ${userLastName}`}
+                        </NavHeader>
+                        <NavText lineHeight="1rem">{headline ? headline : userHeadline}</NavText>
+                    </Box>
+                </Flex>
                 <Set>
                     <NavButton variant="outlined" palette="primary" width="100%">
-                        {viewProfile}                    </NavButton>
+                        {viewProfile}
+                    </NavButton>
                 </Set>
             </Stack>
             <Text.Block>
@@ -163,7 +149,9 @@ export const PopoverContent: React.FC = () => {
                 <NavText>{posts}</NavText>
                 <NavText>{jobPosting}</NavText>
                 <Divider />
-                <PageLink fontWeight={'normal'} fontSize={'14px'} alignItems={'flex-start'} onClick={logOut} href='/'>{signout}</PageLink>
+                <PageLink fontWeight="normal" fontSize="14px" alignItems="flex-start" onClick={logOut} href="/">
+                    {signout}
+                </PageLink>
             </Text.Block>
         </Box>
     );
@@ -173,14 +161,12 @@ export const PopoverIcon: React.FC = () => {
         <NavIcon
             aria-label="Navlcon"
             icon="solid-sort-down"
-            style={{
-                margin: 0,
-                padding: 0,
-                width: '25px',
-                height: '20px',
-                position: 'relative',
-                top: '-5px',
-            }}
+            margin="0"
+            padding="0"
+            width="25px"
+            height="20px"
+            position="relative"
+            top="-5px"
         />
     );
 };

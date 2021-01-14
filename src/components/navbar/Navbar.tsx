@@ -20,16 +20,16 @@ export function Navbar(): JSX.Element {
     const { user } = useContext(UserContext);
     const { photoURL }: any = user;
     return (
-        <TopNav margin={'0 2rem'}>
+        <TopNav margin="0 2rem">
             <TopNav.Section>
-                <Navlink key={10} href="/" style={{ marginLeft: '0' }}>
+                <Navlink keyData={100} href="/" style={{ marginLeft: '0' }}>
                     <Image src="/logo.png" height="35px" />
                 </Navlink>
-                <Flex style={{ alignItems: 'center' }}>
+                <Flex alignItems="center">
                     <Input
                         before={<Input.Icon icon="solid-search" />}
                         placeholder={t('placeholder')}
-                        style={{ marginLeft: '5px' }}
+                        marginLeft="5px"
                         size="small"
                         width="250px"
                         marginRight="6rem"
@@ -38,38 +38,42 @@ export function Navbar(): JSX.Element {
             </TopNav.Section>
             <TopNav.Section >
                 {navData?.map((navElement: { navHref: string; navIcon: string; navText: React.ReactNode; }, index: number) => {
+                    const isNavUser = navElement.navIcon === "user";
+                    const isNavPlain = navElement.navIcon === "";
+                    const isNavWork = navElement.navIcon === "th";
+                    const navUserStyle: React.CSSProperties = { paddingRight: "1rem" };
+                    const navPlainStyle: React.CSSProperties = {
+                        color: '#5d3b09',
+                        fontSize: '0.75rem',
+                        fontWeight: 'lighter',
+                        width: '90px',
+                        textAlign: 'center',
+                    }
                     return (
-                        <>
+                        <React.Fragment key={index}>
                             <Navlink
-                                key={index}
+                                keyData={index}
                                 href={navElement.navHref}
                                 style={
-                                    navElement.navIcon === 'user' ?
-                                        { paddingRight: '1rem' } :
-                                        navElement.navIcon === '' ?
-                                            {
-                                                color: '#5d3b09',
-                                                fontSize: '0.75rem',
-                                                fontWeight: 'lighter',
-                                                width: '90px',
-                                                textAlign: 'center',
-                                            } :
+                                    isNavUser ?
+                                        navUserStyle :
+                                        isNavPlain ?
+                                            navPlainStyle :
                                             undefined
                                 }
                             >
-                                {navElement.navIcon !== 'user' && <NavIcon aria-label="Navlcon" icon={`solid-${navElement.navIcon}`} />}
-                                {navElement.navIcon === 'user' && <NavImage src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
-                                    alt="Profile Picture" width={'30px'} />}
+                                {!isNavUser && <NavIcon aria-label="Navlcon" icon={`solid-${navElement.navIcon}`} />}
+                                {isNavUser && <NavImage src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'}
+                                    alt="Profile Picture" width="30px" />}
 
-                                <Flex>
+                                <Flex key={index + 1}>
                                     <NavText>{navElement.navText}</NavText>
-                                    {navElement.navIcon === 'user' && <UserPopover />}
-                                    {navElement.navIcon === 'th' && <SideDrawer />}
+                                    {isNavUser && <UserPopover />}
+                                    {isNavWork && <SideDrawer />}
                                 </Flex>
-
                             </Navlink>
-                            {navElement.navIcon === 'user' && <NavDivider />}
-                        </>
+                            {isNavUser && <NavDivider />}
+                        </React.Fragment>
                     );
                 })}
                 <DarkMode />

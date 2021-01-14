@@ -19,6 +19,7 @@ const PageLink = applyTheme(Link, {
         },
     },
 });
+
 export const NavDivider = applyTheme(Box, {
     modes: {
         default: {
@@ -36,15 +37,15 @@ export const NavDivider = applyTheme(Box, {
     },
 });
 
-type Props = {
+type NavlinkProps = {
     children: React.ReactNode;
     href: string;
-    key: number;
+    keyData: number;
     style?: React.CSSProperties | undefined;
 };
-export const Navlink: React.FC<Props> = ({ children, href, key, style }) => {
+export const Navlink: React.FC<NavlinkProps> = ({ children, href, keyData, style }) => {
     return (
-        <PageLink key={key} href={href} style={style}>
+        <PageLink key={keyData} href={href} style={style}>
             {children}
         </PageLink>
     );

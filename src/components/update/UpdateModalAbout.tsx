@@ -15,20 +15,20 @@ export function UpdateModalAbout(): JSX.Element {
             </Modal.Disclosure>
             <Modal>
                 <Card>
-                    <Flex justifyContent={'space-between'} borderBottom={'1px solid #ccc'}>
-                        <Box margin={'auto 0 1.5rem'} fontSize={'1.5rem'}>
+                    <Flex justifyContent="space-between" borderBottom="1px solid #ccc">
+                        <Box margin="auto 0 1.5rem" fontSize="1.5rem">
                             {title}
                         </Box>
-                        <Modal.Disclosure use={Link} fontSize={'1.5rem'} color={'#666'} textDecoration={'none'}>
+                        <Modal.Disclosure use={Link} fontSize="1.5rem" color="#666" textDecoration="none">
                             X
                         </Modal.Disclosure>
                     </Flex>
                     <Box
-                        maxHeight={'500px'}
-                        maxWidth={'800px'}
-                        minWidth={'600px'}
-                        overflowY={'scroll'}
-                        padding={'1rem 1rem 1rem 0'}
+                        maxHeight="500px"
+                        maxWidth="800px"
+                        minWidth="600px"
+                        overflowY="scroll"
+                        padding="1rem 1rem 1rem 0"
                     >
                         <UpdateModalAboutForm />
                     </Box>

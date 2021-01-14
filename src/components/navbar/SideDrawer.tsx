@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Card, Flex } from 'bumbag';
+import { Drawer, Card, Flex, Text, Box } from 'bumbag';
 import {
     CustomDrawer,
     NavHeader,
@@ -20,23 +20,18 @@ export function SideDrawer(): JSX.Element {
 
     return (
         <Drawer.State animated>
-            <Drawer.Disclosure style={{ height: '5px', marginTop: '-7px' }}>
+            <Drawer.Disclosure height="5px" marginTop="-7px">
                 <PopoverIcon />
             </Drawer.Disclosure>
-            <CustomDrawer placement="right" style={{ marginTop: '58px', borderRadius: '8px 8px 0 0' }} fade slide>
-                <Card style={{ margin: '1.5rem', padding: '2px 0 0 0' }}>
+            <CustomDrawer placement="right" marginTop="58px" borderRadius="8px 8px 0 0" fade slide>
+                {/* products part */}
+                <Card margin="1.5rem" padding="2px 0 0 0">
                     <NavHeader>{products}</NavHeader>
-                    <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px', padding: '20px ' }}>
-                        <Flex
-                            style={{
-                                flexWrap: 'wrap',
-                                justifyContent: 'space-between',
-                                maxWidth: '325px',
-                            }}
-                        >
+                    <Card margin="auto 0" borderRadius="0 0 4px 4px" padding="20px ">
+                        <Flex flexWrap="wrap" justifyContent="space-between" maxWidth="325px">
                             {iconData.map((icon: Record<string, string>, index: string) => {
                                 return (
-                                    <Flex key={index} style={{ flexDirection: 'column' }}>
+                                    <Flex key={index} flexDirection="column">
                                         <SideDrawerIconContainer>
                                             <NavImage alt="Linked icon" src={icon.src} />
                                         </SideDrawerIconContainer>
@@ -47,21 +42,22 @@ export function SideDrawer(): JSX.Element {
                         </Flex>
                     </Card>
                 </Card>
-                <Card style={{ margin: '1.5rem', padding: '2px 0 0 0' }}>
+                {/* services part */}
+                <Card margin="1.5rem" padding="2px 0 0 0">
                     <NavHeader>{services}</NavHeader>
-                    <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px' }}>
+                    <Card margin="auto 0" borderRadius="0 0 4px 4px">
                         {innerText.map((data: any, index: any) => {
                             return (
-                                <div key={index}>
+                                <Box key={index}>
                                     <NavSubHeader>{data.header}</NavSubHeader>
                                     <NavSubText>{data.text}</NavSubText>
-                                </div>
+                                </Box>
                             );
                         })}
                     </Card>
-                    <Card style={{ margin: 'auto 0', borderRadius: '0 0 4px 4px', padding: '0.5rem 1.5rem' }}>
+                    <Card margin="auto 0" borderRadius="0 0 4px 4px" padding="0.5rem 1.5rem">
                         <NavSubHeader>
-                            {createPage} <span style={{ fontSize: '1.5rem' }}>+</span>
+                            {createPage} <Text fontSize="1.5rem">+</Text>
                         </NavSubHeader>
                     </Card>
                 </Card>

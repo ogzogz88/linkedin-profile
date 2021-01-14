@@ -61,13 +61,14 @@ export const LangItem: React.FC<LangItemInterface> = ({
     key,
     handleClick,
 }: LangItemInterface) => {
+    const langSet = chosenLang === language.key;
     return (
         <DropdownMenu.Item
             key={key}
             data-value={language.key}
             onClick={(event) => handleClick(event)}
-            background={chosenLang === language.key ? '#574feb' : ''}
-            color={chosenLang === language.key ? '#fff' : '#888'}
+            background={langSet ? '#574feb' : ''}
+            color={langSet ? '#fff' : '#888'}
         >
             {language.name}
         </DropdownMenu.Item>

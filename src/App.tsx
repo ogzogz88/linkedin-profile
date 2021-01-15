@@ -1,10 +1,6 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
-import Main from './components/main/Main'
+import Main from './components/main/Main';
 import { UserProvider } from './providers/UserProvider';
-
-
-
 
 function App(): JSX.Element {
     return (
@@ -12,7 +8,6 @@ function App(): JSX.Element {
             <Main />
         </UserProvider>
     );
-
 }
 
 export default App;

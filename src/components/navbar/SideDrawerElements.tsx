@@ -85,6 +85,13 @@ export const NavSubText = applyTheme(Text, {
     },
 });
 export const CustomDrawer = applyTheme(Drawer, {
+    styles: {
+        base: {
+            marginTop: '58px',
+            borderRadius: '8px 8px 0 0',
+            cursor: 'default',
+        },
+    },
     modes: {
         dark: {
             defaultProps: {

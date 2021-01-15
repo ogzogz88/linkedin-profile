@@ -53,7 +53,7 @@ interface LangItemInterface {
     language: { key: string; name: string };
     chosenLang: string;
     key: number;
-    handleClick: (event: any) => void;
+    handleClick: (event: { currentTarget: { dataset: { value: string } } }) => void;
 }
 export const LangItem: React.FC<LangItemInterface> = ({
     chosenLang,

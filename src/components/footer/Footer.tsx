@@ -7,9 +7,21 @@ import { useTranslation } from 'react-i18next';
 
 export function Footer(): JSX.Element {
     const { i18n } = useTranslation();
-    const footerData = i18n.t<any>('footerData', { returnObjects: true });
+
+    type specialLinksArray = { title: string; text: string; navIcon: string };
+    interface NewType {
+        links: string[];
+        logoSrc: string;
+        specialLinks: Array<specialLinksArray>;
+    }
+    const footerData = i18n.t<NewType>('footerData', { returnObjects: true });
     const { links, logoSrc, specialLinks } = footerData;
-    const languages: any = {
+    interface Languages {
+        en: string;
+        tr: string;
+        [key: string]: Languages[keyof Languages];
+    }
+    const languages: Languages = {
         en: 'English',
         tr: 'Türkçe',
     };
@@ -17,10 +29,10 @@ export function Footer(): JSX.Element {
         { key: 'en', name: 'English' },
         { key: 'tr', name: 'Türkçe' },
     ];
-    const localLng: any = localStorage.getItem('i18nextLng');
+    const localLng: string | null = localStorage.getItem('i18nextLng');
     const initialLang = localLng ? localLng : 'en';
     const [lang, setLang] = useState(initialLang);
-    const handleClick = (event: any) => {
+    const handleClick = (event: { currentTarget: { dataset: { value: string } } }) => {
         const lang = event.currentTarget.dataset.value;
         setLang(lang);
         i18n.changeLanguage(lang);
@@ -34,7 +46,7 @@ export function Footer(): JSX.Element {
             </Columns.Column>
             <Columns.Column spread={6} padding="0">
                 <Flex flexWrap="wrap">
-                    {links.map((link: any, index: any) => {
+                    {links.map((link: string, index: number) => {
                         return (
                             <Box width="170px" margin="0.2rem 0" key={index}>
                                 <FooterLinkSm key={index}>{link}</FooterLinkSm>
@@ -44,7 +56,7 @@ export function Footer(): JSX.Element {
                 </Flex>
             </Columns.Column>
             <Columns.Column spread={3} padding="0">
-                {specialLinks.map((link: any, index: any) => {
+                {specialLinks.map((link: specialLinksArray, index: number) => {
                     return (
                         <Flex key={index} marginBottom="0.8rem">
                             <NavIcon

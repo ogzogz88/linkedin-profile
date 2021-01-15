@@ -1,303 +1,300 @@
 {
     "title": "Welcome to react using react-i18next and typescript 4.1",
     "description": {
-      "part1": "This is an example without namespaces.",
-      "part2": "In order to infer the appropriate type for t function, you should use type augmentation to override the Resources type.",
-      "part3": "Check out the @types/react-i18next to see an example."
+        "part1": "This is an example without namespaces.",
+        "part2": "In order to infer the appropriate type for t function, you should use type augmentation to override the Resources type.",
+        "part3": "Check out the @types/react-i18next to see an example."
     },
-    "placeholder":"Search",
-    "NavData" : [
-      {
-          "navText": "Home",
-          "navHref":"#",
-          "navIcon": "home"
-      },
-      {
-          "navText": "My Network",
-          "navHref": "#",
-          "navIcon": "user-friends"
-      },
-      {
-          "navText": "Jobs",
-          "navHref": "#",
-          "navIcon": "suitcase"
-      },
-      {
-          "navText": "Messaging",
-          "navHref": "#",
-          "navIcon": "comment-dots"
-      },
-      {
-          "navText": "Notifications",
-          "navHref": "#",
-          "navIcon": "bell"
-      },
-      {
-          "navText": "Me",
-          "navHref": "#",
-          "navIcon": "user"
-      },
-      {
-          "navText": "Work",
-          "navHref": "#",
-          "navIcon": "th"
-      },
-      {
-          "navText": "Try Premium Free For 1 Month",
-          "navHref": "#",
-          "navIcon": ""
-      }
-  ],
-  "footerData" : {
-    "links": [
-        "About",
-        "Accessibility",
-        "Talent Solutions",
-        "Community Guidelines",
-        "Careers",
-        "Marketing Solutions",
-        "Privacy & Terms",
-        "Ad Choices",
-        "Advertising",
-        "Sales Solutions",
-        "Mobile",
-        "Small Business",
-        "Safety Center"
-    ],
-    "specialLinks": [
+    "placeholder": "Search",
+    "NavData": [
         {
-            "title": "Questions ?",
-            "text": "Visit our Help Center.",
-            "navIcon": "question-circle"
+            "navText": "Home",
+            "navHref": "#",
+            "navIcon": "home"
         },
         {
-            "title": "Manage your account and privacy",
-            "text": "Go to your Settings.",
-            "navIcon": "cog"
+            "navText": "My Network",
+            "navHref": "#",
+            "navIcon": "user-friends"
+        },
+        {
+            "navText": "Jobs",
+            "navHref": "#",
+            "navIcon": "suitcase"
+        },
+        {
+            "navText": "Messaging",
+            "navHref": "#",
+            "navIcon": "comment-dots"
+        },
+        {
+            "navText": "Notifications",
+            "navHref": "#",
+            "navIcon": "bell"
+        },
+        {
+            "navText": "Me",
+            "navHref": "#",
+            "navIcon": "user"
+        },
+        {
+            "navText": "Work",
+            "navHref": "#",
+            "navIcon": "th"
+        },
+        {
+            "navText": "Try Premium Free For 1 Month",
+            "navHref": "#",
+            "navIcon": ""
         }
     ],
-    "copyrightsText": "LinkedIn Corporation © 2021",
-    "logoSrc": "../../assets/photos/footer-logo.png"
-},
-"mainProfileRightData" : [
-  {
-      "textCard": [
-          {
-              "text": "Edit public profile & URL",
-              "tooltip":
-                  "See and edit how you look to people who are not signed in, and find you through search engines (ex: Google, Bing)."
-          },
-          {
-              "text": "Add profile in another language",
-              "tooltip":
-                  "Creating a profile in another language makes it easier for local business contacts and recruiters to find you on LinkedIn."
-          }
-      ]
-  },
-  {
-      "alsoViewed": {
-          "title": "People also viewed",
-          "data": [
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-1.jpg",
-                  "name": "Eser KOÇVER",
-                  "order": "2nd",
-                  "headline": "Financial Consultant at USA Embassy"
-              },
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-2.jpg",
-                  "name": "Erkin KULA",
-                  "order": "3rd",
-                  "headline": "Product Manager at Trendyol"
-              },
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-3.jpg",
-                  "name": "Gökay BAYKARA",
-                  "order": "2nd",
-                  "headline": "Plastic Surgeon at Kastamonu Government Hospital"
-              },
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-4.jpg",
-                  "name": "Mücahit GÜRBÜZ",
-                  "order": "2nd",
-                  "headline": "Software Engineer at OPLOG"
-              }
-          ]
-      }
-  }
-],
-"mainProfileLeftData" : [
-  {
-      "basic": {
-          "userName": "Your Name",
-          "userLastName": "Your Lastname",
-          "userEmail": "yourmailaddress@gmail.com",
-          "userHeadline": "Your Company, Your Position",
-          "userLocation": "City",
-          "userCountry": "Country",
-          "userCompany": "Company",
-          "userEducation": "Education",
-          "userIndustry": "Industry"
-      },
-      "introButtons":{
-        "profile":"Add profile section",
-        "more":"More..."
-      },
-      "about": {
-          "title": "About",
-          "text": "You can tell about your skills, your interests, your work and so on.  "
-      }
-  }
-],
-"userPopoverData":{
-  "viewProfile":"View Profile",
-  "account":"Account",
-  "settings":"Settings & Privacy",
-  "help":"Help",
-  "language":"Language",
-  "manage":"Manage",
-  "posts":"Posts & Activity",
-  "jobPosting":"Job Posting Account",
-  "signout":"Sign Out"
-},
-"signinData":{
-  "signin":"Sign In",
-  "email":"Email",
-  "password":"Paswword",
-  "signinWithGoogle":"Sign In With Google",
-  "or":"Or",
-  "noAccount":"Don't have an account?  ",
-  "gotoSignup":"Go to Sign Up",
-  "forgetPass":"Forget Password",
-  "enterEmail":"Enter your email",
-  "enterPass":"Enter your password"
-},
-"signupData":{
-  "signup":"Sign Up",
-  "displayNameT":"Display name",
-  "nameT":"Name",
-  "lastNameT":"Last name",
-  "emailT":"Email",
-  "passwordT":"Password",
-  "enterDisplayName":"Enter your display name",
-  "enterName":"Enter your name",
-  "enterLastName":"Enter your last name",
-  "enterEmail":"Enter your email",
-  "enterPass":"Enter your password",
-  "alreadyAccount":"Already have an account?",
-  "or":"Or",
-  "signinHere":"Sign in here",
-  "signinWithGoogle":"Sign In With Google"
-},
-"passwordResetData":{
-  "resetPass":"Reset Your Password",
-  "emailT":"Email",
-  "enterEmail":"Enter your email",
-  "sendReset":"Send me a reset link",
-  "emailSent":"An email has been sent to you!",
-  "or":"Or",
-  "goBack":"Go back to sign in",
-  "signin":"Sign in"
-},
-"sideDrawerData" : {
-  "innerText":[
-  {
-      "header": "Talent Solutions",
-      "text": "Find, attract and recruit talent"
-  },
-  {
-      "header": "Sales Solutions",
-      "text": "Unlock sales opportunities"
-  },
-  {
-      "header": "Post a job for free",
-      "text": "Get your job in front of quality candidates"
-  },
-  {
-      "header": "Marketing Solutions",
-      "text": "Acquire customers and grow your business"
-  },
-  {
-      "header": "Learning Solutions",
-      "text": "Develop talent across your organization"
-  }
-  ],
-  "headerText":{
-    "products":"Visit More LinkedIn Products",
-    "services":"LinkedIn Business Services",
-    "createPage":"Create a Company Page"
-  },
-  "iconData" : [
-    {
-        "src": "../../assets/icons/sideDrawerIcon-1.png",
-        "text": "Learning"
+    "footerData": {
+        "links": [
+            "About",
+            "Accessibility",
+            "Talent Solutions",
+            "Community Guidelines",
+            "Careers",
+            "Marketing Solutions",
+            "Privacy & Terms",
+            "Ad Choices",
+            "Advertising",
+            "Sales Solutions",
+            "Mobile",
+            "Small Business",
+            "Safety Center"
+        ],
+        "specialLinks": [
+            {
+                "title": "Questions ?",
+                "text": "Visit our Help Center.",
+                "navIcon": "question-circle"
+            },
+            {
+                "title": "Manage your account and privacy",
+                "text": "Go to your Settings.",
+                "navIcon": "cog"
+            }
+        ],
+        "copyrightsText": "LinkedIn Corporation © 2021",
+        "logoSrc": "../../assets/photos/footer-logo.png"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-2.png",
-        "text": "Insights"
+    "mainProfileRightData": [
+        {
+            "textCard": [
+                {
+                    "text": "Edit public profile & URL",
+                    "tooltip": "See and edit how you look to people who are not signed in, and find you through search engines (ex: Google, Bing)."
+                },
+                {
+                    "text": "Add profile in another language",
+                    "tooltip": "Creating a profile in another language makes it easier for local business contacts and recruiters to find you on LinkedIn."
+                }
+            ]
+        },
+        {
+            "alsoViewed": {
+                "title": "People also viewed",
+                "data": [
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-1.jpg",
+                        "name": "Eser KOÇVER",
+                        "order": "2nd",
+                        "headline": "Financial Consultant at USA Embassy"
+                    },
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-2.jpg",
+                        "name": "Erkin KULA",
+                        "order": "3rd",
+                        "headline": "Product Manager at Trendyol"
+                    },
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-3.jpg",
+                        "name": "Gökay BAYKARA",
+                        "order": "2nd",
+                        "headline": "Plastic Surgeon at Kastamonu Government Hospital"
+                    },
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-4.jpg",
+                        "name": "Mücahit GÜRBÜZ",
+                        "order": "2nd",
+                        "headline": "Software Engineer at OPLOG"
+                    }
+                ]
+            }
+        }
+    ],
+    "mainProfileLeftData": [
+        {
+            "basic": {
+                "userName": "Your Name",
+                "userLastName": "Your Lastname",
+                "userEmail": "yourmailaddress@gmail.com",
+                "userHeadline": "Your Company, Your Position",
+                "userLocation": "City",
+                "userCountry": "Country",
+                "userCompany": "Company",
+                "userEducation": "Education",
+                "userIndustry": "Industry"
+            },
+            "introButtons": {
+                "profile": "Add profile section",
+                "more": "More..."
+            },
+            "about": {
+                "title": "About",
+                "text": "You can tell about your skills, your interests, your work and so on.  "
+            }
+        }
+    ],
+    "userPopoverData": {
+        "viewProfile": "View Profile",
+        "account": "Account",
+        "settings": "Settings & Privacy",
+        "help": "Help",
+        "language": "Language",
+        "manage": "Manage",
+        "posts": "Posts & Activity",
+        "jobPosting": "Job Posting Account",
+        "signout": "Sign Out"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-3.png",
-        "text": "Post a Job"
+    "signinData": {
+        "signin": "Sign In",
+        "email": "Email",
+        "password": "Paswword",
+        "signinWithGoogle": "Sign In With Google",
+        "or": "Or",
+        "noAccount": "Don't have an account?  ",
+        "gotoSignup": "Go to Sign Up",
+        "forgetPass": "Forget Password",
+        "enterEmail": "Enter your email",
+        "enterPass": "Enter your password"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-4.png",
-        "text": "Advertise"
+    "signupData": {
+        "signup": "Sign Up",
+        "displayNameT": "Display name",
+        "nameT": "Name",
+        "lastNameT": "Last name",
+        "emailT": "Email",
+        "passwordT": "Password",
+        "enterDisplayName": "Enter your display name",
+        "enterName": "Enter your name",
+        "enterLastName": "Enter your last name",
+        "enterEmail": "Enter your email",
+        "enterPass": "Enter your password",
+        "alreadyAccount": "Already have an account?",
+        "or": "Or",
+        "signinHere": "Sign in here",
+        "signinWithGoogle": "Sign In With Google"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-5.png",
-        "text": "Find Leads"
+    "passwordResetData": {
+        "resetPass": "Reset Your Password",
+        "emailT": "Email",
+        "enterEmail": "Enter your email",
+        "sendReset": "Send me a reset link",
+        "emailSent": "An email has been sent to you!",
+        "or": "Or",
+        "goBack": "Go back to sign in",
+        "signin": "Sign in"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-6.png",
-        "text": "Groups"
+    "sideDrawerData": {
+        "innerText": [
+            {
+                "header": "Talent Solutions",
+                "text": "Find, attract and recruit talent"
+            },
+            {
+                "header": "Sales Solutions",
+                "text": "Unlock sales opportunities"
+            },
+            {
+                "header": "Post a job for free",
+                "text": "Get your job in front of quality candidates"
+            },
+            {
+                "header": "Marketing Solutions",
+                "text": "Acquire customers and grow your business"
+            },
+            {
+                "header": "Learning Solutions",
+                "text": "Develop talent across your organization"
+            }
+        ],
+        "headerText": {
+            "products": "Visit More LinkedIn Products",
+            "services": "LinkedIn Business Services",
+            "createPage": "Create a Company Page"
+        },
+        "iconData": [
+            {
+                "src": "../../assets/icons/sideDrawerIcon-1.png",
+                "text": "Learning"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-2.png",
+                "text": "Insights"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-3.png",
+                "text": "Post a Job"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-4.png",
+                "text": "Advertise"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-5.png",
+                "text": "Find Leads"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-6.png",
+                "text": "Groups"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-7.png",
+                "text": "ProFinder"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-8.png",
+                "text": "Salary"
+            }
+        ]
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-7.png",
-        "text": "ProFinder"
+    "modalIntroData": {
+        "title": "Edit intro"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-8.png",
-        "text": "Salary"
+    "modalAboutData": {
+        "title": "Edit about"
+    },
+    "modalImageData": {
+        "title": "Edit Image"
+    },
+    "modalIntroFormData": {
+        "nameT": "First name",
+        "lastNameT": "Last name",
+        "headlineT": "Headline",
+        "companyT": "Company",
+        "educationT": "Education",
+        "countryT": "Country",
+        "locationT": "Location",
+        "industryT": "Industry",
+        "successMsgT": "You updated your Intro Info.",
+        "errorMsgT": "Unable to update Intro info, please try again later.",
+        "btnSaveT": "Save",
+        "btnCloseT": "Close"
+    },
+    "modalAboutFormData": {
+        "summaryT": "Summary",
+        "successMsgT": "You updated your About Info.",
+        "errorMsgT": "Unable to update About info, please try again later.",
+        "btnSaveT": "Save",
+        "btnCloseT": "Close"
+    },
+    "modalImageFormData": {
+        "photoT": "Your photo",
+        "successMsgT": "You updated your photo.",
+        "errorMsgT": "Unable to update photo, please try again later.",
+        "btnSaveT": "Save",
+        "btnCloseT": "Close"
     }
-]
-  
-},
-"modalIntroData":{
-"title":"Edit intro"
-},
-"modalAboutData":{
-  "title":"Edit about"
-},
-"modalImageData":{
-  "title":"Edit Image"
-},
-"modalIntroFormData":{
-  "nameT":"First name",
-  "lastNameT":"Last name",
-  "headlineT":"Headline",
-  "companyT":"Company",
-  "educationT":"Education",
-  "countryT":"Country",
-  "locationT":"Location",
-  "industryT":"Alan",
-  "successMsgT":"You updated your Intro Info.",
-  "errorMsgT":"Unable to update Intro info, please try again later.",
-  "btnSaveT":"Save",
-  "btnCloseT":"Close"
-},
-"modalAboutFormData":{
-  "summaryT":"Summary",
-  "successMsgT":"You updated your About Info.",
-  "errorMsgT":"Unable to update About info, please try again later.",
-  "btnSaveT":"Save",
-  "btnCloseT":"Close"
-},
-"modalImageFormData":{
-  "photoT":"Your photo",
-  "successMsgT":"You updated your photo.",
-  "errorMsgT":"Unable to update photo, please try again later.",
-  "btnSaveT":"Save",
-  "btnCloseT":"Close"
-}
 }

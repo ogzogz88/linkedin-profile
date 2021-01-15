@@ -23,7 +23,7 @@ export function SideDrawer(): JSX.Element {
             <Drawer.Disclosure height="5px" marginTop="-7px">
                 <PopoverIcon />
             </Drawer.Disclosure>
-            <CustomDrawer placement="right" marginTop="58px" borderRadius="8px 8px 0 0" fade slide>
+            <CustomDrawer placement="right" fade slide hideBackdrop>
                 {/* products part */}
                 <Card margin="1.5rem" padding="2px 0 0 0">
                     <NavHeader>{products}</NavHeader>
@@ -45,7 +45,7 @@ export function SideDrawer(): JSX.Element {
                 {/* services part */}
                 <Card margin="1.5rem" padding="2px 0 0 0">
                     <NavHeader>{services}</NavHeader>
-                    <Card margin="auto 0" borderRadius="0 0 4px 4px">
+                    <Card margin="auto 0" padding="0.5rem 1rem" borderRadius="0 0 4px 4px">
                         {innerText.map((data: any, index: any) => {
                             return (
                                 <Box key={index}>

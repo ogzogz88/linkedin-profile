@@ -24,7 +24,7 @@ export function UpdateModalImage(): JSX.Element {
                         <Box margin="auto 0 1.5rem" fontSize="1.5rem">
                             {title}
                         </Box>
-                        <Modal.Disclosure use={Link} fontSize={'1.5rem'} color={'#666'} textDecoration={'none'}>
+                        <Modal.Disclosure use={Link} fontSize="1.5rem" color="#666" textDecoration="none">
                             X
                         </Modal.Disclosure>
                     </Flex>

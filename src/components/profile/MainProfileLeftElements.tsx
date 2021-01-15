@@ -58,7 +58,7 @@ export const MainPageIconContainer = applyTheme(Flex, {
             height: '2rem',
             margin: '0 1rem',
             ':hover': {
-                background: '#ebebeb',
+                background: '#EBEBEB',
             },
         },
     },

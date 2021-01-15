@@ -23,7 +23,7 @@ export function UpdateModalImageForm(): JSX.Element {
     const { i18n } = useTranslation();
     const modalImageFormData = i18n.t<any>('modalImageFormData', { returnObjects: true });
     const { photoT, successMsgT, errorMsgT, btnSaveT, btnCloseT } = modalImageFormData;
-    const [fileUrl, setFileUrl] = useState(null);
+    const [fileUrl, setFileUrl] = useState('');
     const { setUser } = useContext(UserContext);
     const [updateMessage, setUpdateMessage] = useState('notSent');
 

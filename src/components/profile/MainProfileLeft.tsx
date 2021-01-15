@@ -51,11 +51,9 @@ export function MainProfileLeft({ user }: any): JSX.Element {
                         <ProfileTextXs>{about ? about : mainProfileLeftData[0].about.text}</ProfileTextXs>
                     </Flex>
                 </Flex>
-                <ProfileEditLink position="absolute" right="1rem" top="1rem">
-                    <MainPageIconContainerSec margin="0">
-                        <UpdateModalAbout />
-                    </MainPageIconContainerSec>
-                </ProfileEditLink>
+                <MainPageIconContainerSec margin="0" position="absolute" right="1rem" top="1rem" padding="1.25rem">
+                    <UpdateModalAbout />
+                </MainPageIconContainerSec>
             </Card>
         </>
     );

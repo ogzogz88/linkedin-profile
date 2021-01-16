@@ -78,20 +78,7 @@ export const updateUserData = async (user: any, additionalData?: any) => {
 
     return getUserDocument(user.uid);
 };
-//update image data
-export const updateImageData = async (user: any, additionalData?: any) => {
-    if (!user) return;
-    const userRef = firestore.doc(`users/${user.uid}`);
-    try {
-        await userRef.update({
-            ...additionalData,
-        });
-    } catch (error) {
-        console.error('Error updating user document', error);
-    }
 
-    return getUserDocument(user.uid);
-};
 const getUserDocument = async (uid: any) => {
     if (!uid) return null;
     try {

@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Modal, Card, Button, FieldStack, InputField, Flex, applyTheme, Alert } from 'bumbag';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
-import { ProfileImg, BackgroundImg, MainPageIconContainerSec } from '../profile/MainProfileLeftElements';
-import { UpdateModalImage } from './UpdateModalImage';
-import { auth, updateUserData } from '../../firebase';
+import { ProfileImg, BackgroundImg } from '../profile/MainProfileLeftElements';
+import { auth, updateUserData, storage } from '../../firebase';
 import { UserContext } from '../../providers/UserProvider';
 import { UpdateMessage } from './UpdateMessage';
 import * as Yup from 'yup';
@@ -28,6 +27,7 @@ interface Values {
     country: string;
     location: string;
     industry: string;
+    photoURL: string;
 }
 const UpdateModalIntroSchema = Yup.object().shape({
     name: Yup.string()
@@ -75,6 +75,7 @@ export const UpdateModalIntroForm: React.FC = () => {
         countryT,
         locationT,
         industryT,
+        photoURLT,
         successMsgT,
         errorMsgT,
         btnSaveT,
@@ -83,6 +84,7 @@ export const UpdateModalIntroForm: React.FC = () => {
     const { user } = useContext(UserContext);
     const { photoURL } = user;
     const { setUser } = useContext(UserContext);
+    const [fileURL, setFileURL] = useState('');
     const [updateMessage, setUpdateMessage] = useState('notSent');
     const initialValues: Values = {
         name: '',
@@ -93,11 +95,21 @@ export const UpdateModalIntroForm: React.FC = () => {
         country: '',
         location: '',
         industry: '',
+        photoURL: '',
+    };
+    const onFileChange = async (e: any) => {
+        const file = e.target.files[0];
+        const storageRef = storage.ref();
+        const fileRef = storageRef.child(file.name);
+        await fileRef.put(file);
+        setFileURL(await fileRef.getDownloadURL());
     };
     const updateModalData = async (values: Values) => {
         try {
             let user: any = auth.currentUser;
-            user = await updateUserData(user, values);
+            const valuesWithPhoto = { ...values };
+            valuesWithPhoto.photoURL = fileURL;
+            user = await updateUserData(user, valuesWithPhoto);
             setUser(user);
         } catch (Error) {
             console.log('Error updating intro data');
@@ -131,17 +143,6 @@ export const UpdateModalIntroForm: React.FC = () => {
                         >
                             <BackgroundImg src="../../assets/photos/profile-bg.jpg" width={'100%'} />
                             <ProfileImg src={photoURL ? `${photoURL}` : '../../assets/photos/profile.png'} />
-                            <MainPageIconContainerSec
-                                style={{
-                                    position: 'absolute',
-                                    left: '7.5rem',
-                                    bottom: '-4rem',
-                                    background: '#fff',
-                                    boxShadow: '0 0 4px 0px #aaa',
-                                }}
-                            >
-                                <UpdateModalImage />
-                            </MainPageIconContainerSec>
                         </Card>
                         <FieldStack orientation="horizontal">
                             <Field component={InputField.Formik} name="name" label={nameT} isRequired />
@@ -153,6 +154,13 @@ export const UpdateModalIntroForm: React.FC = () => {
                         <Field component={InputField.Formik} name="country" label={countryT} isRequired />
                         <Field component={InputField.Formik} name="location" label={locationT} />
                         <Field component={InputField.Formik} name="industry" label={industryT} isRequired />
+                        <Field
+                            component={InputField.Formik}
+                            name="photoURL"
+                            label={photoURLT}
+                            type="file"
+                            onChange={onFileChange}
+                        />
                         {updateMessage === 'isSent' ? (
                             <UpdateMessage title="Success" type="success">
                                 {successMsgT}

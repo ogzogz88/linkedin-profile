@@ -20,7 +20,7 @@ export default function Main(): JSX.Element {
                 <BumbagProvider theme={Theme}>
                     <Switch>
                         <Route exact path="/">
-                            {user === null ? <Redirect to="/signin" /> : <MainPageContent />}
+                            {user !== null ? <MainPageContent /> : <Redirect to="/signin" />}
                         </Route>
                         <Route path="/signin">{user !== null ? <Redirect to="/" /> : <SignIn />}</Route>
                         <Route path="/signup">{user !== null ? <Redirect to="/" /> : <SignUp />}</Route>

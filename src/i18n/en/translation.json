@@ -278,6 +278,7 @@
         "countryT": "Country",
         "locationT": "Location",
         "industryT": "Industry",
+        "photoURLT": "Your Photo",
         "successMsgT": "You updated your Intro Info.",
         "errorMsgT": "Unable to update Intro info, please try again later.",
         "btnSaveT": "Save",

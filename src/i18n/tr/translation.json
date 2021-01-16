@@ -1,303 +1,301 @@
 {
     "title": "React'ın react-i18next ve typescript 4.1 ile kullanımına hoşgeldiniz.",
     "description": {
-      "part1": "Namespace kullanılmadan oluşturulan bir örnek",
-      "part2": "t fonksiyonundan uygun type çıkarımının yapılabilmesi için, Resources type'ını override eden type augmentation'ı kullanmalısın. ",
-      "part3": "Bir örnek için @types/react-i18next sayfasını ziyaret edebilirsiniz."
+        "part1": "Namespace kullanılmadan oluşturulan bir örnek",
+        "part2": "t fonksiyonundan uygun type çıkarımının yapılabilmesi için, Resources type'ını override eden type augmentation'ı kullanmalısın. ",
+        "part3": "Bir örnek için @types/react-i18next sayfasını ziyaret edebilirsiniz."
     },
-    "placeholder":"Ara",
-    "NavData" : [
-      {
-          "navText": "Anasayfa",
-          "navHref":"#",
-          "navIcon": "home"
-      },
-      {
-          "navText": "Ağım",
-          "navHref": "#",
-          "navIcon": "user-friends"
-      },
-      {
-          "navText": "İş İlanları",
-          "navHref": "#",
-          "navIcon": "suitcase"
-      },
-      {
-          "navText": "Mesajlaşma",
-          "navHref": "#",
-          "navIcon": "comment-dots"
-      },
-      {
-          "navText": "Bildirimler",
-          "navHref": "#",
-          "navIcon": "bell"
-      },
-      {
-          "navText": "Ben",
-          "navHref": "#",
-          "navIcon": "user"
-      },
-      {
-          "navText": "İş",
-          "navHref": "#",
-          "navIcon": "th"
-      },
-      {
-          "navText": "Premiun'u 1 Ay Ücretsiz Deneyin",
-          "navHref": "#",
-          "navIcon": ""
-      }
-  ],
-  "footerData" : {
-    "links": [
-        "Hakkımızda",
-        "Ulaşılabilirlik",
-        "Yetenek Çözümleri",
-        "Topluluk Rehberi",
-        "Kariyer",
-        "Pazarlama Çözümleri",
-        "Gizlilik & Şartlar",
-        "Reklam Tercihleri",
-        "Reklam Verme",
-        "Satış Çözümleri",
-        "Mobil",
-        "Küçük işletmeler",
-        "Güvenlik Merkezi"
-    ],
-    "specialLinks": [
+    "placeholder": "Ara",
+    "NavData": [
         {
-            "title": "Sorular ?",
-            "text": "Yardım Merkezini ziyaret edin.",
-            "navIcon": "question-circle"
+            "navText": "Anasayfa",
+            "navHref": "#",
+            "navIcon": "home"
         },
         {
-            "title": "Hesap ve gizlili yönet",
-            "text": "Ayarlara git.",
-            "navIcon": "cog"
+            "navText": "Ağım",
+            "navHref": "#",
+            "navIcon": "user-friends"
+        },
+        {
+            "navText": "İş İlanları",
+            "navHref": "#",
+            "navIcon": "suitcase"
+        },
+        {
+            "navText": "Mesajlaşma",
+            "navHref": "#",
+            "navIcon": "comment-dots"
+        },
+        {
+            "navText": "Bildirimler",
+            "navHref": "#",
+            "navIcon": "bell"
+        },
+        {
+            "navText": "Ben",
+            "navHref": "#",
+            "navIcon": "user"
+        },
+        {
+            "navText": "İş",
+            "navHref": "#",
+            "navIcon": "th"
+        },
+        {
+            "navText": "Premiun'u 1 Ay Ücretsiz Deneyin",
+            "navHref": "#",
+            "navIcon": ""
         }
     ],
-    "copyrightsText": "LinkedIn Şirketi © 2021",
-    "logoSrc": "../../assets/photos/footer-logo.png"
-},
-"mainProfileRightData" : [
-  {
-      "textCard": [
-          {
-              "text": "Profilini & URL'i düzenle",
-              "tooltip":
-                  "Oturum açmamış kişilere nasıl göründüğünüzü görün ve düzenleyin, kendinizi arama motorlarında bulun (ör. Google, Bing)."
-          },
-          {
-              "text": "Başka bir dilde profil ekle",
-              "tooltip":
-                  "Başka bir dilde profil oluşturmak, yerel iş bağlantılarının ve işe alım uzmanlarının sizi LinkedIn'de bulmasını kolaylaştırır."
-          }
-      ]
-  },
-  {
-      "alsoViewed": {
-          "title": "İnsanlar ayrıca görüntüledi",
-          "data": [
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-1.jpg",
-                  "name": "Eser KOÇVER",
-                  "order": "2'nci",
-                  "headline": "ABD Büyükelçiliği'nde Finansal Danışman"
-              },
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-2.jpg",
-                  "name": "Erkin KULA",
-                  "order": "3'üncü",
-                  "headline": "Trendyol'da Ürün Yöneticisi"
-              },
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-3.jpg",
-                  "name": "Gökay BAYKARA",
-                  "order": "2'nci",
-                  "headline": "Kastamonu Devlet Hastanesinde Plastik Cerrah"
-              },
-              {
-                  "imgSrc": "../../assets/photos/also-viewed-4.jpg",
-                  "name": "Mücahit GÜRBÜZ",
-                  "order": "2'nci",
-                  "headline": "OPLOG'da Yazılım Mühendisi"
-              }
-          ]
-      }
-  }
-],
-"mainProfileLeftData" : [
-  {
-      "basic": {
-          "userName": "Adınız",
-          "userLastName": "Soyadınız",
-          "userEmail": "emailadresiniz@gmail.com",
-          "userHeadline": "Şirketiniz, Pozisyonunuz",
-          "userLocation": "Şehir",
-          "userCountry": "Ülke",
-          "userCompany": "Şirket",
-          "userEducation": "Eğitim",
-          "userIndustry": "Endüstri / Alan"
-      },
-      "introButtons":{
-        "profile":"Profil bölümü ekle",
-        "more":"Daha fazla..."
-      },
-      "about": {
-          "title": "Hakkında",
-          "text": "Becerilerinizi, ilgi alanlarınızı, işinizi ve istediğiniz diğer hususları burada belirtebilirsiniz. "
-      }
-  }
-],
-"userPopoverData":{
-  "viewProfile":"Profili Görüntüle",
-  "account":"Hesap",
-  "settings":"Ayarlar & Gizlilik",
-  "help":"Yardım",
-  "language":"Dil",
-  "manage":"Yönet",
-  "posts":"Postlar & Etkinlikler",
-  "jobPosting":"İş Paylaşımı Hesabı",
-  "signout":"Çıkış Yap"
-},
-"signinData":{
-  "signin":"Giriş Yap",
-  "email":"Email",
-  "password":"Parola",
-  "signinWithGoogle":"Google ile Giriş Yap",
-  "or":"Ya da",
-  "noAccount":"Bir hesabınız yok mu?  ",
-  "gotoSignup":"Kaydol",
-  "forgetPass":"Parolamı Unuttum",
-  "enterEmail":"Email adresinizi giriniz",
-  "enterPass":"Parolanızı giriniz"
-},
-"signupData":{
-  "signup":"Kaydol",
-  "displayNameT":"Görünen ad",
-  "nameT":"Ad",
-  "lastNameT":"Soyad",
-  "emailT":"Email",
-  "passwordT":"Parola",
-  "enterDisplayName":"Görünen adınızı giriniz ",
-  "enterName":"Adınızı giriniz",
-  "enterLastName":"Soyadınızı giriniz",
-  "enterEmail":"Email adresinizi giriniz",
-  "enterPass":"Parolanızı giriniz",
-  "alreadyAccount":"Zaten bir hesabınız mı var?",
-  "or":"Ya da",
-  "signinHere":"Buradan giriş yap",
-  "signinWithGoogle":"Google ile Giriş Yap"
-},
-"passwordResetData":{
-  "resetPass":"Parolayı Sıfırla",
-  "emailT":"Email",
-  "enterEmail":"Email adresinizi giriniz",
-  "sendReset":"Parola reset linki gönder",
-  "emailSent":"Email adresinize parola reset linki gönderilmiştir!",
-  "or":"Ya da",
-  "goBack":"Giriş Yap'a geri git",
-  "signin":"Giriş Yap"
-},
-"sideDrawerData" : {
-  "innerText":[
-  {
-      "header": "Yetenek Çözümleri",
-      "text": "Yeni yetenekleri keşfet ve işe al"
-  },
-  {
-      "header": "Satış Çözümleri",
-      "text": "Satış imkanlarından faydalan"
-  },
-  {
-      "header": "Ücretsiz İş İlanı Oluştur",
-      "text": "İşinizi kaliteli adayların önüne çıkarın"
-  },
-  {
-      "header": "Pazarlama Çözümleri",
-      "text": "Müşterilerinizi artırın ve işinizi büyütün"
-  },
-  {
-      "header": "Öğrenim Çözümleri",
-      "text": "Kuruluşunuzla beraber yeni yetenekler geliştirin"
-  }
-  ],
-  "headerText":{
-    "products":"Diğer LinkedIn Ürünlerini Ziyaret Edin",
-    "services":"LinkedIn Ticari Hizmetler",
-    "createPage":"Şirket Sayfası Oluştur"
-  },
-  "iconData" : [
-    {
-        "src": "../../assets/icons/sideDrawerIcon-1.png",
-        "text": "Learning"
+    "footerData": {
+        "links": [
+            "Hakkımızda",
+            "Ulaşılabilirlik",
+            "Yetenek Çözümleri",
+            "Topluluk Rehberi",
+            "Kariyer",
+            "Pazarlama Çözümleri",
+            "Gizlilik & Şartlar",
+            "Reklam Tercihleri",
+            "Reklam Verme",
+            "Satış Çözümleri",
+            "Mobil",
+            "Küçük işletmeler",
+            "Güvenlik Merkezi"
+        ],
+        "specialLinks": [
+            {
+                "title": "Sorular ?",
+                "text": "Yardım Merkezini ziyaret edin.",
+                "navIcon": "question-circle"
+            },
+            {
+                "title": "Hesap ve gizlili yönet",
+                "text": "Ayarlara git.",
+                "navIcon": "cog"
+            }
+        ],
+        "copyrightsText": "LinkedIn Şirketi © 2021",
+        "logoSrc": "../../assets/photos/footer-logo.png"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-2.png",
-        "text": "İçgörüler"
+    "mainProfileRightData": [
+        {
+            "textCard": [
+                {
+                    "text": "Profilini & URL'i düzenle",
+                    "tooltip": "Oturum açmamış kişilere nasıl göründüğünüzü görün ve düzenleyin, kendinizi arama motorlarında bulun (ör. Google, Bing)."
+                },
+                {
+                    "text": "Başka bir dilde profil ekle",
+                    "tooltip": "Başka bir dilde profil oluşturmak, yerel iş bağlantılarının ve işe alım uzmanlarının sizi LinkedIn'de bulmasını kolaylaştırır."
+                }
+            ]
+        },
+        {
+            "alsoViewed": {
+                "title": "İnsanlar ayrıca görüntüledi",
+                "data": [
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-1.jpg",
+                        "name": "Eser KOÇVER",
+                        "order": "2'nci",
+                        "headline": "ABD Büyükelçiliği'nde Finansal Danışman"
+                    },
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-2.jpg",
+                        "name": "Erkin KULA",
+                        "order": "3'üncü",
+                        "headline": "Trendyol'da Ürün Yöneticisi"
+                    },
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-3.jpg",
+                        "name": "Gökay BAYKARA",
+                        "order": "2'nci",
+                        "headline": "Kastamonu Devlet Hastanesinde Plastik Cerrah"
+                    },
+                    {
+                        "imgSrc": "../../assets/photos/also-viewed-4.jpg",
+                        "name": "Mücahit GÜRBÜZ",
+                        "order": "2'nci",
+                        "headline": "OPLOG'da Yazılım Mühendisi"
+                    }
+                ]
+            }
+        }
+    ],
+    "mainProfileLeftData": [
+        {
+            "basic": {
+                "userName": "Adınız",
+                "userLastName": "Soyadınız",
+                "userEmail": "emailadresiniz@gmail.com",
+                "userHeadline": "Şirketiniz, Pozisyonunuz",
+                "userLocation": "Şehir",
+                "userCountry": "Ülke",
+                "userCompany": "Şirket",
+                "userEducation": "Eğitim",
+                "userIndustry": "Endüstri / Alan"
+            },
+            "introButtons": {
+                "profile": "Profil bölümü ekle",
+                "more": "Daha fazla..."
+            },
+            "about": {
+                "title": "Hakkında",
+                "text": "Becerilerinizi, ilgi alanlarınızı, işinizi ve istediğiniz diğer hususları burada belirtebilirsiniz. "
+            }
+        }
+    ],
+    "userPopoverData": {
+        "viewProfile": "Profili Görüntüle",
+        "account": "Hesap",
+        "settings": "Ayarlar & Gizlilik",
+        "help": "Yardım",
+        "language": "Dil",
+        "manage": "Yönet",
+        "posts": "Postlar & Etkinlikler",
+        "jobPosting": "İş Paylaşımı Hesabı",
+        "signout": "Çıkış Yap"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-3.png",
-        "text": "İş İlanı Yayınla"
+    "signinData": {
+        "signin": "Giriş Yap",
+        "email": "Email",
+        "password": "Parola",
+        "signinWithGoogle": "Google ile Giriş Yap",
+        "or": "Ya da",
+        "noAccount": "Bir hesabınız yok mu?  ",
+        "gotoSignup": "Kaydol",
+        "forgetPass": "Parolamı Unuttum",
+        "enterEmail": "Email adresinizi giriniz",
+        "enterPass": "Parolanızı giriniz"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-4.png",
-        "text": "Rerklam Verin"
+    "signupData": {
+        "signup": "Kaydol",
+        "displayNameT": "Görünen ad",
+        "nameT": "Ad",
+        "lastNameT": "Soyad",
+        "emailT": "Email",
+        "passwordT": "Parola",
+        "enterDisplayName": "Görünen adınızı giriniz ",
+        "enterName": "Adınızı giriniz",
+        "enterLastName": "Soyadınızı giriniz",
+        "enterEmail": "Email adresinizi giriniz",
+        "enterPass": "Parolanızı giriniz",
+        "alreadyAccount": "Zaten bir hesabınız mı var?",
+        "or": "Ya da",
+        "signinHere": "Buradan giriş yap",
+        "signinWithGoogle": "Google ile Giriş Yap"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-5.png",
-        "text": "Adayları Bulun"
+    "passwordResetData": {
+        "resetPass": "Parolayı Sıfırla",
+        "emailT": "Email",
+        "enterEmail": "Email adresinizi giriniz",
+        "sendReset": "Parola reset linki gönder",
+        "emailSent": "Email adresinize parola reset linki gönderilmiştir!",
+        "or": "Ya da",
+        "goBack": "Giriş Yap'a geri git",
+        "signin": "Giriş Yap"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-6.png",
-        "text": "Gruplar"
+    "sideDrawerData": {
+        "innerText": [
+            {
+                "header": "Yetenek Çözümleri",
+                "text": "Yeni yetenekleri keşfet ve işe al"
+            },
+            {
+                "header": "Satış Çözümleri",
+                "text": "Satış imkanlarından faydalan"
+            },
+            {
+                "header": "Ücretsiz İş İlanı Oluştur",
+                "text": "İşinizi kaliteli adayların önüne çıkarın"
+            },
+            {
+                "header": "Pazarlama Çözümleri",
+                "text": "Müşterilerinizi artırın ve işinizi büyütün"
+            },
+            {
+                "header": "Öğrenim Çözümleri",
+                "text": "Kuruluşunuzla beraber yeni yetenekler geliştirin"
+            }
+        ],
+        "headerText": {
+            "products": "Diğer LinkedIn Ürünlerini Ziyaret Edin",
+            "services": "LinkedIn Ticari Hizmetler",
+            "createPage": "Şirket Sayfası Oluştur"
+        },
+        "iconData": [
+            {
+                "src": "../../assets/icons/sideDrawerIcon-1.png",
+                "text": "Learning"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-2.png",
+                "text": "İçgörüler"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-3.png",
+                "text": "İş İlanı Yayınla"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-4.png",
+                "text": "Rerklam Verin"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-5.png",
+                "text": "Adayları Bulun"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-6.png",
+                "text": "Gruplar"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-7.png",
+                "text": "ProFinder"
+            },
+            {
+                "src": "../../assets/icons/sideDrawerIcon-8.png",
+                "text": "Maaş"
+            }
+        ]
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-7.png",
-        "text": "ProFinder"
+    "modalIntroData": {
+        "title": "Girişi düzenle"
     },
-    {
-        "src": "../../assets/icons/sideDrawerIcon-8.png",
-        "text": "Maaş"
+    "modalAboutData": {
+        "title": "Hakkında kısmını düzenle"
+    },
+    "modalImageData": {
+        "title": "Fotoğrafı düzenle"
+    },
+    "modalIntroFormData": {
+        "nameT": "Adınız",
+        "lastNameT": "Soyadınız",
+        "headlineT": "Başlık",
+        "companyT": "Şirket adı",
+        "educationT": "Eğitim",
+        "countryT": "Ülke",
+        "locationT": "Şehir",
+        "industryT": "Alan",
+        "photoURLT": "Fotoğrafınız",
+        "successMsgT": "Giriş bilgilerinizi güncellediniz.",
+        "errorMsgT": "Giriş bilgileri güncellenemedi, lütfen tekrar deneyiniz.",
+        "btnSaveT": "Kaydet",
+        "btnCloseT": "Çıkış"
+    },
+    "modalAboutFormData": {
+        "summaryT": "Özet",
+        "successMsgT": "Hakkında bilgilerinizi güncellediniz.",
+        "errorMsgT": "Hakkında bilgileri güncellenemedi, lütfen tekrar deneyiniz.",
+        "btnSaveT": "Kaydet",
+        "btnCloseT": "Çıkış"
+    },
+    "modalImageFormData": {
+        "photoT": "Fotoğrafınız",
+        "successMsgT": "Fotoğrafınızı güncellediniz.",
+        "errorMsgT": "Fotoğraf güncellenemiyor, lütfen tekrar deneyiniz.",
+        "btnSaveT": "Kaydet",
+        "btnCloseT": "Çıkış"
     }
-]
-},
-"modalIntroData":{
-"title":"Girişi düzenle"
-},
-"modalAboutData":{
-  "title":"Hakkında kısmını düzenle"
-},
-"modalImageData":{
-  "title":"Fotoğrafı düzenle"
-},
-"modalIntroFormData":{
-  "nameT":"Adınız",
-  "lastNameT":"Soyadınız",
-  "headlineT":"Başlık",
-  "companyT":"Şirket adı",
-  "educationT":"Eğitim",
-  "countryT":"Ülke",
-  "locationT":"Şehir",
-  "industryT":"Alan",
-  "successMsgT":"Giriş bilgilerinizi güncellediniz.",
-  "errorMsgT":"Giriş bilgileri güncellenemedi, lütfen tekrar deneyiniz.",
-  "btnSaveT":"Kaydet",
-  "btnCloseT":"Çıkış"
-},
-"modalAboutFormData":{
-  "summaryT":"Özet",
-  "successMsgT":"Hakkında bilgilerinizi güncellediniz.",
-  "errorMsgT":"Hakkında bilgileri güncellenemedi, lütfen tekrar deneyiniz.",
-  "btnSaveT":"Kaydet",
-  "btnCloseT":"Çıkış"
-},
-"modalImageFormData":{
-  "photoT":"Fotoğrafınız",
-  "successMsgT":"Fotoğrafınızı güncellediniz.",
-  "errorMsgT":"Fotoğraf güncellenemiyor, lütfen tekrar deneyiniz.",
-  "btnSaveT":"Kaydet",
-  "btnCloseT":"Çıkış"
-}
-  
 }

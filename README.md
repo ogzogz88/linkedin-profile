@@ -1,4 +1,4 @@
-# LinkedIn Profile Page : Minimal LinkedIn Profile page with basic functionalities.
+## LinkedIn Profile Page : Minimal LinkedIn Profile page with basic functionalities.
 
 You can login with username: sibumi1@gmail.com and password: 111111 and change photo and other info.
 Only "Me" and "Work" links shows anything extra.

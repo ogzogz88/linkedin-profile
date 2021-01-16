@@ -1,3 +1,27 @@
+# LinkedIn Profile Page : Minimal LinkedIn Profile page with basic functionalities.
+
+You can login with username: sibumi1@gmail.com and password: 111111 and change photo and other info.
+Only "Me" and "Work" links shows anything extra.
+
+## Tech Stack
+
+This project is based on create-react-app, typscript, Context API, reacti18next, Bumbag.style as styling and uses Firebase for login and firestore for database.
+Project is NOT RESPONSIVE and it does not include tests.
+Because this project was built as a case study using some libraries and tools for the first time and the core part completed in only 2 weeks.
+It was my first time using typescript, Bumbag.style and reacti18next.
+
+## Live project
+
+It is deployed with firebase and live at https://linkedin-profile-358a8.web.app/
+
+# Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Available Scripts
+
+In the project directory, you can run:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

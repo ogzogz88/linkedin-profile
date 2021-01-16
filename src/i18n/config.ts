@@ -54,7 +54,8 @@ i18n.use(Backend)
         },
         debug: false,
         detection: {
-            order: ['localStorage', 'navigator'],
+            // First checks the users browser settings, after localstorage
+            order: ['navigator', 'localStorage'],
             caches: ['localStorage'],
         },
         resources,
